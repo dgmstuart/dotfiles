@@ -1,6 +1,6 @@
-alias l='/bin/ls -F'
-alias ll='/bin/ls -alo'
-alias lt='/bin/ls -alort'
-alias lh='/bin/ls -alh'
+source $HOME/.profile
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# git autocompletion in git 1.8.x
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash  ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-completion.bash 
+fi
