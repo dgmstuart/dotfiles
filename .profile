@@ -1,20 +1,7 @@
 # Path
 ##########
 
-# /etc/paths adds the following:
-#   /usr/bin
-#   /bin
-#   /usr/sbin
-#   /sbin
-#   /usr/local/bin
-
-# I also have the following already in my path - haven't worked out where from yet:
-#   /usr/local/git/bin
-#   /usr/X11/bin
-
-# It looks like the following don't actually need to be in the path after all...
-#   export PATH=$PATH:/usr/local/heroku/bin
-#   export PATH=$PATH:/usr/local/mysql/bin
+export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -41,7 +28,7 @@ alias lt='ls -alort'
 alias lh='ls -alh'
 
 # Projects
-alias soldn='cd ~/Sites/swingoutlondon'
+alias soldn='cd ~/Dev/swingoutlondon'
 alias ssoldn='soldn; subl .'
 
 # Git
@@ -50,6 +37,8 @@ alias gce='git config -e'
 
 # Environment 
 ##############
+export VISUAL='subl'
+export EDITOR='vi'
 
 # Syntax highlighting for less:
 export LESSOPEN="| src-hilite-lesspipe.sh %s" 
