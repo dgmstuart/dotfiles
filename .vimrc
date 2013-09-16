@@ -6,6 +6,7 @@ if v:progname =~? "evim"
 endif
 
 colorscheme slate
+" colorscheme railscasts also exists...
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -42,6 +43,10 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
 endif
+
+set expandtab
+set tabstop=2
+set shiftwidth=2
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
