@@ -27,10 +27,6 @@ alias ll='ls -alo'
 alias lt='ls -alort'
 alias lh='ls -alh'
 
-# Projects
-alias soldn='cd ~/Dev/swingoutlondon'
-alias ssoldn='soldn; subl .'
-
 # Whippet
 alias whippetmulti='sudo whippet --multisite -p 80'
 alias whippetlocal='sudo whippet -p 80'
