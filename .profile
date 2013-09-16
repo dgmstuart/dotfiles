@@ -56,6 +56,7 @@ export VISUAL='subl'
 export EDITOR='vi'
 
 # Syntax highlighting for less:
+# Install with "brew install source-highlight"
 export LESSOPEN="| src-hilite-lesspipe.sh %s" 
 export LESS='-R'
 export MORE='-R'
