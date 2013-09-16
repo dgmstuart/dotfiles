@@ -11,7 +11,7 @@ ZSH_THEME="robbyrussell"
 
 # Plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git osx bundler heroku rails rails3 ruby sublime nanoc)
+plugins=(git rvm osx bundler heroku rails rails3 ruby sublime nanoc npm node)
 
 source $ZSH/oh-my-zsh.sh
 

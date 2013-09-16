@@ -31,9 +31,24 @@ alias lh='ls -alh'
 alias soldn='cd ~/Dev/swingoutlondon'
 alias ssoldn='soldn; subl .'
 
+# Whippet
+alias whippetmulti='sudo whippet --multisite -p 80'
+alias whippetlocal='sudo whippet -p 80'
+
 # Git
 alias gce='git config -e'
+alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
+alias gittest='git push origin +HEAD:testing'
+alias gitemptycommit='git commit --allow-empty -m Empty'
 
+function gitsubplugin(){
+  if [ -d "plugins" ]; then
+    git submodule add git@git.dxw.net:wordpress-plugins/$1 plugins/$1
+  else
+    echo "The plugins directory doesn't exist." 
+    echo "Are you sure you're in the right place?"
+  fi
+}
 
 # Environment 
 ##############
@@ -47,3 +62,6 @@ export MORE='-R'
 
 # Disable the less history file
 export LESSHISTFILE="-"
+
+## Per-system profile
+[ -r ~/.profile.local ] && . ~/.profile.local
