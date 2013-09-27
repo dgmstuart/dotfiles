@@ -16,6 +16,10 @@ alias zshplugins='ll ~/.oh-my-zsh/plugins'
 alias zshconfig="vim ~/.zshrc"
 alias szsh='source ~/.zshrc'
 
+# profile
+alias epr="vim ~/.profile"
+alias eprl="vim ~/.profile.local"
+
 # Editors
 alias subl=subl
 alias v='vim'
