@@ -3,9 +3,11 @@
 
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
-# Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# Add RVM to PATH for scripting:
+export PATH=$PATH:$HOME/.rvm/bin 
 
+# Load RVM into a shell session *as a function*:
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
 
 # Aliases 
 ##########
