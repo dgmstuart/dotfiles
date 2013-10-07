@@ -54,7 +54,7 @@ function gitsubplugin(){
 
 # Environment 
 ##############
-export VISUAL='subl'
+export VISUAL='vim'
 export EDITOR='vi'
 
 # Syntax highlighting for less:
