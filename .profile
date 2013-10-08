@@ -3,6 +3,9 @@
 
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
+# Add NVM to PATH
+. ~/.nvm/nvm.sh
+
 # Add RVM to PATH for scripting:
 export PATH=$PATH:$HOME/.rvm/bin 
 
