@@ -41,6 +41,7 @@ alias whippetmulti='sudo whippet --multisite -p 80'
 alias whippetlocal='sudo whippet -p 80'
 
 # Git
+alias gcd='git checkout develop'
 alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 alias gittest='git push origin +HEAD:testing'
