@@ -26,6 +26,7 @@ alias eprl="vim ~/.profile.local"
 alias subl=subl
 alias v='vim'
 alias mvm='mvim'
+alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 
 # Listing
 alias l='ls -F'
