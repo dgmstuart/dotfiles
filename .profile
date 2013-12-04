@@ -57,7 +57,7 @@ function gitsubplugin(){
 # Environment 
 ##############
 export VISUAL='vim'
-export EDITOR='vi'
+export EDITOR='vim'
 
 # Syntax highlighting for less:
 # Install with "brew install source-highlight"
