@@ -2,7 +2,7 @@
 	name = Duncan Stuart
 	email = dgmstuart@gmail.com
 [github]
-	user = leveretweb
+	user = dgmstuart 
 [core]
 	excludesfile = ~/.gitignore_global
 [difftool "sourcetree"]
