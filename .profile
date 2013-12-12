@@ -3,9 +3,6 @@
 
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
-# Add NVM to PATH
-. ~/.nvm/nvm.sh
-
 # Add RVM to PATH for scripting:
 export PATH=$PATH:$HOME/.rvm/bin 
 
@@ -29,6 +26,7 @@ alias eprl="vim ~/.profile.local"
 alias subl=subl
 alias v='vim'
 alias mvm='mvim'
+alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 
 # Listing
 alias l='ls -F'
