@@ -10,4 +10,7 @@ plugins=(git rvm osx bundler heroku rails ruby node sublime nanoc npm node)
 
 source $ZSH/oh-my-zsh.sh
 
+# Make zsh play nice with rake
+alias rake="noglob rake"
+
 source $HOME/.profile
