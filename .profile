@@ -30,9 +30,8 @@ alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 
 # Listing
 alias l='ls -F'
-alias ll='ls -alo'
+alias ll='ls -aloh'
 alias lt='ls -alort'
-alias lh='ls -alh'
 
 # Whippet
 alias whippetmulti='sudo whippet --multisite -p 80'
