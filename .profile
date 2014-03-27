@@ -27,6 +27,7 @@ alias subl=subl
 alias v='vim'
 alias mvm='mvim'
 alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
+alias rmtemp='rm \.*~'
 
 # Listing
 alias l='ls -F'
