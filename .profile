@@ -4,12 +4,12 @@
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # Add RVM to PATH for scripting:
-export PATH=$PATH:$HOME/.rvm/bin 
+export PATH=$PATH:$HOME/.rvm/bin
 
 # Load RVM into a shell session *as a function*:
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" 
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# Aliases 
+# Aliases
 ##########
 
 # zsh
@@ -27,7 +27,6 @@ alias subl=subl
 alias v='vim'
 alias mvm='mvim'
 alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
-alias rmtemp='rm \.*~'
 
 # Listing
 alias l='ls -F'
@@ -49,19 +48,27 @@ function gitsubplugin(){
   if [ -d "plugins" ]; then
     git submodule add git@git.dxw.net:wordpress-plugins/$1 plugins/$1
   else
-    echo "The plugins directory doesn't exist." 
+    echo "The plugins directory doesn't exist."
     echo "Are you sure you're in the right place?"
   fi
 }
 
-# Environment 
+# Maintenance
+function rmtemp(){
+  if [ -s *~ ]; then
+    rm *~
+  fi
+}
+alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
+
+# Environment
 ##############
 export VISUAL='vim'
 export EDITOR='vim'
 
 # Syntax highlighting for less:
 # Install with "brew install source-highlight"
-export LESSOPEN="| src-hilite-lesspipe.sh %s" 
+export LESSOPEN="| src-hilite-lesspipe.sh %s"
 export LESS='-R'
 export MORE='-R'
 
