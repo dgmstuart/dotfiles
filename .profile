@@ -3,12 +3,6 @@
 
 export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
-# Add RVM to PATH for scripting:
-export PATH=$PATH:$HOME/.rvm/bin
-
-# Load RVM into a shell session *as a function*:
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 # Aliases
 ##########
 
@@ -75,5 +69,13 @@ export MORE='-R'
 # Disable the less history file
 export LESSHISTFILE="-"
 
-## Per-system profile
+# rbenv
+########
+# Use Homebrew's directories rather than ~/.rbenv
+export RBENV_ROOT=/usr/local/var/rbenv
+
+# Enable rbenbv shims and autocompletions
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Per-system profile
 [ -r ~/.profile.local ] && . ~/.profile.local
