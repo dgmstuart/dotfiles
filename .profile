@@ -1,7 +1,7 @@
 # Path
 ##########
 
-export PATH=/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # Aliases
 ##########
