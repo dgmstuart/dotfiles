@@ -69,6 +69,11 @@ export MORE='-R'
 # Disable the less history file
 export LESSHISTFILE="-"
 
+# Golang
+########
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
 # rbenv
 ########
 # Use Homebrew's directories rather than ~/.rbenv
