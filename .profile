@@ -37,6 +37,7 @@ alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
+alias gad='git add .'
 
 function gitsubplugin(){
   if [ -d "plugins" ]; then
@@ -59,6 +60,11 @@ function rmtemp(){
   fi
 }
 alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
+
+# Display the top N used commands
+function top_commands() {
+  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
+}
 
 # Environment
 ##############
