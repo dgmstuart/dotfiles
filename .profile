@@ -32,12 +32,13 @@ alias whippetmulti='sudo whippet --multisite -p 80'
 alias whippetlocal='sudo whippet -p 80'
 
 # Git
+alias gad='git add .'
+alias gmsg='git commit --message'
 alias gcd='git checkout develop'
 alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
-alias gad='git add .'
 
 function gitsubplugin(){
   if [ -d "plugins" ]; then
@@ -47,6 +48,9 @@ function gitsubplugin(){
     echo "Are you sure you're in the right place?"
   fi
 }
+
+# Rails
+alias zc='zeus console'
 
 # Heroku
 alias gphm='git push heroku master'
