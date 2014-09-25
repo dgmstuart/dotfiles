@@ -9,7 +9,7 @@ export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 # zsh
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias zshplugins='ll ~/.oh-my-zsh/plugins'
-alias zshconfig="vim ~/.zshrc"
+alias zpr="vim ~/.zshrc"
 alias szsh='source ~/.zshrc'
 
 # profile
@@ -33,12 +33,14 @@ alias whippetlocal='sudo whippet -p 80'
 
 # Git
 alias gad='git add .'
+alias grm='git rm'
 alias gmsg='git commit --message'
 alias gcd='git checkout develop'
 alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
+alias tga='tig --all'
 
 function gitsubplugin(){
   if [ -d "plugins" ]; then
@@ -51,6 +53,7 @@ function gitsubplugin(){
 
 # Rails
 alias zc='zeus console'
+alias zrr='zeus rake routes'
 
 # Heroku
 alias gphm='git push heroku master'
