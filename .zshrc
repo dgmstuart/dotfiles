@@ -6,11 +6,8 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="dgms"
 
-plugins=(git rbenv osx bundler heroku rails ruby node sublime nanoc npm node)
+plugins=(git rbenv osx bundler heroku rails ruby rake node sublime nanoc npm node)
 
 source $ZSH/oh-my-zsh.sh
-
-# Make zsh play nice with rake
-alias rake="noglob rake"
 
 source $HOME/.profile
