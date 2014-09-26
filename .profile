@@ -70,7 +70,7 @@ alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
 
 # Display the top N used commands
 function top_commands() {
-  history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
+  history | tail -2000 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
 }
 
 # Environment
