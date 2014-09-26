@@ -33,6 +33,7 @@ alias whippetlocal='sudo whippet -p 80'
 
 # Git
 alias gad='git add .'
+alias gasp='git add spec/spec_helper.rb'
 alias grm='git rm'
 alias gmsg='git commit --message'
 alias gcd='git checkout develop'
