@@ -35,7 +35,7 @@ alias whippetlocal='sudo whippet -p 80'
 alias gad='git add .'
 alias gasp='git add spec/spec_helper.rb'
 alias grm='git rm'
-alias gmsg='git commit --message'
+alias msg='git commit --message'
 alias gcd='git checkout develop'
 alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
@@ -55,6 +55,7 @@ function gitsubplugin(){
 # Rails
 alias zc='zeus console'
 alias zrr='zeus rake routes'
+alias rdm='zeus rake db:migrate'
 
 # Heroku
 alias gphm='git push heroku master'
@@ -76,6 +77,8 @@ alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
 function top_commands() {
   history | tail -2000 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
 }
+
+alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
 # Environment
 ##############
