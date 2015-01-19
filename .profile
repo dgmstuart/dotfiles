@@ -53,6 +53,7 @@ function gitsubplugin(){
 }
 
 # Rails
+alias zst='zeus start'
 alias zc='zeus console'
 alias zrr='zeus rake routes'
 alias rdm='zeus rake db:migrate'
