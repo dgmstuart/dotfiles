@@ -42,6 +42,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
+" Plugins with unbundle:
+:runtime bundle/vim-unbundle/unbundle.vim
+
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
