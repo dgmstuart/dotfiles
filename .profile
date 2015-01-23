@@ -43,6 +43,9 @@ alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
 
+# Consular
+alias cs='consular start'
+
 function gitsubplugin(){
   if [ -d "plugins" ]; then
     git submodule add git@git.dxw.net:wordpress-plugins/$1 plugins/$1
