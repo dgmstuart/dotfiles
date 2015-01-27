@@ -43,9 +43,6 @@ alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
 
-# Consular
-alias cs='consular start'
-
 function gitsubplugin(){
   if [ -d "plugins" ]; then
     git submodule add git@git.dxw.net:wordpress-plugins/$1 plugins/$1
@@ -68,6 +65,9 @@ alias heroku_m='heroku run rake db:migrate && heroku restart'
 
 # Blog
 alias rgd='rake gen_deploy'
+
+# Consular
+alias cs='consular start'
 
 # Maintenance
 function rmtemp(){
