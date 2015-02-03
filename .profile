@@ -58,6 +58,9 @@ alias zc='zeus console'
 alias zrr='zeus rake routes'
 alias rdm='zeus rake db:migrate'
 
+# Bundler
+alias b='bundle'
+
 # Heroku
 alias gphm='git push heroku master'
 alias heroku_cc='heroku run rails runner Rails.cache.clear'
