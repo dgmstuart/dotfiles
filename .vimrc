@@ -53,6 +53,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " Plugins with unbundle:
+filetype off
 runtime bundle/vim-unbundle/unbundle.vim
 
 " Only do this part when compiled with support for autocommands.
