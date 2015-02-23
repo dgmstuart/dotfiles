@@ -98,3 +98,13 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" Whitespace highlighting
+set list
+set listchars=trail:·,tab:¬·
+
+" Automatically delete trailing whitespace for certain filetypes
+autocmd FileType ruby,php autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" Delete trailing whitespace by pressing f5
+:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
