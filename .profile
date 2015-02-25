@@ -68,6 +68,10 @@ alias heroku_m='heroku run rake db:migrate && heroku restart'
 
 # Blog
 alias rgd='rake gen_deploy'
+function new_post(){
+  cd ${BLOG_HOME:?"Need to set BLOG_HOME to the location of the octopress blog directory"}
+  rake new_post["$@"]
+}
 
 # Consular
 alias cs='consular start'
