@@ -1,10 +1,18 @@
-" Based on the MacVim .vimrc
 colorscheme solarized
 set background=dark
 
 " Set font for macvim
 if has("gui_running")
   set guifont=Bitstream\ vera\ sans\ mono:h14
+endif
+
+" when the terminal has colors...
+if &t_Co > 2 || has("gui_running")
+  syntax on         " set syntax highlighting on
+  set hlsearch      " highlight search matches
+
+  " Highlight the status line
+  highlight StatusLine ctermfg=00 ctermbg=06
 endif
 
 " allow backspacing over everything in insert mode
@@ -17,6 +25,11 @@ set incsearch       " do incremental searching
 set gcr=a:blinkon0  " disable the blinking cursor
 set number          " show line numbers
 set relativenumber  " show relative line numbers
+set showcmd         " display incomplete commands
+set showmatch       " show matching brackets
+set matchtime=2     " speed up matching brackets
+set laststatus=2    " always show status line.
+set autoindent      " maintain the indenting from the previous line
 
 " Soft tabs
 set expandtab
@@ -30,17 +43,16 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
+map \ :nohlsearch<CR> " clear search highlighting by pressing \
+
+let mapleader = ","
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
-endif
+set statusline+=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P " the default status line
 
 " Recommended syntastic settings:
 set statusline+=%#warningmsg#
