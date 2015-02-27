@@ -47,6 +47,16 @@ map \ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
+" Use Left and Right arrow keys for indenting
+nmap <Left> <<
+nmap <Right> >>
+vmap <Left> <gv
+vmap <Right> >gv
+
+" Disable the up and down keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
