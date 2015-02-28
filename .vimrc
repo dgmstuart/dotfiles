@@ -56,6 +56,10 @@ vmap <Right> >gv
 " Disable the up and down keys
 noremap <Up> <Nop>
 noremap <Down> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
