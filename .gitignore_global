@@ -26,5 +26,7 @@ Thumbs.db
 *~
 *.swp
 
+# My Suffixes #
+###############
 *.backup
 *.ignore
