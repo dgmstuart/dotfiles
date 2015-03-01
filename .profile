@@ -44,15 +44,6 @@ alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
 
-function gitsubplugin(){
-  if [ -d "plugins" ]; then
-    git submodule add git@git.dxw.net:wordpress-plugins/$1 plugins/$1
-  else
-    echo "The plugins directory doesn't exist."
-    echo "Are you sure you're in the right place?"
-  fi
-}
-
 # Rails
 alias zst='zeus start'
 alias zc='zeus console'
