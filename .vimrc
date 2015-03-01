@@ -32,6 +32,7 @@ set laststatus=2    " always show status line.
 set autoindent      " maintain the indenting from the previous line
 set undofile        " enable persistent undo
 set undodir=~/.vim/undo
+set nomodeline      " modelines are a potential security hole
 
 " Soft tabs
 set expandtab
