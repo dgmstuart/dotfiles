@@ -18,9 +18,10 @@ alias eprl="vim ~/.profile.local"
 
 # Editors
 alias subl=subl
+alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 alias v='vim'
 alias mvm='mvim'
-alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
+alias vv='vim ~/.vimrc'
 
 # Listing
 alias l='ls -F'
