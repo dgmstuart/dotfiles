@@ -73,6 +73,9 @@ function rmtemp(){
   if [ -s *~ ]; then
     rm *~
   fi
+  if [ -s .*~ ]; then
+    rm .*~
+  fi
 }
 alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
 
