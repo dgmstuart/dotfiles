@@ -30,6 +30,8 @@ set showmatch       " show matching brackets
 set matchtime=2     " speed up matching brackets
 set laststatus=2    " always show status line.
 set autoindent      " maintain the indenting from the previous line
+set undofile        " enable persistent undo
+set undodir=~/.vim/undo
 
 " Soft tabs
 set expandtab
