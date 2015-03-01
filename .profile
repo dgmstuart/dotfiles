@@ -64,6 +64,8 @@ function new_post(){
   cd ${BLOG_HOME:?"Need to set BLOG_HOME to the location of the octopress blog directory"}
   rake new_post["$@"]
 }
+alias blogposts='find $BLOG_HOME/source/_posts/*'
+alias epost='vim `blogposts | tail -1`'
 
 # Consular
 alias cs='consular start'
