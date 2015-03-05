@@ -46,7 +46,7 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-map \ :nohlsearch<CR> " clear search highlighting by pressing \
+map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
