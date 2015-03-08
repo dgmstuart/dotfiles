@@ -7,8 +7,8 @@ export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
 ##########
 
 # zsh
-alias ohmyzsh="subl ~/.oh-my-zsh"
-alias zshplugins='ll ~/.oh-my-zsh/plugins'
+alias ohmyzsh="~/.oh-my-zsh"
+alias zshplugins='cd ~/.oh-my-zsh/plugins; ll'
 alias zpr="vim ~/.zshrc"
 alias szsh='source ~/.zshrc'
 
