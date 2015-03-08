@@ -1,6 +1,9 @@
 # Custom prompt:
 export PS1='[\s] $(tput setaf 3)\w $(tput setaf 4)$ $(tput sgr0)'
 
+# Use vi mode:
+set -o vi
+
 # Show colours
 alias ls='ls -G'
 

@@ -5,3 +5,6 @@ ZSH_THEME_GIT_PROMPT_PREFIX="git:(%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{%F{red}%}*%{%f%k%b%}%{$fg[blue]%})"
+
+# Vi mode editing:
+MODE_INDICATOR="%{$fg_bold[red]%}[% NORMAL]%{$reset_color%}"

@@ -102,6 +102,9 @@ export MORE='-R'
 # Disable the less history file
 export LESSHISTFILE="-"
 
+# Decrease the lag when switching to normal mode on the command line:
+export KEYTIMEOUT=1
+
 # Golang
 ########
 export GOPATH=~/go
