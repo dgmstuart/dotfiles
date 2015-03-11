@@ -53,15 +53,11 @@ map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
-" Use Left and Right arrow keys for indenting
-nmap <Left> <<
-nmap <Right> >>
-vmap <Left> <gv
-vmap <Right> >gv
-
-" Disable the up and down keys
+" Disable the arrow keys:
 noremap <Up> <Nop>
 noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
