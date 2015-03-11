@@ -137,3 +137,6 @@ augroup END
 
 " Delete trailing whitespace by pressing f5
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" Commenting
+map <Leader>/ <Plug>CommentaryLine
