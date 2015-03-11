@@ -29,8 +29,8 @@ alias ll='ls -aloh'
 alias lt='ls -alort'
 
 # Whippet
-alias whippetmulti='sudo whippet --multisite -p 80'
-alias whippetlocal='sudo whippet -p 80'
+alias whippetmulti='sudo whippet-server --multisite -p 80'
+alias whippetlocal='sudo whippet-server -p 80 -i 127.0.0.1'
 
 # Git
 alias gad='git add .'
