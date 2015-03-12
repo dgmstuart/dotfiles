@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
+[submodule ".vim/bundle/ack"]
+	path = .vim/bundle/ack
+	url = git@github.com:mileszs/ack.vim.git
