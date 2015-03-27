@@ -18,7 +18,7 @@ endif
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set history=50      " keep 50 lines of command line history
+set history=1000    " lines of command line history to keep
 set ruler           " show the cursor position all the time
 set showcmd         " display incomplete commands
 set incsearch       " do incremental searching
@@ -32,6 +32,8 @@ set laststatus=2    " always show status line.
 set autoindent      " maintain the indenting from the previous line
 set undofile        " enable persistent undo
 set undodir=~/.vim/undo
+set previewheight=30 " height of the preview window
+set pastetoggle=<C-p> " key for toggling paste mode
 set nomodeline      " modelines are a potential security hole
 
 " Soft tabs
