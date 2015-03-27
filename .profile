@@ -43,6 +43,10 @@ alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursiv
 alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
+alias gp2p='git push origin +master:production'
+
+# RSpec
+alias rsp='rspec'
 
 # Rails
 alias zst='zeus start'
