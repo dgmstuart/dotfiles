@@ -53,6 +53,8 @@ map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
+map <Leader>gs :Gstatus<CR>
+
 " Disable the arrow keys:
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -63,12 +65,23 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 
+" Disable backspace in normal mode - it's a bad habit
+noremap <BS> <Nop>
+
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
 endif
 
-set statusline+=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P " the default status line
+set statusline=\ "
+set statusline+=%f\ " file name
+set statusline+=[
+set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+set statusline+=]
+set statusline+=%h%1*%m%r%w%0*\ " flag
+set statusline+=%{fugitive#statusline()}
+set statusline+=%= " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
 " Recommended syntastic settings:
 set statusline+=%#warningmsg#
