@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="dgms"
 
-plugins=(git rbenv osx bundler heroku rails ruby rake node sublime nanoc npm vi-mode)
+plugins=(git rbenv osx bundler heroku rails ruby rake node sublime nanoc npm)
 
 source $ZSH/oh-my-zsh.sh
 
