@@ -55,6 +55,7 @@ map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
+map <Leader>r :w<CR> \| :!rspec %<CR>
 map <Leader>gs :Gstatus<CR>
 
 " Disable the arrow keys:
