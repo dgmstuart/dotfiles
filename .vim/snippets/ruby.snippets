@@ -693,7 +693,7 @@ snippet descm
 	describe '${1:#method}' do
 		${0:pending 'Not implemented'}
 	end
-snippet cont
+snippet con
 	context '${1:message}' do
 		${0}
 	end
@@ -735,3 +735,11 @@ snippet is
 	it { should ${0} }
 snippet isn
 	it { should_not ${0} }
+snippet rsh
+	require 'spec/spec_helper'
+snippet feat
+	feature "${1}" do
+	  scenario "${2}" do
+	    ${3}
+	  end
+	end
