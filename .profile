@@ -64,12 +64,30 @@ alias heroku_m='heroku run rake db:migrate && heroku restart'
 
 # Blog
 alias rgd='rake gen_deploy'
-function new_post(){
+function newpost(){
   cd ${BLOG_HOME:?"Need to set BLOG_HOME to the location of the octopress blog directory"}
-  rake new_post["$@"]
+  output=$( rake new_post["$@"] )
+  echo "$output"
+
+  local return_code=$?
+  if [ $return_code -eq 0 ]; then
+    # Get the name of the file which was just created:
+    post_path=$(grep -o 'source\/_posts\/.*\.markdown' <<< $output)
+    # Stash all other posts (for faster generation)
+    echo "Isolating post..."
+    rake isolate["$post_path"]
+    # Open with the cursor at the bottom of the header:
+    vim -c 'normal G' $post_path
+  fi
 }
-alias blogposts='find $BLOG_HOME/source/_posts/*'
-alias epost='vim `blogposts | tail -1`'
+# blogposts: display the list of posts ordered by last modified time
+# %m                           -- Last modified timestamp
+# %N                           -- Quoted File name
+# -exec stat -f "%m %N" {} \;  -- Outputs a timestamp at the beginning of the line for sorting
+# cut -d ' ' -f2-              -- Returns only the second field in a space-delimited string
+alias blogposts='find $BLOG_HOME/source/_posts/* -exec stat -f "%m %N" {} \; | sort -n | cut -d " " -f2-'
+alias lastpost='find `blogposts` | tail -1 '
+alias epost='vim `lastpost`'
 
 # Consular
 alias cs='consular start'
