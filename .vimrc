@@ -23,6 +23,7 @@ set ruler           " show the cursor position all the time
 set showcmd         " display incomplete commands
 set incsearch       " do incremental searching
 set gcr=a:blinkon0  " disable the blinking cursor
+set cursorline      " show the cursor line
 set number          " show line numbers
 set relativenumber  " show relative line numbers
 set showcmd         " display incomplete commands
@@ -35,6 +36,8 @@ set undodir=~/.vim/undo
 set previewheight=30 " height of the preview window
 set pastetoggle=<C-p> " key for toggling paste mode
 set nomodeline      " modelines are a potential security hole
+set ignorecase      " ignore case in searches
+set smartcase       " do case-sensitive searches if the search term includes uppercase letters
 
 " Soft tabs
 set expandtab
