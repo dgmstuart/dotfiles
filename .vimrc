@@ -58,8 +58,15 @@ map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
 let mapleader = ","
 
-map <Leader>r :w<CR> \| :!rspec %<CR>
 map <Leader>gs :Gstatus<CR>
+
+" Run rspec  using thoughtbot/vim-rspec and tpope/dispatch.
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+
+map <Leader>r :w<cr>:call RunCurrentSpecFile()<CR>
+map <Leader>s :w<cr>:call RunNearestSpec()<CR>
+map <Leader>l :w<cr>:call RunLastSpec()<CR>
+map <Leader>a :w<cr>:call RunAllSpecs()<CR>
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
