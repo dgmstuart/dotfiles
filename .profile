@@ -34,15 +34,16 @@ alias whippetlocal='sudo whippet-server -p 80 -i 127.0.0.1'
 
 # Git
 alias gad='git add .'
+alias gcad='gad; gca'
 alias gasp='git add spec/spec_helper.rb'
 alias grm='git rm'
 alias msg='git commit --message'
 alias gcd='git checkout develop'
 alias gce='git config -e'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
-alias gittest='git push origin +HEAD:testing'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
+alias gittest='git push origin +HEAD:testing'
 alias gp2p='git push origin +master:production'
 
 # RSpec
