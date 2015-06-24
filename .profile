@@ -62,6 +62,10 @@ alias b='bundle'
 alias gphm='git push heroku master'
 alias heroku_cc='heroku run rails runner Rails.cache.clear'
 alias heroku_m='heroku run rake db:migrate && heroku restart'
+alias h='heroku'
+alias hrake='heroku run bundle exec rake'
+alias hlog='heroku logs -t'
+alias hconsole='heroku run console'
 
 # Blog
 alias rgd='rake gen_deploy'
