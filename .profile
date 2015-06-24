@@ -107,6 +107,7 @@ function rmtemp(){
   fi
 }
 alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
+alias killruby='kill -9 `pidof ruby`'
 
 # Display the top N used commands
 function top_commands() {
