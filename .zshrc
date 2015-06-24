@@ -10,3 +10,7 @@ plugins=(git rbenv osx bundler heroku rails ruby rake node sublime nanoc npm)
 source $ZSH/oh-my-zsh.sh
 
 source $HOME/.profile
+
+source ~/k/k.sh
+alias ll="k -Ah"
+
