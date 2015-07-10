@@ -46,3 +46,6 @@
 [submodule "k"]
 	path = k
 	url = git@github.com:rimraf/k.git
+[submodule ".vim/bundle/vim-multiple-cursors"]
+	path = .vim/bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git
