@@ -1,0 +1,33 @@
+# Blog
+function newpost(){
+  cd ${BLOG_HOME:?"Need to set BLOG_HOME to the location of the octopress blog directory"}
+  output=$( rake new_post["$@"] )
+  echo "$output"
+
+  local return_code=$?
+  if [ $return_code -eq 0 ]; then
+    # Get the name of the file which was just created:
+    post_path=$(grep -o 'source\/_posts\/.*\.markdown' <<< $output)
+    # Stash all other posts (for faster generation)
+    echo "Isolating post..."
+    rake isolate["$post_path"]
+    # Open with the cursor at the bottom of the header:
+    vim -c 'normal G' $post_path
+  fi
+}
+
+# Maintenance
+function rmtemp(){
+  if [ -s *~ ]; then
+    rm *~
+  fi
+  if [ -s .*~ ]; then
+    rm .*~
+  fi
+}
+
+# Display the top N used commands
+function top_commands() {
+  history | tail -2000 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
+}
+
