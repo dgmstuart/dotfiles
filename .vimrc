@@ -13,6 +13,12 @@ if &t_Co > 2 || has("gui_running")
 
   " Highlight the status line
   highlight StatusLine ctermfg=00 ctermbg=06
+
+  " highlight the status bar when in insert mode
+  if version >= 700
+    au InsertEnter * hi StatusLine ctermfg=136 ctermbg=00
+    au InsertLeave * hi StatusLine ctermfg=00 ctermbg=06
+  endif
 endif
 
 " allow backspacing over everything in insert mode
@@ -86,21 +92,27 @@ if has('mouse')
   set mouse=a
 endif
 
-set statusline=\ "
-set statusline+=%f\ " file name
+" statusline highlighting groups:
+hi warningmsg ctermbg=red ctermfg=black
+set statusline=
+set statusline+=(%n)\                      " buffer number
+set statusline+=%f\                        " file name
 set statusline+=[
-set statusline+=%{strlen(&ft)?&ft:'none'} " filetype
+set statusline+=%{strlen(&ft)?&ft:'none'}  " filetype
 set statusline+=]
-set statusline+=%h%1*%m%r%w%0*\ " flag
-set statusline+=%{fugitive#statusline()}
-set statusline+=%= " right align
-set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+set statusline+=%1*%h%m%r%w%0*\            " flags: help window, modified, readonly, preview window
+set statusline+=%{fugitive#statusline()}\  " git info
+set statusline+=%#warningmsg#              " <start warning>
+set statusline+=%{SyntasticStatuslineFlag()} " syntax error
+set statusline+=%*                         " <end warning>
 
-" Recommended syntastic settings:
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set statusline+=%=                         " right align
 
+set statusline+=%-14.(%c%V%)\              " column
+set statusline+=%<                         " truncation point (???)
+set statusline+=(%l/%L)                    " line number
+
+" Recommended Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
