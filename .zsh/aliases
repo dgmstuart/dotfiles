@@ -6,6 +6,7 @@ alias ohmyzsh="~/.oh-my-zsh"
 alias zshplugins='cd ~/.oh-my-zsh/plugins; ll'
 alias zpr="vim ~/.zshrc"
 alias szsh='source ~/.zshrc'
+alias eal="vim ~/.zsh/aliases"
 
 # profile
 alias epr="vim ~/.profile"
@@ -48,6 +49,7 @@ alias exclude='vim ~/.git/info/exclude'
 
 # RSpec
 alias rsp='rspec'
+alias zsp='zeus rspec'
 
 # Rails
 alias zst='zeus start'
