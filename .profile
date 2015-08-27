@@ -24,6 +24,10 @@ export KEYTIMEOUT=1
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
+# Composer
+export COMPOSERPATH=~/.composer
+export PATH=$PATH:$COMPOSERPATH/vendor/bin
+
 # Man syntax highlighting
 #########################
 export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
