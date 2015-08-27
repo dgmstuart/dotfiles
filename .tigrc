@@ -1,4 +1,2 @@
-bind diff <Up> move-up
-bind diff <Down> move-down
 bind generic O !git checkout %(commit)
 bind main R !git revert %(commit)
