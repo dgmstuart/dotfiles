@@ -12,6 +12,9 @@ source $HOME/.zsh/functions
 # N.B: Aliases are sourced in .zshenv so that they are available in non-interactive shells
 source $HOME/.zsh/dgms.zsh-theme
 
+# Enable the hash key
+bindkey -s '^[3' \#
+
 source ~/k/k.sh
 alias ll="k -Ah"
 
