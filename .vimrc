@@ -67,13 +67,13 @@ let mapleader = ","
 
 map <Leader>gs :Gstatus<CR>
 
-" Run rspec  using thoughtbot/vim-rspec and tpope/dispatch.
-let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+" Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
+let g:rspec_command = "w | Dispatch bundle exec rspec {spec}"
 
-map <Leader>r :w<cr>:call RunCurrentSpecFile()<CR>
-map <Leader>s :w<cr>:call RunNearestSpec()<CR>
-map <Leader>l :w<cr>:call RunLastSpec()<CR>
-map <Leader>a :w<cr>:call RunAllSpecs()<CR>
+map <Leader>r :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
