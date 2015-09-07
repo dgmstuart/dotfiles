@@ -52,3 +52,9 @@
 [submodule ".vim/bundle/vim-supertab"]
 	path = .vim/bundle/vim-supertab
 	url = git@github.com:ervandew/supertab.git
+[submodule ".vim/bundle/vim-phpcomplete"]
+	path = .vim/bundle/vim-phpcomplete
+	url = git@github.com:shawncplus/phpcomplete.vim.git
+[submodule ".vim/bundle/vim-wordpress"]
+	path = .vim/bundle/vim-wordpress
+	url = git@github.com:dsawardekar/wordpress.vim.git
