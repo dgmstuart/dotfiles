@@ -164,6 +164,8 @@ if !exists(":DiffOrig")
     \ | wincmd p | diffthis
 endif
 
+autocmd Filetype php setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
 " Whitespace highlighting
 set list
 set listchars=trail:·,tab:¬·
