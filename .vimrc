@@ -56,6 +56,7 @@ map Q gq
 
 " prevent accidental commands:
 command! Q q " Bind :Q to :q
+command! W w " Bind :W to :w
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
