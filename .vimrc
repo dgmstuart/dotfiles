@@ -51,6 +51,8 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
+let g:netrw_dirhistmax = 0 "disable generation of .netrwhist
+
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
