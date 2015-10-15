@@ -45,6 +45,7 @@ set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
 set grepprg=ag      " use the silver searcher for grep commands
+set iskeyword+=-    " treat dashes as part of words, not as separators
 
 " Soft tabs
 set expandtab
@@ -156,6 +157,9 @@ augroup gitcommit
   " Start typing straight away in commit messages
   autocmd!
   autocmd BufReadPost COMMIT_EDITMSG exe 'normal gg' | startinsert!
+
+  " add spellchecking and automatic wrapping at the recommended 72 columns to commit messages.
+  autocmd Filetype gitcommit setlocal spell textwidth=72
 augroup END
 
 " Convenient command to see the difference between the current buffer and the
