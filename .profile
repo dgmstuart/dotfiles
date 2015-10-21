@@ -46,5 +46,10 @@ export RBENV_ROOT=/usr/local/var/rbenv
 # Enable rbenbv shims and autocompletions
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Tmux
+#######
+# Disable auto-renaming of windows:
+export DISABLE_AUTO_TITLE=true
+
 # Per-system profile
 [ -r ~/.profile.local ] && . ~/.profile.local
