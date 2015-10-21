@@ -51,7 +51,7 @@ alias gp2s='git push origin +master:testing'
 alias exclude='vim ~/.git/info/exclude'
 
 # RSpec
-alias rsp='rspec'
+alias rsp='bundle exec rspec'
 alias zsp='zeus rspec'
 
 # Rails

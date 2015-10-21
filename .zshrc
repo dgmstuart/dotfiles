@@ -9,7 +9,8 @@ source $ZSH/oh-my-zsh.sh
 
 source $HOME/.profile
 source $HOME/.zsh/functions
-# N.B: Aliases are sourced in .zshenv so that they are available in non-interactive shells
+source $HOME/.zsh/aliases
+# N.B: Aliases are also sourced in .zshenv so that they are available in non-interactive shells like vim
 source $HOME/.zsh/dgms.zsh-theme
 source $HOME/.zsh/mandatory_aliases.sh
 source $HOME/.zsh/explicit_aliases.sh
