@@ -11,6 +11,8 @@ source $HOME/.profile
 source $HOME/.zsh/functions
 # N.B: Aliases are sourced in .zshenv so that they are available in non-interactive shells
 source $HOME/.zsh/dgms.zsh-theme
+source $HOME/.zsh/mandatory_aliases.sh
+source $HOME/.zsh/explicit_aliases.sh
 
 # Enable the hash key
 bindkey -s '^[3' \#
