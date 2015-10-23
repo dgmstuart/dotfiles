@@ -37,6 +37,7 @@ alias dunit='./vendor/bin/dunit'
 # Git
 alias gad='git add .'
 alias gcad='gad; gca'
+alias gdc='git diff --cached'
 alias gasp='git add spec/spec_helper.rb'
 alias grm='git rm'
 alias msg='git commit --message'
