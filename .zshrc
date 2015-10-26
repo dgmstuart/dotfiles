@@ -19,5 +19,3 @@ source $HOME/.zsh/explicit_aliases.sh
 bindkey -s '^[3' \#
 
 source ~/k/k.sh
-alias ll="k -Ah"
-

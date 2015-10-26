@@ -23,6 +23,7 @@ alias vv='vim ~/.vimrc'
 # Listing
 alias l='ls -F'
 alias ll='ls -aloh'
+alias kk="k -Ah"
 alias lt='ls -alort'
 
 # Whippet
