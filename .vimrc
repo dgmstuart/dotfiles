@@ -79,6 +79,9 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" Commenting
+map <Leader>/ <Plug>CommentaryLine
+
 " File search
 noremap <Leader>t <Nop>
 map <Leader>p :CtrlP<CR>
@@ -96,11 +99,6 @@ inoremap <Right> <Nop>
 
 " Disable backspace in normal mode - it's a bad habit
 noremap <BS> <Nop>
-
-" In many terminal emulators the mouse works just fine, thus enable it.
-if has('mouse')
-  set mouse=a
-endif
 
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
@@ -191,6 +189,3 @@ augroup END
 
 " Delete trailing whitespace by pressing f5
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-" Commenting
-map <Leader>/ <Plug>CommentaryLine
