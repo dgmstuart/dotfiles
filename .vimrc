@@ -79,6 +79,11 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
+" File search
+noremap <Leader>t <Nop>
+map <Leader>p :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<CR>
+
 " Disable the arrow keys:
 noremap <Up> <Nop>
 noremap <Down> <Nop>

@@ -10,9 +10,6 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule ".vim/bundle/Command-T"]
-	path = .vim/bundle/Command-T
-	url = git@github.com:wincent/Command-T
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
 	url = git://github.com/garbas/vim-snipmate.git
@@ -61,3 +58,6 @@
 [submodule "/Users/dxwduncan/.vim/bundle/vim-tabular"]
 	path = /Users/dxwduncan/.vim/bundle/vim-tabular
 	url = git@github.com:godlygeek/tabular.git
+[submodule ".vim/bundle/vim-ctrlp"]
+	path = .vim/bundle/vim-ctrlp
+	url = git@github.com:ctrlpvim/ctrlp.vim.git
