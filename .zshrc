@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-plugins=(git rbenv osx bundler heroku rails ruby rake node sublime nanoc npm)
+plugins=(git rbenv bundler heroku rails ruby rake sublime npm)
 
 source $ZSH/oh-my-zsh.sh
 
