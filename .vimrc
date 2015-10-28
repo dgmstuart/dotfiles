@@ -125,11 +125,13 @@ set statusline+=%-14.(%c%V%)\              " column
 set statusline+=%<                         " truncation point (???)
 set statusline+=(%l/%L)                    " line number
 
-" Recommended Syntastic settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" Syntax checking
+let g:syntastic_always_populate_loc_list = 1  " populate the location list on each save
+let g:syntastic_auto_loc_list = 1             " automatically open and close the location list
+let g:syntastic_loc_list_height = 5
+let g:syntastic_check_on_open = 1             " run checks on open, not just on save
+let g:syntastic_check_on_wq = 0               " don't run checks on exit
+let g:syntastic_auto_jump = 1                 " always jump the cursor to the first issue
 
 " Plugins with unbundle:
 filetype off
