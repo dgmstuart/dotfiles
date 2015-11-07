@@ -83,7 +83,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>/ <Plug>CommentaryLine
 
 " File search
-noremap <Leader>t <Nop>
+map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
 
