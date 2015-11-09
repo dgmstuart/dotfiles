@@ -184,7 +184,7 @@ set listchars=trail:·,tab:¬·
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType ruby,javascript,php,markdown,vim,sh autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType ruby,javascript,php,markdown,vim,sh,conf autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Delete trailing whitespace by pressing f5
