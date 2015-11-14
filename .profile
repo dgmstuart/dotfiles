@@ -1,6 +1,6 @@
 # Path
 ##########
-export PATH=~/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # Environment
 ##############
