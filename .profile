@@ -1,6 +1,8 @@
 # Path
 ##########
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+# Use globally installed node modules:
+export PATH=$PATH:~/.npm-global/bin
 
 # Environment
 ##############
