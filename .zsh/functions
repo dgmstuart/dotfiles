@@ -31,3 +31,7 @@ function top_commands() {
   history | tail -2000 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head -${1:-20}
 }
 
+# Display the amount of free space left on disk
+function freespace() {
+  df -hl | grep /dev/disk1 | awk '{ print $(4) }';
+}
