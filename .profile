@@ -1,8 +1,17 @@
 # Path
 ##########
 export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-# Use globally installed node modules:
+
+# Node
 export PATH=$PATH:~/.npm-global/bin
+
+# Golang
+export GOPATH=~/go
+export PATH=$PATH:$GOPATH/bin
+
+# Composer
+export COMPOSERPATH=~/.composer
+export PATH=$PATH:$COMPOSERPATH/vendor/bin
 
 # Environment
 ##############
@@ -20,15 +29,6 @@ export LESSHISTFILE="-"
 
 # Decrease the lag when switching to normal mode on the command line:
 export KEYTIMEOUT=1
-
-# Golang
-########
-export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
-
-# Composer
-export COMPOSERPATH=~/.composer
-export PATH=$PATH:$COMPOSERPATH/vendor/bin
 
 # Man syntax highlighting
 #########################
