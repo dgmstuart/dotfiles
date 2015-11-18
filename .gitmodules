@@ -55,8 +55,8 @@
 [submodule ".vim/bundle/vim-wordpress"]
 	path = .vim/bundle/vim-wordpress
 	url = git@github.com:dsawardekar/wordpress.vim.git
-[submodule "/Users/dxwduncan/.vim/bundle/vim-tabular"]
-	path = /Users/dxwduncan/.vim/bundle/vim-tabular
+[submodule ".vim/bundle/vim-tabular"]
+	path = .vim/bundle/vim-tabular
 	url = git@github.com:godlygeek/tabular.git
 [submodule ".vim/bundle/vim-ctrlp"]
 	path = .vim/bundle/vim-ctrlp
