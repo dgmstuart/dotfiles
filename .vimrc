@@ -133,7 +133,7 @@ let g:syntastic_auto_jump = 1                 " always jump the cursor to the fi
 
 " Plugins with unbundle:
 filetype off
-runtime bundle/vim-unbundle/unbundle.vim
+runtime bundle/vim-unbundle/plugin/unbundle.vim
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
