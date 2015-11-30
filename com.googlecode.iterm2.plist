@@ -484,7 +484,7 @@
 	<key>HotKeyBookmark</key>
 	<string>AA6B0079-79C5-46D8-839E-B0F06246EBFA</string>
 	<key>HotKeyTogglesWindow</key>
-	<true/>
+	<false/>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyAutoHides</key>
@@ -534,7 +534,7 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>675 46 445 103 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>753 610 606 456 0 0 1920 1080 </string>
+	<string>753 611 606 456 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>627 516 620 392 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1857,7 +1857,7 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>469071001.68984503</real>
+	<real>469971042.82546002</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1874,6 +1874,13 @@
 		<string>0000</string>
 		<string>0001</string>
 		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1919,7 +1926,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-13T01:30:01Z</date>
+	<date>2015-11-23T11:30:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
