@@ -2,3 +2,5 @@ bind generic <Ctrl-F> move-page-down
 bind generic <Ctrl-B> move-page-up
 bind generic O !git checkout %(commit)
 bind main R !git revert %(commit)
+
+set line-graphics = utf-8
