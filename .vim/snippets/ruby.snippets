@@ -690,11 +690,11 @@ snippet desc
 		${0}
 	end
 snippet descm
-	describe '${1:#method}' do
+	describe "${1:#method}" do
 		${0:pending 'Not implemented'}
 	end
 snippet con
-	context '${1:message}' do
+	context "${1:message}" do
 		${0}
 	end
 snippet bef
@@ -726,7 +726,7 @@ snippet shared
 snippet ibl
 	it_behaves_like ${0:'shared examples name'}
 snippet it
-	it '${1:spec_name}' do
+	it "${1:spec_name}" do
 		${0}
 	end
 snippet its
@@ -735,8 +735,10 @@ snippet is
 	it { should ${0} }
 snippet isn
 	it { should_not ${0} }
+snippet rrh
+	require 'rails_helper'
 snippet rsh
-	require 'spec/spec_helper'
+	require 'spec_helper'
 snippet feat
 	feature "${1}" do
 	  scenario "${2}" do
