@@ -13,3 +13,5 @@ if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash  ]; then
 fi
 
 source $HOME/.profile
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

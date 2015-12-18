@@ -19,3 +19,5 @@ source $HOME/.zsh/explicit_aliases.sh
 bindkey -s '^[3' \#
 
 source ~/k/k.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
