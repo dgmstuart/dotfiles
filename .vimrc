@@ -86,6 +86,7 @@ map <Leader>/ <Plug>CommentaryLine
 map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
+let g:ctrlp_by_filename = 1
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
