@@ -8,6 +8,8 @@
         whitespace = trailing-space
 [push]
 	default = simple
+[pull]
+	ff = only
 [color]
 	status = auto
 	diff = auto
