@@ -534,9 +534,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>675 46 445 103 0 0 1280 777 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>753 611 606 456 0 0 1920 1080 </string>
+	<string>951 624 606 456 0 0 1920 1080 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>627 516 620 392 0 0 1920 1080 </string>
+	<string>328 306 620 392 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1280 800 0 0 1280 777 </string>
 	<key>New Bookmarks</key>
@@ -1857,7 +1857,7 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>470450401.72253001</real>
+	<real>473599216.18252701</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1883,6 +1883,24 @@
 		<string>0009</string>
 		<string>0010</string>
 		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
+		<string>0025</string>
+		<string>0026</string>
+		<string>0027</string>
+		<string>0028</string>
+		<string>0029</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1928,8 +1946,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-11-29T00:40:00Z</date>
+	<date>2016-01-04T11:20:15Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SmartPlacement</key>
 	<false/>
@@ -1948,6 +1968,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20151111</string>
+	<string>2.9.20160102</string>
 </dict>
 </plist>
