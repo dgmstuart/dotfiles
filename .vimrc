@@ -1,3 +1,36 @@
+" Vundle config start
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'mileszs/ack.vim'
+Plugin 'ervandew/supertab'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'godlygeek/tabular'
+Plugin 'garbas/vim-snipmate'
+  Plugin 'MarcWeber/vim-addon-mw-utils' " snipmate dependency
+  Plugin 'tomtom/tlib_vim'              " snipmate dependency
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Vundle config end
+
 colorscheme solarized
 set background=dark
 
