@@ -77,15 +77,20 @@ alias hlog='heroku logs -t'
 alias hconsole='heroku run console'
 
 # Blog
+alias octopress='bundle exec octopress'
+alias js='bundle exec jekyll serve'
 alias rgd='rake gen_deploy'
 # blogposts: display the list of posts ordered by last modified time
 # %m                           -- Last modified timestamp
 # %N                           -- Quoted File name
 # -exec stat -f "%m %N" {} \;  -- Outputs a timestamp at the beginning of the line for sorting
 # cut -d ' ' -f2-              -- Returns only the second field in a space-delimited string
-alias blogposts='find $BLOG_HOME/source/_posts/* -exec stat -f "%m %N" {} \; | sort -n | cut -d " " -f2-'
+alias blogposts='find $BLOG_HOME/_posts/* -exec stat -f "%m %N" {} \; | sort -n | cut -d " " -f2-'
+alias blogdrafts='find $BLOG_HOME/_drafts/* -exec stat -f "%m %N" {} \; | sort -n | cut -d " " -f2-'
 alias lastpost='find `blogposts` | tail -1 '
+alias lastdraft='find `blogdrafts` | tail -1 '
 alias epost='vim `lastpost`'
+alias edraft='vim `lastdraft`'
 
 # Consular
 alias cs='consular start'
