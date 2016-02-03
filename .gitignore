@@ -1,3 +1,4 @@
 .profile.local
 bin/
 .npm-global/
+.vim/bundle
