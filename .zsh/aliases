@@ -56,6 +56,7 @@ alias exclude='vim ~/.git/info/exclude'
 
 # RSpec
 alias rsp='bundle exec rspec'
+alias bsp='bin/rspec'
 alias zsp='zeus rspec'
 
 # Rails
