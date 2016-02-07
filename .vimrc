@@ -114,14 +114,18 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-" Commenting
-map <Leader>/ <Plug>CommentaryLine
+" Project search
+map <Leader>m :Ack<CR>
+map <Leader>/ :Ack<Space>
 
 " File search
 map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_by_filename = 1
+
+" Quickfix lists
+map <Leader>q :cclose<CR>   " close the quickfix window
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
