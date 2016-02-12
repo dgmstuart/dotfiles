@@ -1,16 +1,16 @@
 # Blog
 function newpost(){
   cd ${BLOG_HOME:?"Need to set BLOG_HOME to the location of the octopress blog directory"}
-  output=$( rake new_post["$@"] )
+  output=$( octopress new post "$@" )
   echo "$output"
 
   local return_code=$?
   if [ $return_code -eq 0 ]; then
     # Get the name of the file which was just created:
-    post_path=$(grep -o 'source\/_posts\/.*\.markdown' <<< $output)
+    post_path=$(grep -o '_posts\/.*\.markdown' <<< $output)
     # Stash all other posts (for faster generation)
     echo "Isolating post..."
-    rake isolate["$post_path"]
+    octopress isolate $post_path
     # Open with the cursor at the bottom of the header:
     vim -c 'normal G' $post_path
   fi
