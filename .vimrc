@@ -65,8 +65,10 @@ set showcmd         " display incomplete commands
 set incsearch       " do incremental searching
 set gcr=a:blinkon0  " disable the blinking cursor
 set cursorline      " show the cursor line
+set colorcolumn=+1  " highlight the column limit
 set number          " show line numbers
 set relativenumber  " show relative line numbers
+set scrolloff=2     " always show 2 lines of context at the top/bottom
 set showcmd         " display incomplete commands
 set showmatch       " show matching brackets
 set matchtime=2     " speed up matching brackets
