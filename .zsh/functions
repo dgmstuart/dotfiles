@@ -16,6 +16,28 @@ function newpost(){
   fi
 }
 
+# Git
+function gitfeature() {
+  usage="usage: gitfeature \#12135 Users can do a thing"
+  if [[ -z "$1" || -z "$2" ]] ; then
+    echo $usage
+    return
+  fi
+
+  id=$1
+  id=${id//\#} # Remove hashes
+
+  shift # Get the rest of the arguments
+
+  story_name=$@
+  story_name=$(echo "$story_name" | awk '{print tolower($0)}') # downcase
+  story_name=${story_name// /-} # replace spaces with dashes
+
+  branch_name="feature/$id-$story_name"
+  git checkout -b $branch_name
+}
+
+
 # Maintenance
 function rmtemp(){
   if [ -s *~ ]; then
