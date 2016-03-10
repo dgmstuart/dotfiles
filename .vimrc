@@ -114,7 +114,7 @@ if executable("bin/rspec")
 else
   let b:rspec_executable = "bundle exec rspec"
 end
-let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress"
+let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
