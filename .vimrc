@@ -120,6 +120,8 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>rr :!bundle exec rspec % --format Fuubar<CR>
+map <Leader>aa :!bundle exec rspec spec --format Fuubar<CR>
 
 " Project search
 map <Leader>m :Ack<CR>
