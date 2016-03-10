@@ -12,5 +12,12 @@
 	ff = only
 [color]
 	status = auto
-	diff = auto
 	branch = auto
+[color "diff"]
+	plain = normal
+	meta = yellow
+	frag = blue
+	old = red
+	new = green
+	commit = yellow
+	whitespace = normal red
