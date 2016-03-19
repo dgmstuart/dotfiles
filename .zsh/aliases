@@ -49,6 +49,7 @@ alias grbdl='git checkout develop; git pull; git checkout -; git rebase develop'
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 alias tga='tig --all'
+alias tgr='tig refs'
 alias gittest='git push origin +HEAD:testing'
 alias gp2p='git push origin +master:production'
 alias gp2s='git push origin +master:testing'
@@ -64,6 +65,7 @@ alias zst='zeus start'
 alias zc='zeus console'
 alias zrr='zeus rake routes'
 alias zrdm='zeus rake db:migrate'
+alias rdm='bundle exec rake db:migrate'
 
 # Bundler
 alias b='bundle'
@@ -94,6 +96,7 @@ alias lastpost='find `blogposts` | tail -1 '
 alias lastdraft='find `blogdrafts` | tail -1 '
 alias epost='vim `lastpost`'
 alias edraft='vim `lastdraft`'
+alias blogd='octopress integrate;jekyll build;octopress deploy;gcad'
 
 # Consular
 alias cs='consular start'
