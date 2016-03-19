@@ -135,6 +135,7 @@ let g:ctrlp_by_filename = 1
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
+map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
@@ -205,6 +206,13 @@ augroup vimrcEx
     \ if line("'\"") > 1 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
+augroup END
+
+augroup ruby
+  autocmd!
+
+  " For all ruby files, encourage 80 columns:
+  autocmd FileType ruby setlocal colorcolumn=81
 augroup END
 
 augroup gitcommit
