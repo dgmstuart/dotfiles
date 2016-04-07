@@ -127,12 +127,16 @@ map <Leader>ff :!bundle exec rspec spec --only-failures --format Fuubar<CR>
 " Project search
 map <Leader>m :Ack<CR>
 map <Leader>/ :Ack<Space>
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " File search
 map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_by_filename = 1
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
