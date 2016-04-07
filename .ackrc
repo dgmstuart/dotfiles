@@ -3,5 +3,6 @@ md=.md,.markdown
 --ignore-dir=vendor
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=tags
 --ignore-dir=doc
 --ignore-dir=coverage
