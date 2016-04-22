@@ -57,3 +57,7 @@ function top_commands() {
 function freespace() {
   df -hl | grep /dev/disk1 | awk '{ print $(4) }';
 }
+
+function ip() {
+  ifconfig en0| awk '/inet 192/{print $2}'
+}
