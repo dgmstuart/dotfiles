@@ -30,6 +30,7 @@ alias lt='ls -alort'
 alias whip='whippet-server'
 alias whippetmulti='sudo whippet-server --multisite -p 80'
 alias whippetlocal='sudo whippet-server -p 80 -i 127.0.0.1'
+alias dwhip='whippet server run'
 
 # PHP testing
 alias punit='./vendor/bin/phpunit'
@@ -107,3 +108,6 @@ alias killruby='kill -9 `pidof ruby`'
 
 alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pasteboard.'"
 
+# Docker
+alias dockerenv='eval $(docker-machine env default)'
+alias dip='docker-machine ip default'
