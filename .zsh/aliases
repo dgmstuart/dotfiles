@@ -54,6 +54,7 @@ alias tgr='tig refs'
 alias gittest='git push origin +HEAD:testing'
 alias gp2p='git push origin +master:production'
 alias gp2s='git push origin +master:testing'
+alias gpf='git push --force-with-lease'
 alias exclude='vim ~/.git/info/exclude'
 
 # RSpec
