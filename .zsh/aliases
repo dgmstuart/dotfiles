@@ -61,13 +61,8 @@ alias exclude='vim ~/.git/info/exclude'
 # RSpec
 alias rsp='bundle exec rspec'
 alias bsp='bin/rspec'
-alias zsp='zeus rspec'
 
 # Rails
-alias zst='zeus start'
-alias zc='zeus console'
-alias zrr='zeus rake routes'
-alias zrdm='zeus rake db:migrate'
 alias rdm='bundle exec rake db:migrate'
 
 # Bundler
@@ -100,9 +95,6 @@ alias lastdraft='find `blogdrafts` | tail -1 '
 alias epost='vim `lastpost`'
 alias edraft='vim `lastdraft`'
 alias blogd='octopress integrate;jekyll build;octopress deploy;gcad'
-
-# Consular
-alias cs='consular start'
 
 # Maintenance
 alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
