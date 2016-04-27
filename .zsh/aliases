@@ -8,6 +8,7 @@ alias zpr="vim ~/.zshrc"
 alias szsh='source ~/.zshrc'
 alias sal='source ~/.zsh/aliases'
 alias eal="vim ~/.zsh/aliases"
+alias efun="vim ~/.zsh/functions"
 
 # profile
 alias epr="vim ~/.profile"
