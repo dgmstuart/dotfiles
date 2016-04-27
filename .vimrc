@@ -198,10 +198,6 @@ filetype plugin indent on
 
 augroup vimrcEx
   autocmd!
-
-  " For all text and markdown files set 'textwidth' to 78 characters.
-  autocmd FileType text,markdown,help setlocal textwidth=78
-
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
   " (happens when dropping a file on gvim).
@@ -215,14 +211,27 @@ augroup END
 
 augroup ruby
   autocmd!
-
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81
 augroup END
 
-augroup gitcommit
-  " Start typing straight away in commit messages
+augroup php
   autocmd!
+  " For all php files, encourage 85 columns:
+  autocmd FileType php setlocal colorcolumn=86
+
+  autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+augroup END
+
+augroup text
+  autocmd!
+  " For all text and markdown files set 'textwidth' to 78 characters.
+  autocmd FileType text,markdown,help setlocal textwidth=78
+augroup END
+
+augroup gitcommit
+  autocmd!
+  " Start typing straight away in commit messages
   autocmd BufReadPost COMMIT_EDITMSG exe 'normal gg' | startinsert!
 
   " add spellchecking and automatic wrapping at the recommended 72 columns to commit messages.
@@ -237,17 +246,15 @@ if !exists(":DiffOrig")
     \ | wincmd p | diffthis
 endif
 
-autocmd Filetype php setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-
-" Whitespace highlighting
-set list
-set listchars=trail:·,tab:¬·
-
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
   autocmd FileType ruby,haml,javascript,php,markdown,vim,help,sh,conf autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
+
+" Whitespace highlighting
+set list
+set listchars=trail:·,tab:¬·
 
 " Delete trailing whitespace by pressing f5
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
