@@ -27,6 +27,7 @@ Plugin 'garbas/vim-snipmate'
   Plugin 'tomtom/tlib_vim'              " snipmate dependency
 Plugin 'tpope/vim-liquid'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'stephpy/vim-php-cs-fixer'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -187,6 +188,8 @@ let g:syntastic_check_on_open = 1             " run checks on open, not just on 
 let g:syntastic_check_on_wq = 0               " don't run checks on exit
 let g:syntastic_auto_jump = 1                 " always jump the cursor to the first issue
 
+let g:syntastic_php_checkers = ['php']
+
 " Plugins with unbundle:
 filetype off
 runtime bundle/vim-unbundle/plugin/unbundle.vim
@@ -225,6 +228,10 @@ augroup php
   autocmd!
   " For all php files, encourage 85 columns:
   autocmd FileType php setlocal colorcolumn=86
+
+  " Auto-fix issues - Travis will fail if we don't
+  " TODO: fix this: it fixes the file but then stops syntax highlighting
+  " autocmd FileType php autocmd BufWritePre <buffer> silent! call PhpCsFixerFixFile()
 
   autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 augroup END
