@@ -213,6 +213,11 @@ augroup ruby
   autocmd!
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81
+
+  let g:syntastic_ruby_checkers = ['mri']
+  if filereadable(".rubocop.yml")
+    call add(g:syntastic_ruby_checkers, "rubocop")
+  endif
 augroup END
 
 augroup php
