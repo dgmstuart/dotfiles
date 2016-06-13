@@ -227,6 +227,8 @@ augroup php
   autocmd FileType php setlocal colorcolumn=86
 
   autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+  let g:syntastic_php_checkers = ['php']
 augroup END
 
 augroup text
