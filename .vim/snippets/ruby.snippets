@@ -255,7 +255,7 @@ snippet file File.read()
 	File.read(${1:'path/to/file'})
 snippet Dir Dir.global() { |file| .. }
 	Dir.glob(${1:'dir/glob/*'}) { |${2:file}| ${0} }
-snippet Dir Dir[".."]
+snippet Dir Dir['..']
 	Dir[${1:'glob/**/*.rb'}]
 snippet dir
 	Filename.dirname(__FILE__)
@@ -690,11 +690,11 @@ snippet desc
 		${0}
 	end
 snippet descm
-	describe "${1:#method}" do
+	describe '${1:#method}' do
 		${0:pending 'Not implemented'}
 	end
 snippet con
-	context "${1:message}" do
+	context '${1:message}' do
 		${0}
 	end
 snippet bef
@@ -726,7 +726,7 @@ snippet shared
 snippet ibl
 	it_behaves_like ${0:'shared examples name'}
 snippet it
-	it "${1:spec_name}" do
+	it '${1:spec_name}' do
 		${0}
 	end
 snippet its
@@ -740,10 +740,10 @@ snippet rrh
 snippet rsh
 	require 'spec_helper'
 snippet feat
-	feature "${1}" do
-	  scenario "${2}" do
+	feature '${1}' do
+	  scenario '${2}' do
 	    ${3}
 	  end
 	end
 snippet save
-	save_and_open_page
+  	save_and_open_page
