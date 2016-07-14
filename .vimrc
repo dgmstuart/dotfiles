@@ -156,6 +156,9 @@ inoremap <Right> <Nop>
 " Disable backspace in normal mode - it's a bad habit
 noremap <BS> <Nop>
 
+" Open tig showing the history of the current file
+command Tighist !tig %
+
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
 set statusline=
