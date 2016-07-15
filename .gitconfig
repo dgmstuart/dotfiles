@@ -7,7 +7,7 @@
 	excludesfile = ~/.gitignore_global
         whitespace = trailing-space
 [push]
-	default = simple
+	default = current
 [pull]
 	rebase = true
 	ff = only
