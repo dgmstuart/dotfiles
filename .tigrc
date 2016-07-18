@@ -1,5 +1,9 @@
 bind generic <Ctrl-F> move-page-down
 bind generic <Ctrl-B> move-page-up
+bind generic g move-first-line
+bind main G none
+bind generic G move-last-line
+bind generic <Ctrl-g> view-grep
 bind generic O !git checkout %(commit)
 bind main R !git revert %(commit)
 
