@@ -71,6 +71,7 @@ alias cover='open coverage/index.html'
 
 # Rails
 alias rdm='bundle exec rake db:migrate'
+alias mailcatcher='mailcatcher; open http://127.0.0.1:1080'
 
 # Bundler
 alias b='bundle'
