@@ -20,6 +20,7 @@ alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 alias v='vim'
 alias mvm='mvim'
 alias vv='vim ~/.vimrc'
+alias vf='vim `fzf`'
 
 # Listing
 alias l='ls -F'
@@ -59,6 +60,8 @@ alias gp2p='git push origin +master:production'
 alias gp2s='git push origin +master:testing'
 alias gpf='git push --force-with-lease'
 alias exclude='vim ~/.git/info/exclude'
+alias fix='$EDITOR `git diff --name-only | uniq`'
+alias dirty='$EDITOR `git ls-files -m`'
 
 # RSpec
 alias rsp='bundle exec rspec'
