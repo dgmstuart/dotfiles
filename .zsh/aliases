@@ -67,6 +67,7 @@ alias dirty='$EDITOR `git ls-files -m`'
 alias rsp='bundle exec rspec'
 alias rspff='bundle exec rspec --only-failures'
 alias bsp='bin/rspec'
+alias cover='open coverage/index.html'
 
 # Rails
 alias rdm='bundle exec rake db:migrate'
