@@ -65,6 +65,7 @@ alias dirty='$EDITOR `git ls-files -m`'
 
 # RSpec
 alias rsp='bundle exec rspec'
+alias rspff='bundle exec rspec --only-failures'
 alias bsp='bin/rspec'
 
 # Rails
