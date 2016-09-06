@@ -239,7 +239,7 @@ augroup END
 augroup text
   autocmd!
   " For all text and markdown files set 'textwidth' to 78 characters.
-  autocmd FileType text,markdown,help setlocal textwidth=78
+  autocmd FileType text,markdown,help,yaml setlocal textwidth=78
 augroup END
 
 augroup gitcommit
@@ -254,7 +254,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType ruby,haml,javascript,scss,css,php,markdown,vim,help,sh,conf autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType ruby,haml,javascript,scss,css,php,markdown,vim,help,sh,conf,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Whitespace highlighting
