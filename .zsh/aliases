@@ -22,6 +22,9 @@ alias mvm='mvim'
 alias vv='vim ~/.vimrc'
 alias vf='vim `fzf`'
 
+# Tmux
+alias muxkill='tmux kill-session'
+
 # Listing
 alias l='ls -F'
 alias ll='ls -aloh'
