@@ -110,12 +110,7 @@ let mapleader = ","
 map <Leader>gs :Gstatus<CR>
 
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
-" Use binstub if available
-if executable("bin/rspec")
-  let b:rspec_executable = "bin/rspec"
-else
-  let b:rspec_executable = "bundle exec rspec"
-end
+let b:rspec_executable = "bundle exec rspec"
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
