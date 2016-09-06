@@ -159,7 +159,7 @@ inoremap <Right> <Nop>
 noremap <BS> <Nop>
 
 " Open tig showing the history of the current file
-command Tighist !tig %
+command! Tighist !tig %
 
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
