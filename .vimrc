@@ -233,8 +233,10 @@ augroup END
 
 augroup text
   autocmd!
-  " For all text and markdown files set 'textwidth' to 78 characters.
-  autocmd FileType text,markdown,help,yaml setlocal textwidth=78
+  " For all text and markdown files:
+  " - enable spellchecking
+  " - set 'textwidth' to 78 characters.
+  autocmd FileType text,markdown,help,yaml setlocal spell textwidth=78
 augroup END
 
 augroup gitcommit
