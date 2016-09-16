@@ -122,8 +122,8 @@ map <Leader>aa :!bundle exec rspec spec --format Fuubar<CR>
 map <Leader>ff :!bundle exec rspec spec --only-failures --format Fuubar<CR>
 
 " Project search
-map <Leader>m :Ack<CR>
-map <Leader>/ :Ack<Space>
+map <Leader>m :Ack <cword> -w<CR>
+map <Leader>/ :Ack  -w<left><left><left>
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
