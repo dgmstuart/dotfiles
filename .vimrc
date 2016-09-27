@@ -156,6 +156,9 @@ noremap <BS> <Nop>
 " Open tig showing the history of the current file
 command! Tighist !tig %
 
+" replace ruby hashrockets with key: value syntax
+command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
+
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
 set statusline=
