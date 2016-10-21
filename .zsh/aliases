@@ -64,7 +64,7 @@ alias gp2s='git push origin +master:testing'
 alias gpf='git push --force-with-lease'
 alias exclude='vim ~/.git/info/exclude'
 alias fix='$EDITOR `git diff --name-only | uniq`'
-alias dirty='$EDITOR `git ls-files -m`'
+alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
 
 # RSpec
 alias rsp='bundle exec rspec'
