@@ -65,6 +65,7 @@ alias gpf='git push --force-with-lease'
 alias exclude='vim ~/.git/info/exclude'
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
+alias hpr='hub pull-request'
 
 # RSpec
 alias rsp='bundle exec rspec'
