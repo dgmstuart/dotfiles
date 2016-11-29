@@ -24,6 +24,7 @@ alias vf='vim `fzf`'
 
 # Tmux
 alias muxkill='tmux kill-session'
+alias killm='killruby;muxkill'
 
 # Listing
 alias l='ls -F'
