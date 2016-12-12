@@ -37,6 +37,7 @@ alias whip='whippet-server'
 alias whippetmulti='sudo whippet-server --multisite -p 80'
 alias whippetlocal='sudo whippet-server -p 80 -i 127.0.0.1'
 alias dwhip='whippet server run'
+alias wpopen='open http://$(dip):80'
 
 # PHP testing
 alias punit='./vendor/bin/phpunit'
