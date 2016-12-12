@@ -41,6 +41,7 @@ alias dwhip='whippet server run'
 # PHP testing
 alias punit='./vendor/bin/phpunit'
 alias dunit='./vendor/bin/dunit'
+alias pdot='./vendor/bin/peridot'
 
 # Git
 alias gad='git add .'

@@ -1,5 +1,6 @@
-# Always include aliases:
+# Always include aliases and functions:
 source $HOME/.zsh/aliases
+source $HOME/.zsh/functions
 
 # Use Homebrew's directories rather than ~/.rbenv
 export RBENV_ROOT=/usr/local/var/rbenv

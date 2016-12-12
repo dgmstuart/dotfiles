@@ -121,6 +121,11 @@ map <Leader>rr :!bundle exec rspec % --format Fuubar<CR>
 map <Leader>aa :!bundle exec rspec spec --format Fuubar<CR>
 map <Leader>ff :!bundle exec rspec spec --only-failures --format Fuubar<CR>
 
+" Run php tests
+" ptest is defined in ~/.zsh/functions
+map <Leader>w  :Dispatch ptest<CR>
+map <Leader>wr :Dispatch ptest %<CR>
+
 " Project search
 map <Leader>m :Ack <cword> -w<CR>
 map <Leader>/ :Ack  -w<left><left><left>

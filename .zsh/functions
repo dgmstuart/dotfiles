@@ -46,6 +46,21 @@ fbr() {
   git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+# Php testing
+# Work out what testing library is being used and run the appropriate commands
+function ptest() {
+  if [ -f 'peridot.php' ]
+  then
+    [[ $# -eq 0 ]] && target='specs' || target=$1
+    vendor/bin/peridot -r dot $target
+  elif [ -f 'phpunit.xml' ]
+  then
+    # If $1 is null, no arg will be passed, and all tests will be run
+    vendor/bin/phpunit $1
+  else
+    echo "Couldn't find a peridot.php or phpunit.xml file"
+  fi
+}
 
 # Maintenance
 function rmtemp(){
