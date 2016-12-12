@@ -27,6 +27,7 @@ Plugin 'garbas/vim-snipmate'
   Plugin 'tomtom/tlib_vim'              " snipmate dependency
 Plugin 'tpope/vim-liquid'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'noahfrederick/vim-composer'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
