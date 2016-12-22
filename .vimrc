@@ -237,7 +237,8 @@ augroup php
 
   autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-  let g:syntastic_php_checkers = ['php']
+  let g:syntastic_php_checkers=['php', 'phpcs']
+  let g:syntastic_php_phpcs_args='--standard=PSR2 -n'
 augroup END
 
 augroup text
