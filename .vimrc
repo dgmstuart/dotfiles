@@ -113,11 +113,17 @@ map <Leader>gs :Gstatus<CR>
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
 let b:rspec_executable = "bundle exec rspec"
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
+function! RunFailingSpecs()
+  let s:rspec_command = substitute(g:rspec_command, "{spec}", "--only-failures", "g")
+
+  execute s:rspec_command
+endfunction
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+map <Leader>f :call RunFailingSpecs()<CR>
 map <Leader>rr :!bundle exec rspec % --format Fuubar<CR>
 map <Leader>aa :!bundle exec rspec spec --format Fuubar<CR>
 map <Leader>ff :!bundle exec rspec spec --only-failures --format Fuubar<CR>
