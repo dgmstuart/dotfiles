@@ -123,13 +123,28 @@ let mapleader = ","
 map <Leader>gs :Gstatus<CR>
 
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
-let b:rspec_executable = "bundle exec rspec"
-let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
+let s:rspec_default_executable = "bundle exec rspec"
+let s:rspec_spring_executable = "bin/rspec"
+let g:rspec_executable = s:rspec_default_executable
+let g:rspec_command = "Dispatch " . g:rspec_executable . " {spec} --format=progress --no-color"
+
+function! ToggleRSpecCommand()
+  if g:rspec_executable == s:rspec_default_executable
+    let g:rspec_executable = s:rspec_spring_executable
+  else
+    let g:rspec_executable = s:rspec_default_executable
+  endif
+  echo "rspec_executable set to " . g:rspec_executable
+  let g:rspec_command = "Dispatch " . g:rspec_executable . " {spec} --format=progress"
+endfunction
+
 function! RunSpecsWithFlag(flag)
   let s:rspec_command = substitute(g:rspec_command, "{spec}", a:flag, "g")
 
   execute s:rspec_command
 endfunction
+
+map <Leader>e :call ToggleRSpecCommand()<CR>
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
