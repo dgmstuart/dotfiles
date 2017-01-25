@@ -77,7 +77,7 @@ set autoindent      " maintain the indenting from the previous line
 set undofile        " enable persistent undo
 set undodir=~/.vim/undo
 set previewheight=30 " height of the preview window
-set pastetoggle=<C-p> " key for toggling paste mode
+set pastetoggle=<C-q> " key for toggling paste mode
 set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
