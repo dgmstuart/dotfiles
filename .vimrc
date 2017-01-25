@@ -144,7 +144,7 @@ endif
 map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
-let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 0
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
