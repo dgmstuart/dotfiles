@@ -211,6 +211,10 @@ runtime bundle/vim-unbundle/plugin/unbundle.vim
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
+
 augroup vimrcEx
   autocmd!
   " When editing a file, always jump to the last known cursor position.
