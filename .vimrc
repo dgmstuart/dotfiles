@@ -27,7 +27,6 @@ Plugin 'garbas/vim-snipmate'
   Plugin 'tomtom/tlib_vim'              " snipmate dependency
 Plugin 'tpope/vim-liquid'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'noahfrederick/vim-composer'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 
 call vundle#end()            " required
