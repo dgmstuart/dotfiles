@@ -172,6 +172,7 @@ command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
 
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
+hi time ctermbg=black ctermfg=136
 set statusline=
 set statusline+=(%n)\                      " buffer number
 set statusline+=%f\                        " file name
@@ -192,6 +193,12 @@ set statusline+=%=                         " right align
 set statusline+=%-14.(%c%V%)\              " column
 set statusline+=%<                         " truncation point (???)
 set statusline+=(%l/%L)                    " line number
+if exists('$TMUX') == 0
+  set statusline+=%#time#                    " <start time>
+  set statusline+=\                          " space
+  set statusline+=%{strftime('%I:%M')}       " Time 24HH:MM
+  set statusline+=%*                         " <end time>
+endif
 
 " Syntax checking
 let g:syntastic_always_populate_loc_list = 1  " populate the location list on each save
