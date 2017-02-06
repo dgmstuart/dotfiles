@@ -202,10 +202,10 @@ set statusline+=%=                         " right align
 set statusline+=%-14.(%c%V%)\              " column
 set statusline+=%<                         " truncation point (???)
 set statusline+=(%l/%L)                    " line number
+set statusline+=\                          " space
 if exists('$TMUX') == 0
   set statusline+=%#time#                    " <start time>
-  set statusline+=\                          " space
-  set statusline+=%{strftime('%I:%M')}       " Time 24HH:MM
+  set statusline+=%{strftime('%e\ %b\ %k:%M')} " Date and Time e.g. 6 Feb 17:44
   set statusline+=%*                         " <end time>
 endif
 
