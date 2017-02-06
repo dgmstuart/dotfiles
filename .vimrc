@@ -105,6 +105,14 @@ inoremap <C-U> <C-G>u<C-U>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
+function! RegReset()
+  echo 'Resetting named registers a-z...'
+  let regs=split('abcdefghijklmnopqrstuvwxyz', '\zs')
+  for r in regs
+    call setreg(r, [])
+  endfor
+endfunction
+
 let mapleader = ","
 
 map <Leader>gs :Gstatus<CR>
