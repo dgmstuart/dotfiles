@@ -81,7 +81,6 @@ set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
 set grepprg=ag      " use the silver searcher for grep commands
-set iskeyword+=-    " treat dashes as part of words, not as separators
 
 " Soft tabs
 set expandtab
