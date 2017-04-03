@@ -157,6 +157,7 @@ let g:ctrlp_use_caching = 0
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
+map <Leader>o :cope<CR> " open the quickfix window fullscreen
 map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
 
 " Disable the arrow keys:
