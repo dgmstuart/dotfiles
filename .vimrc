@@ -205,6 +205,7 @@ set statusline+=(%l/%L)                    " line number
 set statusline+=\                          " space
 if exists('$TMUX') == 0
   set statusline+=%#time#                    " <start time>
+  set statusline+=\                          " space
   set statusline+=%{strftime('%e\ %b\ %k:%M')} " Date and Time e.g. 6 Feb 17:44
   set statusline+=%*                         " <end time>
 endif
