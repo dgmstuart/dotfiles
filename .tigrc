@@ -7,4 +7,7 @@ bind generic <Ctrl-g> view-grep
 bind generic O !git checkout %(commit)
 bind main R !git revert %(commit)
 
-set line-graphics = utf-8
+set line-graphics = default
+
+set main-view-id = yes
+set main-view-date = relative-compact
