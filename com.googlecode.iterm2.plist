@@ -501,6 +501,8 @@
 	<integer>262401</integer>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -524,7 +526,7 @@
 		BAtzdHJlYW10eXBlZIHoA4QBQISEhAhOU1N0cmluZwGEhAhOU09iamVjdACF
 		hAErATGG
 		</data>
-		<string>307</string>
+		<string>322</string>
 	</array>
 	<key>NSTableView Hidden Columns KeyBingingTable</key>
 	<array/>
@@ -535,16 +537,18 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>929 110 445 633 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>187 117 606 456 0 0 1440 900 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>518 578 400 129 0 0 1440 900 </string>
+	<string>1416 2243 400 129 1076 900 1080 1920 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>408 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>279 307 796 473 0 0 1440 900 </string>
+	<string>334 327 918 495 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>1076 900 1080 1920 1076 900 1080 1897 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1127,7 +1131,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>Menlo-Regular 14</string>
+			<string>FiraCode-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1990,7 +1994,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-01-17T13:54:05Z</date>
+	<date>2017-06-30T13:38:49Z</date>
 	<key>ShowFullScreenTabBar</key>
 	<true/>
 	<key>SmartPlacement</key>
@@ -2010,6 +2014,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.13</string>
+	<string>3.0.15</string>
 </dict>
 </plist>
