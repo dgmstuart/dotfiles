@@ -219,10 +219,6 @@ let g:syntastic_check_on_open = 1             " run checks on open, not just on 
 let g:syntastic_check_on_wq = 0               " don't run checks on exit
 let g:syntastic_auto_jump = 1                 " always jump the cursor to the first issue
 
-" Plugins with unbundle:
-filetype off
-runtime bundle/vim-unbundle/plugin/unbundle.vim
-
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
