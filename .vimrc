@@ -29,6 +29,7 @@ Plugin 'tpope/vim-liquid'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'stefanoverna/vim-i18n'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -160,6 +161,10 @@ let g:ctrlp_use_caching = 0
 map <Leader>q :cclose<CR>   " close the quickfix window
 map <Leader>o :cope<CR> " open the quickfix window fullscreen
 map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
+
+" Rails i18n helpers
+vmap <Leader>z :call I18nTranslateString()<CR>
+vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 
 " Disable the arrow keys:
 noremap <Up> <Nop>
