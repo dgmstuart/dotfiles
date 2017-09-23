@@ -3,3 +3,7 @@ bin/
 .npm-global/
 .vim/bundle
 .v8flags.*
+
+## Elixir:
+.hex
+.mix

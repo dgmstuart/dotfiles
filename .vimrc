@@ -30,6 +30,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'stefanoverna/vim-i18n'
+Plugin 'elixir-editors/vim-elixir'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
