@@ -31,6 +31,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'stefanoverna/vim-i18n'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'elmcast/elm-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -257,6 +258,19 @@ augroup ruby
   if filereadable(".rubocop.yml")
     call add(g:syntastic_ruby_checkers, "rubocop")
   endif
+augroup END
+
+augroup elm
+  autocmd!
+  " For all elm files, encourage 80 columns:
+  autocmd FileType elm setlocal colorcolumn=81
+
+  autocmd Filetype elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+  let g:elm_syntastic_show_warnings = 1
+  let g:elm_setup_keybindings = 0
+  autocmd FileType elm map <Leader>e :ElmMake<CR>
+  autocmd FileType elm map <Leader>d :ElmErrorDetail<CR>
 augroup END
 
 augroup php
