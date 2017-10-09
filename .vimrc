@@ -133,10 +133,10 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunFailingSpecs()<CR>
-map <Leader>rr :!bundle exec rspec % --format Fuubar<CR>
-map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".") . ' --format Fuubar'<CR>
-map <Leader>aa :!bundle exec rspec spec --format Fuubar<CR>
-map <Leader>ff :!bundle exec rspec spec --only-failures --format Fuubar<CR>
+map <Leader>rr :!bundle exec rspec %<CR>
+map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".")<CR>
+map <Leader>aa :!bundle exec rspec spec<CR>
+map <Leader>ff :!bundle exec rspec spec --only-failures<CR>
 
 " Run php tests
 " ptest is defined in ~/.zsh/functions
