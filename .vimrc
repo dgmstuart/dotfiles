@@ -129,15 +129,23 @@ function! RunFailingSpecs()
   execute s:rspec_command
 endfunction
 
+function! RunNextFailingSpec()
+  let s:rspec_command = substitute(g:rspec_command, "{spec}", "--next-failure", "g")
+
+  execute s:rspec_command
+endfunction
+
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunFailingSpecs()<CR>
+map <Leader>n :call RunNextFailingSpec()<CR>
 map <Leader>rr :!bundle exec rspec %<CR>
 map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".")<CR>
 map <Leader>aa :!bundle exec rspec spec<CR>
 map <Leader>ff :!bundle exec rspec spec --only-failures<CR>
+map <Leader>nn :!bundle exec rspec spec --next-failure<CR>
 
 " Run php tests
 " ptest is defined in ~/.zsh/functions
