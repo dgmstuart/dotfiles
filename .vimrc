@@ -123,14 +123,8 @@ map <Leader>gs :Gstatus<CR>
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
 let b:rspec_executable = "bundle exec rspec"
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
-function! RunFailingSpecs()
-  let s:rspec_command = substitute(g:rspec_command, "{spec}", "--only-failures", "g")
-
-  execute s:rspec_command
-endfunction
-
-function! RunNextFailingSpec()
-  let s:rspec_command = substitute(g:rspec_command, "{spec}", "--next-failure", "g")
+function! RunSpecsWithFlag(flag)
+  let s:rspec_command = substitute(g:rspec_command, "{spec}", a:flag, "g")
 
   execute s:rspec_command
 endfunction
@@ -139,8 +133,8 @@ map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-map <Leader>f :call RunFailingSpecs()<CR>
-map <Leader>n :call RunNextFailingSpec()<CR>
+map <Leader>f :call RunSpecsWithFlag("--only-failures")<CR>
+map <Leader>n :call RunSpecsWithFlag("--next-failure")<CR>
 map <Leader>rr :!bundle exec rspec %<CR>
 map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".")<CR>
 map <Leader>aa :!bundle exec rspec spec<CR>
