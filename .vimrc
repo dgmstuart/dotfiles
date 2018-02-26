@@ -170,16 +170,6 @@ map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
 vmap <Leader>z :call I18nTranslateString()<CR>
 vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 
-" Disable the arrow keys:
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-
 " Disable backspace in normal mode - it's a bad habit
 noremap <BS> <Nop>
 
