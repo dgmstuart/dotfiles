@@ -88,6 +88,9 @@ alias dope='open http://$(docker-machine ip):3000'
 alias rubofix='vim $(bundle exec rubocop --format=files)'
 alias rubocop='bundle exec rubocop'
 
+# Ruby
+alias rake='bundle exec rake'
+
 # Bundler
 alias b='bundle'
 
