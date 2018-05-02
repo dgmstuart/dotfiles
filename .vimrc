@@ -173,6 +173,11 @@ vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 " Disable backspace in normal mode - it's a bad habit
 noremap <BS> <Nop>
 
+" Swedish keyboard mappings:
+map <Leader>- :Ack  -w<left><left><left>
+map - /<left><left><left>
+
+
 " Open tig showing the history of the current file
 command! Tighist !tig %
 
