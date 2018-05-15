@@ -43,14 +43,6 @@ export LESS_TERMCAP_so=$(printf '\e[07;33m') # enter standout mode – yellow ba
 export LESS_TERMCAP_ue=$(printf '\e[0m')     # leave underline mode
 export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 
-# rbenv
-########
-# Use Homebrew's directories rather than ~/.rbenv
-export RBENV_ROOT=/usr/local/var/rbenv
-
-# Enable rbenbv shims and autocompletions
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
 # Tmux
 #######
 # Disable auto-renaming of windows:

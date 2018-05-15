@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-plugins=(git rbenv bundler heroku rails ruby rake sublime npm)
+plugins=(git bundler heroku rails ruby rake sublime npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -20,3 +20,6 @@ bindkey -s '^[3' \#
 source ~/k/k.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
