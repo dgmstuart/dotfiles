@@ -9,3 +9,6 @@ bin/
 ## Elixir:
 .hex
 .mix
+
+## Redis:
+dump.rdb
