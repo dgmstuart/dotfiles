@@ -186,6 +186,9 @@ command! Tighist !tig %
 " replace ruby hashrockets with key: value syntax
 command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
 
+" replace `try` (Rails) with the lonely operator (`&. Ruby)
+command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
+
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
 hi time ctermbg=black ctermfg=136
