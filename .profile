@@ -48,5 +48,9 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 # Disable auto-renaming of windows:
 export DISABLE_AUTO_TITLE=true
 
+# nvm
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 # Per-system profile
 [ -r ~/.profile.local ] && . ~/.profile.local

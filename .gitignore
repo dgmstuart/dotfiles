@@ -1,6 +1,8 @@
 .profile.local
 bin/
 .npm-global/
+.node-gyp/
+.nvm/
 .vim/bundle
 .v8flags.*
 
