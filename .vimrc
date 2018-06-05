@@ -85,6 +85,8 @@ set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
 set grepprg=ag      " use the silver searcher for grep commands
+set splitright      " open new split panes on the right (left is default)
+set mouse=a         " enable the mouse
 
 " Soft tabs
 set expandtab
