@@ -260,6 +260,9 @@ augroup ruby
   if filereadable(".rubocop.yml")
     call add(g:syntastic_ruby_checkers, "rubocop")
   endif
+
+  " Prevent autocomplete looking in all gems!
+  set complete-=i
 augroup END
 
 augroup elm
