@@ -265,6 +265,14 @@ augroup ruby
   set complete-=i
 augroup END
 
+augroup haml
+  autocmd!
+  let g:syntastic_haml_checkers = ['haml']
+  if filereadable(".haml-lint.yml")
+    call add(g:syntastic_haml_checkers, "haml_lint")
+  endif
+augroup END
+
 augroup elm
   autocmd!
   " For all elm files, encourage 80 columns:
