@@ -5,6 +5,7 @@ bin/
 .nvm/
 .vim/bundle
 .v8flags.*
+.chromedriver-helper
 
 ## Elixir:
 .hex
