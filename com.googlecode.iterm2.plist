@@ -14,6 +14,8 @@
 	<string>manual</string>
 	<key>BadgeFont</key>
 	<string>Helvetica</string>
+	<key>CopySelection</key>
+	<false/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Solarized%20Dark</key>
@@ -572,11 +574,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>2410 499 620 392 1440 -287 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2399 657 796 473 1440 -287 2560 1440 </string>
+	<string>3204 644 796 486 1440 -287 2560 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>1588 507 592 584 1440 -287 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1440 900 0 0 1440 877 </string>
+	<string>1440 -287 2560 1440 1440 -287 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 425 570 452 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1175,7 +1177,7 @@
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1899,7 +1901,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>ADF87552-C0BA-4F06-B337-1A2D3FC0941E</string>
 	<key>NoSyncLastTipTime</key>
-	<real>555408107.25731301</real>
+	<real>556793602.98062599</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1967,6 +1969,18 @@
 		<string>0057</string>
 		<string>0058</string>
 		<string>0059</string>
+		<string>0060</string>
+		<string>0061</string>
+		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
@@ -2014,7 +2028,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-08-07T07:57:07Z</date>
+	<date>2018-08-24T07:50:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -2040,6 +2054,6 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.1.7</string>
+	<string>3.2.0</string>
 </dict>
 </plist>
