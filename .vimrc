@@ -186,6 +186,11 @@ command! Tighist !tig %
 " replace ruby hashrockets with key: value syntax
 command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
 
+" replace should with expect in specs
+command! Shouldnot %s/\(\S\+\).should\(\s\+\)==\s*\(.\+\)/expect(\1).to\2eq(\3)/
+command! Shouldnoteq let @q = '^iexpect(^[/should^Mhi)^[lct .to^[j'
+command! Shouldnotto let @q = '^iexpect(^[f bbi)w<80>kb^[wcwto^[j'
+
 " replace `try` (Rails) with the lonely operator (`&. Ruby)
 command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
 
