@@ -79,8 +79,8 @@ alias hpr='hub pull-request'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 
 # RSpec
-alias rsp='bundle exec rspec'
-alias rspff='bundle exec rspec --only-failures'
+alias rsp='`rspec_cmd`'
+alias rspff='rsp --only-failures'
 alias bsp='bin/rspec'
 alias cover='open coverage/index.html'
 

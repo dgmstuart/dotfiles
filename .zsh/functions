@@ -46,6 +46,20 @@ fbr() {
   git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+# Ruby testing
+# Work out what the setup is and run the appropriatee command
+function rspec_cmd() {
+  if [ -f 'bin/rspec' ]
+  then
+    echo 'bin/rspec'
+  elif [ -f 'Gemfile' ]
+  then
+    echo 'bundle exec rspec'
+  else
+    echo 'rspec'
+  fi
+}
+
 # Php testing
 # Work out what testing library is being used and run the appropriate commands
 function ptest() {
