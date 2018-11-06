@@ -285,6 +285,14 @@ augroup scss
   endif
 augroup END
 
+augroup css
+  autocmd!
+  if filereadable(".stylelintrc.json")
+    let g:syntastic_css_stylelint_exec = './node_modules/.bin/stylelint'
+    let g:syntastic_css_checkers = ['stylelint']
+  endif
+augroup END
+
 augroup elm
   autocmd!
   " For all elm files, encourage 80 columns:
