@@ -52,5 +52,8 @@ export DISABLE_AUTO_TITLE=true
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# load travis
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
 # Per-system profile
 [ -r ~/.profile.local ] && . ~/.profile.local
