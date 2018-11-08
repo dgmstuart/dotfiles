@@ -6,7 +6,9 @@ bin/
 .vim/bundle
 .v8flags.*
 .chromedriver-helper
+.asdf/
 .travis/
+.yarnrc
 
 ## Elixir:
 .hex
