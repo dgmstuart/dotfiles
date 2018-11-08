@@ -160,8 +160,9 @@ map <Leader>t :CtrlP<CR>
 map <Leader>p :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
 let g:ctrlp_by_filename = 0
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
 let g:ctrlp_use_caching = 0
+let g:ctrlp_show_hidden = 1
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
