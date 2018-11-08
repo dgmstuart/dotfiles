@@ -74,6 +74,7 @@ alias exclude='vim ~/.git/info/exclude'
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
 alias hpr='hub pull-request'
+alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 
 # RSpec
 alias rsp='bundle exec rspec'
