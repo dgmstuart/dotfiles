@@ -33,6 +33,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'stefanoverna/vim-i18n'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'elmcast/elm-vim'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
