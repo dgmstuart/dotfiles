@@ -49,6 +49,11 @@ fbr() {
 # Ruby testing
 # Work out what the setup is and run the appropriate command
 function rspec_command() {
+  # if [ -f '.rspec_command.sh' ]
+  #   # Custom script
+  #   then
+  #     echo './.rspec_command.sh'
+  # elif [ -f 'bin/rspec' ]
   if [ -f 'bin/rspec' ]
   then
     # Binstub (potentially with spring)

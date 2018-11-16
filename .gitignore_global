@@ -33,3 +33,8 @@ Thumbs.db
 
 # This is a special file used by search tools like ag and ack:
 !.ignore
+
+# My Functions #
+################
+# A custom RSpec command:
+.rspec_command.sh
