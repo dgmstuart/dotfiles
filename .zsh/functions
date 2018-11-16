@@ -47,15 +47,18 @@ fbr() {
 }
 
 # Ruby testing
-# Work out what the setup is and run the appropriatee command
-function rspec_cmd() {
+# Work out what the setup is and run the appropriate command
+function rspec_command() {
   if [ -f 'bin/rspec' ]
   then
+    # Binstub (potentially with spring)
     echo 'bin/rspec'
   elif [ -f 'Gemfile' ]
   then
+    # With bundler
     echo 'bundle exec rspec'
   else
+    # Without bundler
     echo 'rspec'
   fi
 }

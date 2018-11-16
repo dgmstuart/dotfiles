@@ -125,8 +125,8 @@ let mapleader = ","
 map <Leader>gs :Gstatus<CR>
 
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
-" rspec_cmd is defined in ~/.zsh/functions
-let g:rspec_command = "Dispatch `rspec_cmd` {spec} --format=progress --no-color"
+" the rspec_command function is defined in ~/.zsh/functions
+let g:rspec_command = "Dispatch `rspec_command` {spec} --format=progress --no-color"
 function! RunSpecsWithFlag(flag)
   let s:rspec_command = substitute(g:rspec_command, "{spec}", a:flag, "g")
 
@@ -139,11 +139,11 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunSpecsWithFlag("--only-failures")<CR>
 map <Leader>n :call RunSpecsWithFlag("--next-failure")<CR>
-map <Leader>rr :!bundle exec rspec %<CR>
-map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".")<CR>
-map <Leader>aa :!bundle exec rspec spec<CR>
-map <Leader>ff :!bundle exec rspec spec --only-failures<CR>
-map <Leader>nn :!bundle exec rspec spec --next-failure<CR>
+map <Leader>rr :!`rspec_command` %<CR>
+map <Leader>ss :exe '!`rspec_command` ' . expand('%'). ':' . line(".")<CR>
+map <Leader>aa :!`rspec_command` spec<CR>
+map <Leader>ff :!`rspec_command` spec --only-failures<CR>
+map <Leader>nn :!`rspec_command` spec --next-failure<CR>
 
 " Run php tests
 " ptest is defined in ~/.zsh/functions
