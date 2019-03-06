@@ -153,9 +153,11 @@ map <Leader>wr :Dispatch ptest %<CR>
 " Project search
 map <Leader>m :Ack <cword> -w<CR>
 map <Leader>/ :Ack  -w<left><left><left>
+let g:ack_use_dispatch = 1
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
 
 " File search
 map <Leader>t :CtrlP<CR>
