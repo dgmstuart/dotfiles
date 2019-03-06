@@ -110,6 +110,7 @@ alias h='heroku'
 alias hrake='heroku run bundle exec rake'
 alias hlog='heroku logs -t'
 alias hconsole='heroku run console'
+alias hconfig='heroku config'
 
 # SASS
 alias stylelint='yarn run stylelint app/assets/stylesheets'
