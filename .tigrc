@@ -11,3 +11,4 @@ set line-graphics = utf-8
 
 set main-view-id = yes
 set main-view-date = relative-compact
+set main-view-author-width = 20
