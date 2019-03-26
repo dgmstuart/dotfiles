@@ -259,7 +259,7 @@ augroup END
 augroup ruby
   autocmd!
   " For all ruby files, encourage 80 columns:
-  autocmd FileType ruby setlocal colorcolumn=81
+  autocmd FileType ruby setlocal colorcolumn=81,101
 
   let g:syntastic_ruby_checkers = ['mri']
   if filereadable(".rubocop.yml")
@@ -333,7 +333,7 @@ augroup gitcommit
   autocmd BufReadPost COMMIT_EDITMSG exe 'normal gg' | startinsert!
 
   " add spellchecking and automatic wrapping at the recommended 72 columns to commit messages.
-  autocmd Filetype gitcommit setlocal spell textwidth=72
+  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73
 augroup END
 
 " Automatically delete trailing whitespace for certain filetypes
