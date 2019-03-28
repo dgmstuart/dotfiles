@@ -20,6 +20,7 @@ export PERL5LIB=/usr/local/Cellar/git/2.6.3/lib/perl5/site_perl
 ##############
 export VISUAL='vim'
 export EDITOR='vim'
+export LANG="en_GB.UTF-8"
 
 # Syntax highlighting for less:
 # Install with "brew install source-highlight"
