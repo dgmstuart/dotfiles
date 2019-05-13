@@ -34,6 +34,7 @@ Plugin 'stefanoverna/vim-i18n'
 Plugin 'elixir-editors/vim-elixir'
 Plugin 'elmcast/elm-vim'
 Plugin 'ap/vim-css-color'
+Plugin 'slim-template/vim-slim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -339,7 +340,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,json,markdown,php,ruby,scss,sh,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,json,markdown,php,ruby,scss,sh,slim,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Whitespace highlighting
