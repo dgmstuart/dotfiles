@@ -9,6 +9,7 @@ bin/
 .asdf/
 .travis/
 .yarnrc
+.hyper_plugins/
 
 ## Elixir:
 .hex
