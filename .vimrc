@@ -340,7 +340,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,json,markdown,php,ruby,scss,sh,slim,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,json,markdown,php,ruby,scss,sh,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Whitespace highlighting
