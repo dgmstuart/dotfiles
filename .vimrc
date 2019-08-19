@@ -301,7 +301,7 @@ augroup elm
   " For all elm files, encourage 80 columns:
   autocmd FileType elm setlocal colorcolumn=81
 
-  autocmd Filetype elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   let g:elm_syntastic_show_warnings = 1
   let g:elm_setup_keybindings = 0
@@ -314,7 +314,7 @@ augroup php
   " For all php files, encourage 85 columns:
   autocmd FileType php setlocal colorcolumn=86
 
-  autocmd Filetype php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
   let g:syntastic_php_checkers=['php', 'phpcs']
   let g:syntastic_php_phpcs_args='--standard=PSR2 -n --ignore=*/templates/*,*/vendor/*'
@@ -334,7 +334,7 @@ augroup gitcommit
   autocmd BufReadPost COMMIT_EDITMSG exe 'normal gg' | startinsert!
 
   " add spellchecking and automatic wrapping at the recommended 72 columns to commit messages.
-  autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73
+  autocmd FileType gitcommit setlocal spell textwidth=72 colorcolumn=73
 augroup END
 
 " Automatically delete trailing whitespace for certain filetypes
