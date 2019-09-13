@@ -20,7 +20,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
 Plugin 'garbas/vim-snipmate'
@@ -216,7 +216,6 @@ set statusline+=%*                         " <end warning>
 set statusline+=%1*%h%r%w%0*\              " flags: help window, readonly, preview window
 set statusline+=%{fugitive#statusline()}\  " git info
 set statusline+=%#warningmsg#              " <start warning>
-set statusline+=%{SyntasticStatuslineFlag()} " syntax error
 set statusline+=%*                         " <end warning>
 
 set statusline+=%=                         " right align
@@ -233,12 +232,9 @@ if exists('$TMUX') == 0
 endif
 
 " Syntax checking
-let g:syntastic_always_populate_loc_list = 1  " populate the location list on each save
-let g:syntastic_auto_loc_list = 1             " automatically open and close the location list
-let g:syntastic_loc_list_height = 5
-let g:syntastic_check_on_open = 0             " run checks on open, not just on save
-let g:syntastic_check_on_wq = 0               " don't run checks on exit
-let g:syntastic_auto_jump = 1                 " always jump the cursor to the first issue
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_enter = 1
+let g:ale_open_list = 1
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -268,9 +264,10 @@ augroup ruby
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81,101
 
-  let g:syntastic_ruby_checkers = ['mri']
+  let g:ale_linters = {'ruby': ['ruby', 'sorbet']}
+
   if filereadable(".rubocop.yml")
-    call add(g:syntastic_ruby_checkers, "rubocop")
+    call add(g:ale_linters['ruby'], "rubocop")
   endif
 
   " Prevent autocomplete looking in all gems!
@@ -279,26 +276,10 @@ augroup END
 
 augroup haml
   autocmd!
-  let g:syntastic_haml_checkers = ['haml']
+  let g:ale_linters = {'haml': []}
+
   if filereadable(".haml-lint.yml")
-    call add(g:syntastic_haml_checkers, "haml_lint")
-  endif
-augroup END
-
-augroup scss
-  autocmd!
-  let g:syntastic_scss_checkers = ['sass']
-  if filereadable(".stylelintrc.json")
-    let g:syntastic_scss_stylelint_exec = './node_modules/.bin/stylelint'
-    call add(g:syntastic_scss_checkers, "stylelint")
-  endif
-augroup END
-
-augroup css
-  autocmd!
-  if filereadable(".stylelintrc.json")
-    let g:syntastic_css_stylelint_exec = './node_modules/.bin/stylelint'
-    let g:syntastic_css_checkers = ['stylelint']
+    let g:ale_linters = {'haml': ['hamllint']}
   endif
 augroup END
 
@@ -309,7 +290,6 @@ augroup elm
 
   autocmd FileType elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-  let g:elm_syntastic_show_warnings = 1
   let g:elm_setup_keybindings = 0
   autocmd FileType elm map <Leader>e :ElmMake<CR>
   autocmd FileType elm map <Leader>d :ElmErrorDetail<CR>
@@ -321,9 +301,6 @@ augroup php
   autocmd FileType php setlocal colorcolumn=86
 
   autocmd FileType php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-
-  let g:syntastic_php_checkers=['php', 'phpcs']
-  let g:syntastic_php_phpcs_args='--standard=PSR2 -n --ignore=*/templates/*,*/vendor/*'
 augroup END
 
 augroup text
@@ -337,8 +314,6 @@ augroup END
 augroup markdown
   autocmd!
   autocmd FileType markdown,liquid setlocal spell textwidth=78
-
-  let g:syntastic_markdown_checkers = ['mdl']
 augroup END
 
 augroup gitcommit
