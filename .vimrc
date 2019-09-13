@@ -146,6 +146,12 @@ map <Leader>aa :!bundle exec rspec spec<CR>
 map <Leader>ff :!bundle exec rspec spec --only-failures<CR>
 map <Leader>nn :!bundle exec rspec spec --next-failure<CR>
 
+" Run tests which don't use RSpec
+map <Leader>ea :Dispatch bundle exec rake<CR>
+map <Leader>eaa :!bundle exec rake<CR>
+map <Leader>er :Dispatch bundle exec rake test TEST=%<CR>
+map <Leader>err :!bundle exec rake test TEST=%<CR>
+
 " Run php tests
 " ptest is defined in ~/.zsh/functions
 map <Leader>w  :Dispatch ptest<CR>
