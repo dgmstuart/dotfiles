@@ -83,6 +83,7 @@ alias sha='git rev-parse --short HEAD'
 # RSpec
 alias rsp='bundle exec rspec'
 alias rspff='bundle exec rspec --only-failures'
+alias rspdm='bundle exec rspec -- `git diff master --name-only -- spec`'
 alias bsp='bin/rspec'
 alias cover='open coverage/index.html'
 
