@@ -328,10 +328,17 @@ augroup END
 
 augroup text
   autocmd!
-  " For all text and markdown files:
+  " For all text files:
   " - enable spellchecking
   " - set 'textwidth' to 78 characters.
-  autocmd FileType text,markdown,help,yaml setlocal spell textwidth=78
+  autocmd FileType text,help,yaml setlocal spell textwidth=78
+augroup END
+
+augroup markdown
+  autocmd!
+  autocmd FileType markdown,liquid setlocal spell textwidth=78
+
+  let g:syntastic_markdown_checkers = ['mdl']
 augroup END
 
 augroup gitcommit
