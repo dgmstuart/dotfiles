@@ -246,6 +246,7 @@ endif
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
+let g:ale_linters = {}
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -275,7 +276,7 @@ augroup ruby
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81,101
 
-  let g:ale_linters = {'ruby': ['ruby', 'sorbet']}
+  let g:ale_linters.ruby = ['ruby', 'sorbet']
 
   if filereadable(".rubocop.yml")
     call add(g:ale_linters['ruby'], "rubocop")
@@ -287,10 +288,10 @@ augroup END
 
 augroup haml
   autocmd!
-  let g:ale_linters = {'haml': []}
+  let g:ale_linters.haml = []
 
   if filereadable(".haml-lint.yml")
-    let g:ale_linters = {'haml': ['hamllint']}
+    let g:ale_linters.haml = ['hamllint']
   endif
 augroup END
 
