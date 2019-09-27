@@ -201,6 +201,16 @@ command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
 " replace `try` (Rails) with the lonely operator (`&. Ruby)
 command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
 
+function! ErrorCountMessage()
+  let current_buffer = bufnr("%")
+  let total_errors = ale#statusline#Count(current_buffer)['total']
+  if total_errors != 0
+    return 'Syntax Errors: ' . total_errors
+  else
+    return ''
+  endif
+endfunction
+
 " statusline highlighting groups:
 hi warningmsg ctermbg=red ctermfg=black
 hi time ctermbg=black ctermfg=136
@@ -216,6 +226,7 @@ set statusline+=%*                         " <end warning>
 set statusline+=%1*%h%r%w%0*\              " flags: help window, readonly, preview window
 set statusline+=%{fugitive#statusline()}\  " git info
 set statusline+=%#warningmsg#              " <start warning>
+set statusline+=%{ErrorCountMessage()}     " syntax error/lint count
 set statusline+=%*                         " <end warning>
 
 set statusline+=%=                         " right align
