@@ -280,6 +280,7 @@ augroup ruby
 
   if filereadable(".rubocop.yml")
     call add(g:ale_linters['ruby'], "rubocop")
+    let g:ale_ruby_rubocop_executable = "bundle"
   endif
 
   " Prevent autocomplete looking in all gems!
