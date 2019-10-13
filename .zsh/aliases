@@ -101,6 +101,7 @@ alias rubocop='bundle exec rubocop'
 
 # Ruby
 alias rake='bundle exec rake'
+alias rubies='asdf list-all ruby'
 
 # Bundler
 alias b='bundle'
