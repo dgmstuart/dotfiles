@@ -100,7 +100,7 @@ alias rubofix='vim $(bundle exec rubocop --format=files)'
 alias rubocop='bundle exec rubocop'
 
 # Ruby
-alias rake='bundle exec rake'
+alias rake='noglob bundle exec rake'
 alias rubies='asdf list-all ruby'
 
 # Bundler
