@@ -42,7 +42,7 @@ function gitfeature() {
 fbr() {
   local branches branch
   branches=$(git branch -a) &&
-  branch=$(echo "$branches" | fzf +s +m -e) &&
+  branch=$(echo "$branches" | fzf +s +m --exact --query=$1) &&
   git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
