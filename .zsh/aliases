@@ -76,7 +76,7 @@ alias gpf='git push --force-with-lease'
 alias exclude='vim .git/info/exclude'
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
-alias hpr='hub pull-request'
+alias hpr='hub pull-request -o'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 alias sha='git rev-parse --short HEAD'
 
