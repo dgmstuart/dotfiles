@@ -23,3 +23,4 @@ source ~/k/k.sh
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
