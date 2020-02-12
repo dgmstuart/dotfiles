@@ -187,6 +187,13 @@ vmap <Leader>dt :call I18nDisplayTranslation()<CR>
 " Disable backspace in normal mode - it's a bad habit
 noremap <BS> <Nop>
 
+" move in quickfix list, useful with Ack.vim
+nnoremap <C-S-n> :cprevious<CR>
+nnoremap <C-n> :cnext<CR>
+
+" convenient shortcut to save file
+nnoremap <C-s> :w<CR>
+
 " Swedish keyboard mappings:
 map <Leader>- :Ack  -w<left><left><left>
 map - /<left><left><left>
