@@ -22,19 +22,12 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'godlygeek/tabular'
 Plugin 'garbas/vim-snipmate'
   Plugin 'MarcWeber/vim-addon-mw-utils' " snipmate dependency
   Plugin 'tomtom/tlib_vim'              " snipmate dependency
-Plugin 'tpope/vim-liquid'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
-Plugin 'stefanoverna/vim-i18n'
-Plugin 'elixir-editors/vim-elixir'
-Plugin 'elmcast/elm-vim'
 Plugin 'ap/vim-css-color'
-Plugin 'slim-template/vim-slim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
