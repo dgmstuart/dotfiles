@@ -1,5 +1,6 @@
 .profile.local
 bin/
+.clamp
 .npm-global/
 .node-gyp/
 .nvm/
