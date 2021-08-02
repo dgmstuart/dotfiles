@@ -10,6 +10,7 @@ bin/
 .travis/
 .yarnrc
 .hyper_plugins/
+.htpasswd
 
 ## Elixir:
 .hex
