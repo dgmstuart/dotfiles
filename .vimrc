@@ -317,6 +317,8 @@ augroup php
   autocmd FileType php setlocal colorcolumn=86
 
   autocmd FileType php setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+
+  autocmd BufNewFile,BufRead .php_cs.dist set filetype=php
 augroup END
 
 augroup text
