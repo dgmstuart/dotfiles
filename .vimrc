@@ -28,6 +28,8 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'ap/vim-css-color'
+Plugin 'yuezk/vim-js'
+Plugin 'maxmellon/vim-jsx-pretty'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
