@@ -175,6 +175,15 @@ map <Leader>q :cclose<CR>   " close the quickfix window
 map <Leader>o :cope<CR> " open the quickfix window fullscreen
 map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
 
+nnoremap <Leader>1 :call ToggleRelativeNumber()<cr>
+function! ToggleRelativeNumber()
+    if &relativenumber
+        set norelativenumber
+    else
+        set relativenumber
+    endif
+endfunction
+
 " Rails i18n helpers
 vmap <Leader>z :call I18nTranslateString()<CR>
 vmap <Leader>dt :call I18nDisplayTranslation()<CR>
