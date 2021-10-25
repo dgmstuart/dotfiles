@@ -259,6 +259,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_open_list = 1
 let g:ale_list_window_size = 5
 let g:ale_linters = {}
+let g:ale_fixers = {}
 
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
@@ -305,6 +306,26 @@ augroup haml
 
   if filereadable(".haml-lint.yml")
     let g:ale_linters.haml = ['hamllint']
+  endif
+augroup END
+
+augroup javascript
+  autocmd!
+  let g:ale_linters.javascript = ['eslint', 'standard', 'xo']
+  let g:ale_linters.javascriptreact = ['eslint', 'standard', 'xo']
+  let g:ale_linters.typescript = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
+  let g:ale_linters.typescriptreact = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
+  let g:ale_fixers.javascript = []
+  let g:ale_fixers.javascriptreact = []
+  let g:ale_fixers.typescript = []
+  let g:ale_fixers.typescriptreact = []
+
+  if filereadable(".prettierrc")
+    call add(g:ale_fixers['javascript'], "prettier")
+    call add(g:ale_fixers['javascriptreact'], "prettier")
+    call add(g:ale_fixers['typescript'], "prettier")
+    call add(g:ale_fixers['typescriptreact'], "prettier")
+    let g:ale_fix_on_save = 1
   endif
 augroup END
 
@@ -355,7 +376,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,json,markdown,php,ruby,scss,sh,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType conf,css,eruby,gitcommit,haml,help,javascript,typescript,react,typescriptreact,json,markdown,php,ruby,scss,sh,text,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " Whitespace highlighting
