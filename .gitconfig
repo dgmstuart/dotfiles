@@ -34,3 +34,5 @@
 	autosquash = true
 [diff-so-fancy]
 	stripLeadingSymbols = false
+[init]
+	defaultBranch = main
