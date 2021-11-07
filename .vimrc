@@ -22,9 +22,7 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'garbas/vim-snipmate'
-  Plugin 'MarcWeber/vim-addon-mw-utils' " snipmate dependency
-  Plugin 'tomtom/tlib_vim'              " snipmate dependency
+Plugin 'SirVer/ultisnips'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'suan/vim-instant-markdown'
 Plugin 'ap/vim-css-color'
