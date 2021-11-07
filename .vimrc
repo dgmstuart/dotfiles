@@ -121,7 +121,11 @@ let mapleader = ","
 map <Leader>gs :Gstatus<CR>
 
 " Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
-let b:rspec_executable = "bundle exec rspec"
+if filereadable("bin/rspec")
+  let b:rspec_executable = "bin/rspec"
+else
+  let b:rspec_executable = "bundle exec rspec"
+endif
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
 function! RunSpecsWithFlag(flag)
   let s:rspec_command = substitute(g:rspec_command, "{spec}", a:flag, "g")
