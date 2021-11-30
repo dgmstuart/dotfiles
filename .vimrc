@@ -125,10 +125,16 @@ else
   let b:rspec_executable = "bundle exec rspec"
 endif
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
+let g:rspec_terminal_command = '!' . b:rspec_executable
 function! RunSpecsWithFlag(flag)
   let s:rspec_command = substitute(g:rspec_command, "{spec}", a:flag, "g")
 
   execute s:rspec_command
+endfunction
+function! RunSpecsInTerminal(args)
+  let l:rspec_terminal_command = g:rspec_terminal_command . ' ' . a:args
+
+  execute l:rspec_terminal_command
 endfunction
 
 map <Leader>r :call RunCurrentSpecFile()<CR>
@@ -137,11 +143,11 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 map <Leader>f :call RunSpecsWithFlag("--only-failures")<CR>
 map <Leader>n :call RunSpecsWithFlag("--next-failure")<CR>
-map <Leader>rr :!bundle exec rspec %<CR>
-map <Leader>ss :exe '!bundle exec rspec ' . expand('%'). ':' . line(".")<CR>
-map <Leader>aa :!bundle exec rspec spec<CR>
-map <Leader>ff :!bundle exec rspec spec --only-failures<CR>
-map <Leader>nn :!bundle exec rspec spec --next-failure<CR>
+map <Leader>rr :call RunSpecsInTerminal('%')<CR>
+map <Leader>ss :call RunSpecsInTerminal(expand('%') . ':' . line("."))<CR>
+map <Leader>aa :call RunSpecsInTerminal('spec')<CR>
+map <Leader>ff :call RunSpecsInTerminal('spec --only-failures')<CR>
+map <Leader>nn :call RunSpecsInTerminal('spec --next-failure')<CR>
 
 " Run tests which don't use RSpec
 map <Leader>ea :Dispatch bundle exec rake<CR>
