@@ -28,6 +28,7 @@ Plugin 'suan/vim-instant-markdown'
 Plugin 'ap/vim-css-color'
 Plugin 'yuezk/vim-js'
 Plugin 'maxmellon/vim-jsx-pretty'
+Plugin 'elzr/vim-json'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -336,6 +337,11 @@ augroup javascript
     let g:ale_fix_on_save = 1
   endif
 augroup END
+
+" augroup json
+"   autocmd!
+"   let g:ale_linters.json = ['eslint']
+" augroup END
 
 augroup elm
   autocmd!
