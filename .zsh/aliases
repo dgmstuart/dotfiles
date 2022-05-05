@@ -130,7 +130,7 @@ alias stylelint='yarn run stylelint app/assets/stylesheets'
 
 # Blog
 alias octopress='bundle exec octopress'
-alias js='bundle exec jekyll serve'
+alias js='bundle exec jekyll serve --open-url'
 alias jb='bundle exec jekyll build'
 # blogposts: display the list of posts ordered by last modified time
 # %m                           -- Last modified timestamp
