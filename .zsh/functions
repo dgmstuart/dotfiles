@@ -85,3 +85,20 @@ function freespace() {
 function ip() {
   ifconfig en0| awk '/inet /{print $2}'
 }
+
+# Show battery percentage if there's an internal battery
+function battery() {
+  power_usage=(pmset -g batt)
+  if ($power_usage | egrep "InternalBattery" --quiet)
+  then
+    result=`$power_usage | egrep "([0-9]+\%)" -o`
+
+    if (( ${+1} ))
+    then
+      # add another percent character so that zsh will interpret it as a literal percent symbol
+      result+="%"
+    fi
+
+    echo $result
+  fi
+}

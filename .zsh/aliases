@@ -156,6 +156,3 @@ alias pubkey="more ~/.ssh/id_rsa.pub | pbcopy | echo '=> Public key copied to pa
 # Docker
 alias dockerenv='eval $(docker-machine env default)'
 alias dip='docker-machine ip default'
-
-# Uncategorised
-alias battery='pmset -g batt | egrep "([0-9]+\%).*" -o | cut -f1 -d";"'
