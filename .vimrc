@@ -296,6 +296,12 @@ augroup END
 
 augroup ruby
   autocmd!
+
+  let g:ale_linters.eruby = ['erblint', 'erubi', 'erubis', 'ruumba']
+augroup END
+
+augroup ruby
+  autocmd!
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81,101
 
