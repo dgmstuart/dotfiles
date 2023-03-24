@@ -88,6 +88,7 @@ alias hprd='hub pull-request -o -b dev'
 alias hbr='hub browse -- pulls'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 alias sha='git rev-parse --short HEAD'
+alias fixup='gad; gc --fixup'
 
 # RSpec
 alias rsp='bundle exec rspec'
