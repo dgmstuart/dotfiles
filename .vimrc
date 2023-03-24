@@ -19,7 +19,6 @@ Plugin 'tpope/vim-rhubarb'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
@@ -29,6 +28,8 @@ Plugin 'ap/vim-css-color'
 Plugin 'yuezk/vim-js'
 Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,7 +78,6 @@ set laststatus=2    " always show status line.
 set autoindent      " maintain the indenting from the previous line
 set undofile        " enable persistent undo
 set undodir=~/.vim/undo
-set previewheight=30 " height of the preview window
 set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
@@ -171,13 +171,9 @@ endif
 
 
 " File search
-map <Leader>t :CtrlP<CR>
-map <Leader>p :CtrlP<CR>
-map <Leader>b :CtrlPBuffer<CR>
-let g:ctrlp_by_filename = 0
-let g:ctrlp_user_command = 'ag %s -l --hidden --nocolor -g ""'
-let g:ctrlp_use_caching = 0
-let g:ctrlp_show_hidden = 1
+map <Leader>t :FZF<CR>
+map <Leader>b :Buffers<CR>
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
