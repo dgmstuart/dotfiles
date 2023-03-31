@@ -30,6 +30,7 @@ Plugin 'maxmellon/vim-jsx-pretty'
 Plugin 'elzr/vim-json'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jbgutierrez/vim-partial'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,6 +170,12 @@ if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
 
+" Refactoring - vim/partial config
+let g:partial_templates = {
+      \ 'erb' : '<%%= render "%s" %%>',
+      \ }
+let g:partial_use_splits = 1
+let g:partial_vertical_split = 1
 
 " File search
 map <Leader>t :FZF<CR>
