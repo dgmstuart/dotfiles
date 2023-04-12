@@ -31,6 +31,8 @@ Plugin 'elzr/vim-json'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jbgutierrez/vim-partial'
+Plugin 'mattn/emmet-vim'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
