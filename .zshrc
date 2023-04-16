@@ -22,7 +22,11 @@ source ~/k/k.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 . $HOME/.asdf/asdf.sh
-. $HOME/.asdf/completions/asdf.bash
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
+
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 source ~/.iterm2_shell_integration.zsh
