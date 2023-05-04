@@ -3,7 +3,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-plugins=(bundler heroku npm)
+plugins=(heroku npm)
 
 source $ZSH/oh-my-zsh.sh
 
