@@ -129,11 +129,10 @@ alias hprd='hub pull-request -o -b dev'
 alias hbr='hub browse -- pulls'
 
 # RSpec
-alias rsp='bundle exec rspec'
-alias rspff='bundle exec rspec --only-failures'
-alias rspnn='bundle exec rspec --next-failure'
-alias rspdm='bundle exec rspec -- `git diff main --name-only -- spec`'
-alias bsp='bin/rspec'
+alias rsp='bin/rspec'
+alias rspff='bin/rspec --only-failures'
+alias rspnn='bin/rspec --next-failure'
+alias rspdm='bin/rspec -- `git diff main --name-only -- spec`'
 alias cover='open coverage/index.html'
 
 # Rails
@@ -153,7 +152,7 @@ alias rcep='bin/rails credentials:edit --environment=production'
 alias update='git checkout develop; git pull; bundle; bundle exec rake db:migrate'
 alias dope='open http://$(docker-machine ip):3000'
 alias rubofix='vim $(bundle exec rubocop --format=files)'
-alias rubocop='bundle exec rubocop'
+alias rubocop='bin/rubocop'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 
 # Ruby
