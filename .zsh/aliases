@@ -83,6 +83,7 @@ alias gcmal='git checkout master; git pull'
 alias gcp='git cherry-pick'
 alias gcpa='git cherry-pick --abort'
 alias gcpc='git cherry-pick --continue'
+
 alias gce='git config -e'
 alias gst='git status'
 
@@ -115,6 +116,8 @@ alias exclude='vim .git/info/exclude'
 alias gce='git config -e'
 
 alias sha='git rev-parse --short HEAD'
+
+alias gclean='git clean --interactive -d'
 
 alias delete_merged='git branch --merged main | grep -v "main" | xargs -n 1 git branch -d'
 
