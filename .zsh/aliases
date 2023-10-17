@@ -126,9 +126,9 @@ alias tga='tig --all'
 alias tgr='tig refs'
 
 # Hub
-alias hpr='hub pull-request -o'
-alias hprm='hub pull-request -o -b main'
-alias hprd='hub pull-request -o -b dev'
+alias hpr='hub pull-request -op'
+alias hprm='hub pull-request -op -b main'
+alias hprd='hub pull-request -op -b dev'
 alias hbr='hub browse -- pulls'
 
 # RSpec
