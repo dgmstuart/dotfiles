@@ -286,6 +286,11 @@ filetype plugin indent on
 nnoremap p p=`]<C-o>
 nnoremap P P=`]<C-o>
 
+let g:rails_projections = {
+      \ ".env": {"alternate": ".env.example"},
+      \ ".env.example": {"alternate": ".env"}
+      \ }
+
 augroup vimrcEx
   autocmd!
   " When editing a file, always jump to the last known cursor position.
