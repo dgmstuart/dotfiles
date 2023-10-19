@@ -12,6 +12,7 @@ bin/
 .yarnrc
 .hyper_plugins/
 .htpasswd
+.zsh_sessions/
 
 ## Elixir:
 .hex
