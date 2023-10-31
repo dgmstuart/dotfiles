@@ -13,6 +13,7 @@ bin/
 .hyper_plugins/
 .htpasswd
 .zsh_sessions/
+.vscode/
 
 ## Elixir:
 .hex
