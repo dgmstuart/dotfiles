@@ -117,7 +117,7 @@ alias gce='git config -e'
 
 alias sha='git rev-parse --short HEAD'
 
-alias gclean='git clean --interactive -d'
+alias gclean='git clean'
 
 alias delete_merged='git branch --merged main | grep -v "main" | xargs -n 1 git branch -d'
 
