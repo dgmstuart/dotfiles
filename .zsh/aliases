@@ -55,6 +55,7 @@ alias gc='git commit -v'
 alias gca='git commit -v -a'
 alias gcad='gad; gca'
 alias fixup='gad; gc --fixup'
+alias squash='gad; gc --squash'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 
 alias gb='git branch'
