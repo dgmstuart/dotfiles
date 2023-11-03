@@ -313,7 +313,7 @@ augroup END
 augroup ruby
   autocmd!
   " For all ruby files, encourage 80 columns:
-  autocmd FileType ruby setlocal colorcolumn=81,101
+  autocmd FileType ruby setlocal colorcolumn=81,101,125
 
   let g:ale_linters.ruby = ['ruby', 'sorbet']
 
