@@ -71,6 +71,7 @@ alias grupstream='git reset --hard @{u}'
 alias gl='git pull'
 alias gfa='git fetch --all --prune'
 alias gfo='git fetch origin --prune'
+alias gfod='gfo;delete_merged'
 
 alias gco='git checkout'
 alias gcd='git checkout dev'
