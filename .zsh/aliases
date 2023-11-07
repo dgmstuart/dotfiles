@@ -92,12 +92,12 @@ alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbd='git rebase dev'
-alias grbdl='git checkout dev; git pull; git checkout -; git rebase dev'
+alias grbdl='git fetch origin dev && git rebase origin/dev'
 alias grbm='git rebase main'
-alias grbml='git checkout main; git pull; git checkout -; git rebase main'
+alias grbml='git fetch origin main && git rebase origin/main'
 
 alias grbma='git rebase master'
-alias grbmal='git checkout master; git pull; git checkout -; git rebase master'
+alias grbmal='git fetch origin master && git rebase origin/master'
 
 alias gitsubmodulefoo='git submodule sync;git submodule update --init --recursive'
 
