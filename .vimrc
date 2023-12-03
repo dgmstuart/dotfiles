@@ -103,13 +103,15 @@ map Q gq
 command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
 command! Wq wq " Bind :Wq to :wq
-command! Bd bd " Bind :Bd to :bd
 
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
+
+" Close the current buffer without closing the split
+command! Bd bp\|bd \#
 
 function! RegReset()
   echo 'Resetting named registers a-z...'
