@@ -32,6 +32,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jbgutierrez/vim-partial'
 Plugin 'mattn/emmet-vim'
+Plugin 'AndrewRadev/splitjoin.vim'
 
 
 call vundle#end()            " required
