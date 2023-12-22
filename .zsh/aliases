@@ -160,6 +160,7 @@ alias dope='open http://$(docker-machine ip):3000'
 alias rubofix='vim $(bundle exec rubocop --format=files)'
 alias rubocop='bin/rubocop'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
+alias dev='heroku local -f Procfile.dev'
 
 # Ruby
 alias rake='noglob bundle exec rake'
