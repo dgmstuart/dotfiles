@@ -59,6 +59,7 @@ alias squash='gad; gc --squash'
 alias gitemptycommit='git commit --allow-empty -m Empty'
 
 alias gb='git branch'
+alias gba='git branch --all'
 
 alias gd='git diff'
 alias gdc='git diff --cached'
@@ -108,7 +109,7 @@ alias gittest='git push origin +HEAD:testing'
 alias gp2p='git push origin +main:production'
 alias gp2s='git push origin +main:testing'
 
-alias gsta='git stash save'
+alias gsta='git stash save -a ' # -a means "save ignored and untracked files as well"
 alias gstp='git stash pop'
 alias gstd='git stash drop'
 
