@@ -46,6 +46,16 @@ fbr() {
   git checkout $(echo "$branch" | sed "s:.* remotes/origin/::" | sed "s:.* ::")
 }
 
+# Remove branches from the main listing of branches by putting a tag on them
+# and deleting the branch
+archive_branch() {
+  local current_branch=$(git rev-parse --abbrev-ref HEAD)
+  local default_branch=$(git config --get init.defaultBranch)
+  git tag "archive/$current_branch" "$current_branch"
+  git checkout "$default_branch"
+  git branch -D "$current_branch"
+}
+
 # Php testing
 # Work out what testing library is being used and run the appropriate commands
 function ptest() {
