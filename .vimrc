@@ -186,6 +186,11 @@ let g:partial_vertical_split = 1
 map <Leader>t :FZF<CR>
 map <Leader>b :Buffers<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
