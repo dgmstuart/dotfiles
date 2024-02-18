@@ -16,6 +16,9 @@ export PATH=$PATH:$COMPOSERPATH/vendor/bin
 # Perl
 export PERL5LIB=/usr/local/Cellar/git/2.6.3/lib/perl5/site_perl
 
+# Rust
+. "$HOME/.cargo/env"
+
 # Environment
 ##############
 export VISUAL='vim'

@@ -19,5 +19,9 @@ bin/
 .hex
 .mix
 
+## Rust
+.cargo
+.rustup
+
 ## Redis:
 dump.rdb
