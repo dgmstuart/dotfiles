@@ -124,6 +124,19 @@ alias gclean='git clean -f'
 
 alias delete_merged='git branch --merged main | grep -v "main" | xargs -n 1 git branch -d'
 
+alias glog='git log --abbrev-commit \
+--pretty=format:" \
+%C(magenta)%h \
+%C(blue)%ad \
+%C(yellow)%an \
+%C(auto)%d \
+%C(auto)%s \
+%Creset" \
+--date=short \
+--graph \
+--branches \
+--remotes'
+
 # Tig
 alias tga='tig --all'
 alias tgr='tig refs'
