@@ -26,6 +26,12 @@ Thumbs.db
 *~
 *.swp
 
+# History, logs, caches etc #
+#############################
+*history
+*history.*
+tmp/
+
 # My Suffixes #
 ###############
 *.backup

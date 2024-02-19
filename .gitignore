@@ -1,3 +1,44 @@
+# OSX directories #
+###################
+Applications
+Desktop
+Documents
+Downloads
+Dropbox
+Library
+Movies
+Music
+Pictures
+Public
+Sites
+.Trash
+
+# My Directories #
+##################
+# ie. non-standard directories that I always have on my machines
+dev/
+bin/
+
+# Passwords, private etc. #
+###########################
+.netrc
+.ssh
+.certs
+.rnd
+.htpasswd
+
+# History, logs, caches etc #
+#############################
+.zcompdump*
+.zsh_sessions/
+.cache/
+.wget-hsts
+
+# Machine-specific files #
+##########################
+.profile.local
+.local/
+
 ## Elixir:
 .hex
 .mix
@@ -9,24 +50,31 @@
 ## Redis:
 dump.rd
 
+## Ruby:
+.gem
+.clamp
+.chromedriver-helper
+.webdrivers
+
 ## Javascript
+.npm
 .npm-global/
 .node-gyp/
 .yarnrc
 .nvm/
 
-## Miscellaneous development files:
-.profile.local
-bin/
-.clamp
+# Vim
+.viminfo
 .vim/bundle
+.vim/.netrwhist
+
+## Miscellaneous development files:
 .v8flags.*
-.chromedriver-helper
 .asdf/
 .travis/
-.htpasswd
-.zsh_sessions/
+.aws
 
 ## Miscellaneous application config files:
+.config
 .vscode/
 .hyper_plugins/
