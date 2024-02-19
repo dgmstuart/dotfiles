@@ -39,6 +39,10 @@ bin/
 .profile.local
 .local/
 .config/karabiner 
+# fzf refers to homebrew which is installed in a different location on Apple sillicon vs Intel
+#   https://docs.brew.sh/Installation
+.fzf.zsh 
+.fzf.bash
 
 ## Elixir:
 .hex
