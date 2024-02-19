@@ -15,4 +15,5 @@ Tomito
 
 homebrew
 oh-my-zsh
+tmuxinator (gem)
 k
