@@ -330,6 +330,8 @@ augroup ruby
     let g:ale_ruby_rubocop_executable = "bundle"
   endif
 
+  autocmd BufNewFile,BufRead Brewfile set filetype=ruby
+
   " Prevent autocomplete looking in all gems!
   set complete-=i
 augroup END

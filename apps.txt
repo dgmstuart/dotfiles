@@ -12,6 +12,7 @@ Tomito
 
 1Password
 
+homebrew
 oh-my-zsh
 shpotify
 k
