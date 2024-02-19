@@ -1,0 +1,20 @@
+# /Users/dgmstuart/.config/tmuxinator/dockspot.yml
+
+name: dockspot
+root: ~/dev/dockspot
+
+windows:
+  - editor: dirty
+  - server: bin/rails server
+  - console: bin/rails console
+  - builders:
+      layout: even-horizontal
+      panes:
+        - yarn build --watch
+        - bin/rails dartsass:build; bin/rails dartsass:watch
+        - bin/rails tailwindcss:watch
+  - sidekiq/guard:
+      layout: even-horizontal
+      panes:
+        - bin/sidekiq
+        - bin/guard

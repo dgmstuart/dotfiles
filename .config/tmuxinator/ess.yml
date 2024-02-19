@@ -1,0 +1,13 @@
+# ~/.tmuxinator/lfb.yml
+
+name: lfb
+root: ~/dev/ess-my-booking
+
+windows:
+  - editor: dirty
+  - server: rs
+  - test_client:
+      layout: even-horizontal
+      panes:
+        - cd ../visbook-test; ruby client.rb
+        - cd ../visbook-test; vim client.rb

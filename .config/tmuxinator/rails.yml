@@ -1,0 +1,7 @@
+# ~/.tmuxinator/rails.yml
+
+name: rails
+
+windows:
+  - editor: dirty
+  - server: rs

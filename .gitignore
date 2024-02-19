@@ -38,6 +38,7 @@ bin/
 ##########################
 .profile.local
 .local/
+.config/karabiner 
 
 ## Elixir:
 .hex
@@ -73,8 +74,10 @@ dump.rdb
 .asdf/
 .travis/
 .aws
+.config/yarn
+.config/hub
 
 ## Miscellaneous application config files:
-.config
 .vscode/
-.hyper_plugins/
+.config/configstore
+.config/iterm2
