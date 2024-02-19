@@ -1,6 +1,8 @@
 # Force these to be expanded - regardless of context:
 setopt aliases
 
+alias dev='~/dev'
+
 # zsh
 alias ohmyzsh="~/.oh-my-zsh"
 alias zshplugins='cd ~/.oh-my-zsh/plugins; ll'
