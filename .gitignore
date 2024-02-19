@@ -33,6 +33,7 @@ bin/
 .zcompdump*
 .zsh_sessions/
 .cache/
+.bundle/cache
 .wget-hsts
 
 # Machine-specific files #
