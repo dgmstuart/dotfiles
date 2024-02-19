@@ -48,7 +48,7 @@ bin/
 .rustup
 
 ## Redis:
-dump.rd
+dump.rdb
 
 ## Ruby:
 .gem
