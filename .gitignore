@@ -81,6 +81,7 @@ dump.rdb
 .aws
 .config/yarn
 .config/hub
+.oh-my-zsh
 
 ## Miscellaneous application config files:
 .vscode/
