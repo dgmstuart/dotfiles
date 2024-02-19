@@ -43,6 +43,7 @@ bin/
 #   https://docs.brew.sh/Installation
 .fzf.zsh 
 .fzf.bash
+Brewfile.lock.json
 
 ## Elixir:
 .hex
