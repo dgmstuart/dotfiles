@@ -1,20 +1,3 @@
-.profile.local
-bin/
-.clamp
-.npm-global/
-.node-gyp/
-.nvm/
-.vim/bundle
-.v8flags.*
-.chromedriver-helper
-.asdf/
-.travis/
-.yarnrc
-.hyper_plugins/
-.htpasswd
-.zsh_sessions/
-.vscode/
-
 ## Elixir:
 .hex
 .mix
@@ -24,4 +7,26 @@ bin/
 .rustup
 
 ## Redis:
-dump.rdb
+dump.rd
+
+## Javascript
+.npm-global/
+.node-gyp/
+.yarnrc
+.nvm/
+
+## Miscellaneous development files:
+.profile.local
+bin/
+.clamp
+.vim/bundle
+.v8flags.*
+.chromedriver-helper
+.asdf/
+.travis/
+.htpasswd
+.zsh_sessions/
+
+## Miscellaneous application config files:
+.vscode/
+.hyper_plugins/
