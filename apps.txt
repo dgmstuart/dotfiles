@@ -5,6 +5,7 @@ Chrome
 Spotify
 
 iterm2
+asdf
 Postgres.app
 VScode
 
