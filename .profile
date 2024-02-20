@@ -26,7 +26,9 @@ export PATH
 export PERL5LIB=/usr/local/Cellar/git/2.6.3/lib/perl5/site_perl
 
 # Rust
-. "$HOME/.cargo/env"
+if [ -d "$HOME/.cargo" ]; then
+  . "$HOME/.cargo/env";
+fi
 
 export DEV_DIR=$HOME/dev
 
