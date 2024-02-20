@@ -2,6 +2,10 @@
 ##########
 PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
+if [ -d "/Applications/Postgres.app" ]; then
+  PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin";
+fi
+
 # Node
 PATH=$PATH:~/.npm-global/bin
 
