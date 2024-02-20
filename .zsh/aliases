@@ -112,7 +112,7 @@ alias gittest='git push origin +HEAD:testing'
 alias gp2p='git push origin +main:production'
 alias gp2s='git push origin +main:testing'
 
-alias gsta='git stash save -a ' # -a means "save ignored and untracked files as well"
+alias gsta='git stash save -u' # -u means "save untracked files as well"
 alias gstp='git stash pop'
 alias gstd='git stash drop'
 
