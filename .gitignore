@@ -40,6 +40,7 @@ bin/
 ##########################
 .profile.local
 .local/
+.gitconfig_local
 .config/karabiner 
 # fzf refers to homebrew which is installed in a different location on Apple sillicon vs Intel
 #   https://docs.brew.sh/Installation
