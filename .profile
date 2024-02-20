@@ -1,17 +1,22 @@
 # Path
 ##########
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
+PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 # Node
-export PATH=$PATH:~/.npm-global/bin
+PATH=$PATH:~/.npm-global/bin
 
 # Golang
 export GOPATH=~/go
-export PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$GOPATH/bin
 
 # Composer
 export COMPOSERPATH=~/.composer
-export PATH=$PATH:$COMPOSERPATH/vendor/bin
+PATH=$PATH:$COMPOSERPATH/vendor/bin
+
+export PATH
+
+# Other application env variables
+#################################
 
 # Perl
 export PERL5LIB=/usr/local/Cellar/git/2.6.3/lib/perl5/site_perl
