@@ -24,6 +24,7 @@ brew "wget"
 brew "pidof"
 brew "tree"
 brew "gpg" # required for asdf
+brew "source-highlight" # for less
 
 # Dev applications
 brew "redis"
