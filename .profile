@@ -65,6 +65,11 @@ export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 # Disable auto-renaming of windows:
 export DISABLE_AUTO_TITLE=true
 
+# File limits
+#############
+ulimit -n 200000
+ulimit -u 2048
+
 # load travis
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
