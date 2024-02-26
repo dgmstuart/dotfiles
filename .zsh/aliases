@@ -229,3 +229,6 @@ alias pubkeye="more ~/.ssh/id_ed25519.pub | pbcopy | echo '=> Public key copied 
 # Docker
 alias dockerenv='eval $(docker-machine env default)'
 alias dip='docker-machine ip default'
+
+# Shpotify
+alias ss='spotify status'
