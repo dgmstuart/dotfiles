@@ -231,6 +231,16 @@ command! Tighist !tig %
 " replace ruby hashrockets with key: value syntax
 command! Notation %s/:\(\w\+\)\s*=>\s*/\1: /g
 
+function! Norocket()
+  " change '"foo" => 1' into 'foo: 1'
+  " ^x   go to beginning of line and delete initial quote
+  " f"r: replace end quote with ':'
+  " ldf> move into the following space and delete up to the end of the =>
+  normal! ^xf"r:ldf>j
+endfunction
+
+command! Norocket call Norocket()
+
 " replace `try` (Rails) with the lonely operator (`&. Ruby)
 command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
 
