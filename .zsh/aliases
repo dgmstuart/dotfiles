@@ -81,7 +81,7 @@ alias gco='git checkout'
 alias gcd='git checkout dev'
 alias gcdl='git checkout dev; git pull'
 alias gcm='git checkout main'
-alias gcml='git checkout main; git pull'
+alias gcml='git checkout main; git pull; gfod'
 
 alias gcma='git checkout master'
 alias gcmal='git checkout master; git pull'
