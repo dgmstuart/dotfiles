@@ -18,3 +18,4 @@ windows:
       panes:
         - bin/sidekiq
         - bin/guard
+  - ngrok: ngrok http --domain=dockspot-duncan.ngrok.dev 3000
