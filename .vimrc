@@ -94,6 +94,14 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
+" ===== Instead of backing up files, just reload the buffer when it changes. =====
+" The buffer is an in-memory representation of a file, it's what you edit
+set autoread        " Auto-reload buffers when file changed on disk
+set nobackup        " Don't use backup files
+set nowritebackup   " Don't backup the file while editing
+set noswapfile      " Don't create swapfiles for new buffers
+set updatecount=0   " Don't try to write swapfiles after some number of updates
+
 let g:netrw_dirhistmax = 0 "disable generation of .netrwhist
 
 " Don't use Ex mode, use Q for formatting
