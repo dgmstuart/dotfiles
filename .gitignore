@@ -90,3 +90,4 @@ dump.rdb
 .vscode/
 .config/configstore
 .config/iterm2
+.tmux/plugins
