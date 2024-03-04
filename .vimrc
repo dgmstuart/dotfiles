@@ -41,11 +41,6 @@ filetype plugin indent on    " required
 
 colorscheme solarized
 
-" Set font for macvim
-if has("gui_running")
-  set guifont=Bitstream\ vera\ sans\ mono:h14
-endif
-
 " when the terminal has colors...
 if &t_Co > 2 || has("gui_running")
   syntax on         " set syntax highlighting on
