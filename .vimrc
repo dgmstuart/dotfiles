@@ -40,7 +40,6 @@ filetype plugin indent on    " required
 " Vundle config end
 
 colorscheme solarized
-set background=light
 
 " Set font for macvim
 if has("gui_running")
