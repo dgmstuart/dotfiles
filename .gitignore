@@ -74,7 +74,9 @@ dump.rdb
 
 # Vim
 .viminfo
+.vim/autoload
 .vim/bundle
+.vim/plugged
 .vim/.netrwhist
 
 ## Miscellaneous development files:

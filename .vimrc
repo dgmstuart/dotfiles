@@ -1,43 +1,37 @@
-" Vundle config start
-set nocompatible              " required
-filetype off                  " required
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'mileszs/ack.vim'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-surround'
+Plug 'vim-ruby/vim-ruby'
+Plug 'dense-analysis/ale'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'suan/vim-instant-markdown'
+Plug 'ap/vim-css-color'
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'elzr/vim-json'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'jbgutierrez/vim-partial'
+Plug 'mattn/emmet-vim'
+Plug 'AndrewRadev/splitjoin.vim'
 
-Plugin 'mileszs/ack.vim'
-Plugin 'thoughtbot/vim-rspec'
-Plugin 'tpope/vim-bundler'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'dense-analysis/ale'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'ap/vim-css-color'
-Plugin 'yuezk/vim-js'
-Plugin 'maxmellon/vim-jsx-pretty'
-Plugin 'elzr/vim-json'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'jbgutierrez/vim-partial'
-Plugin 'mattn/emmet-vim'
-Plugin 'AndrewRadev/splitjoin.vim'
-
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-" Vundle config end
+call plug#end()
 
 colorscheme solarized
 
