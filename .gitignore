@@ -86,6 +86,7 @@ dump.rdb
 .aws
 .config/yarn
 .config/hub
+.config/coc
 .oh-my-zsh
 
 ## Miscellaneous application config files:

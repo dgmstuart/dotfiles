@@ -1,0 +1,7 @@
+{
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "suggest.floatConfig": {
+    "border": true
+  },
+  "snippets.priority": 100
+}

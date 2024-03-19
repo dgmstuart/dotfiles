@@ -18,7 +18,6 @@ Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'dense-analysis/ale'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'SirVer/ultisnips'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'suan/vim-instant-markdown'
 Plug 'ap/vim-css-color'
@@ -30,8 +29,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'jbgutierrez/vim-partial'
 Plug 'mattn/emmet-vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
+
+let g:coc_global_extensions = [
+\ 'coc-snippets',
+\ '@yaegassy/coc-tailwindcss3'
+\ ]
 
 colorscheme solarized
 
@@ -64,6 +69,16 @@ if &t_Co > 2 || has("gui_running")
   " highlight the status bar when in insert mode
   autocmd InsertEnter * exe "hi StatusLine ctermfg=" .s:solarizedYellow "ctermbg=" .s:solarizedBlack
   autocmd InsertLeave * exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
+
+  function! SetCocColors()
+    " partial match text in popup menu:
+    exe "hi CocSearch ctermfg=" .s:solarizedBlue
+    " basic colours of popup menu:
+    exe "hi CocFloating ctermfg=" .s:solarizedGrey1 "ctermbg=" .s:solarizedGrey5
+    " selected item in popup menu:
+    exe "hi CocMenuSel ctermbg=" .s:solarizedCreamDark
+  endfunction
+  autocmd VimEnter,ColorScheme * call SetCocColors()
 endif
 
 " allow backspacing over everything in insert mode
@@ -92,6 +107,7 @@ set smartcase       " do case-sensitive searches if the search term includes upp
 set grepprg=ag      " use the silver searcher for grep commands
 set splitright      " open new split panes on the right (left is default)
 set mouse=a         " enable the mouse
+set updatetime=300  " minimise latency (default is 4000)
 
 " Soft tabs
 set expandtab
@@ -220,6 +236,9 @@ map <Leader>/ :Ack '' -w<left><left><left><left>
 map <Leader>t :FZF<CR>
 map <Leader>b :Buffers<CR>
 
+" rename the symbol under the cursor - across the whole workspace
+nmap <leader>rn <Plug>(coc-rename)
+
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
 map <Leader>o :cope<CR> " open the quickfix window fullscreen
@@ -248,6 +267,12 @@ map <Leader>- :Ack  -w<left><left><left>
 map - /<left><left><left>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
+
+" Autocomplete
+" Use Tab to complete with coc
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+" ...or enter to complete with coc
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()  : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 function! RegReset()
   echo 'Resetting named registers a-z...'
