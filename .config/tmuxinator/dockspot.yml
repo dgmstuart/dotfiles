@@ -13,9 +13,9 @@ windows:
         - yarn build --watch
         - bin/rails dartsass:build; bin/rails dartsass:watch
         - bin/rails tailwindcss:watch
-  - sidekiq/guard:
+  - sidekiq/cable:
       layout: even-horizontal
       panes:
         - bin/sidekiq
-        - bin/guard
+        - WEB_CONCURRENCY=0 PORT=28080 bundle exec puma config/cable.ru
   - ngrok: ngrok http --domain=dockspot-duncan.ngrok.dev 3000
