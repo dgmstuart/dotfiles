@@ -465,3 +465,6 @@ set listchars=trail:·,tab:¬·
 
 " Delete trailing whitespace by pressing f5
 :nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+" auto-source .vimrc when saving
+autocmd! bufwritepost .vimrc nested source %
