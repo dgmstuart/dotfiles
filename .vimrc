@@ -40,13 +40,31 @@ if &t_Co > 2 || has("gui_running")
   syntax on         " set syntax highlighting on
   set hlsearch      " highlight search matches
 
+  " local variables for solarized colors
+  let s:solarizedBlack      = "8"
+  let s:solarizedGrey5      = "0"
+  let s:solarizedGrey4      = "10"
+  let s:solarizedGrey3      = "11"
+  let s:solarizedGrey2      = "12"
+  let s:solarizedGrey1      = "14"
+  let s:solarizedCreamDark  = "7"
+  let s:solarizedCreamLight = "15"
+  let s:solarizedYellow     = "3"
+  let s:solarizedOrange     = "9"
+  let s:solarizedRed        = "1"
+  let s:solarizedMagenta    = "5"
+  let s:solarizedViolet     = "13"
+  let s:solarizedBlue       = "4"
+  let s:solarizedCyan       = "6"
+  let s:solarizedGreen      = "2"
+
   " Highlight the status line
-  highlight StatusLine ctermfg=00 ctermbg=06
+  exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
 
   " highlight the status bar when in insert mode
   if version >= 700
-    au InsertEnter * hi StatusLine ctermfg=136 ctermbg=00
-    au InsertLeave * hi StatusLine ctermfg=00 ctermbg=06
+    au InsertEnter * exe "hi StatusLine ctermfg=" .s:solarizedYellow "ctermbg=" .s:solarizedBlack
+    au InsertLeave * exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
   endif
 endif
 
@@ -266,8 +284,8 @@ function! ErrorCountMessage()
 endfunction
 
 " statusline highlighting groups:
-hi warningmsg ctermbg=red ctermfg=black
-hi time ctermbg=black ctermfg=136
+exe "hi warningmsg ctermbg=" .s:solarizedRed "ctermfg=" .s:solarizedGrey5
+exe "hi time ctermbg=" .s:solarizedGrey5 "ctermfg=" .s:solarizedYellow
 set statusline=
 set statusline+=(%n)\                      " buffer number
 set statusline+=%f\                        " file name
