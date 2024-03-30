@@ -269,6 +269,10 @@ map - /<left><left><left>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
+" GoTo code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+
 " Use K to show documentation in preview window
 nnoremap <silent> K :call ShowDocumentation()<CR>
 
