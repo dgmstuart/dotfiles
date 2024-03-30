@@ -269,6 +269,17 @@ map - /<left><left><left>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
 
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
 " Autocomplete
 " Use Tab to complete with coc
 inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
