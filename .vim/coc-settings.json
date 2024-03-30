@@ -3,5 +3,7 @@
   "suggest.floatConfig": {
     "border": true
   },
-  "snippets.priority": 100
+  "snippets.priority": 100,
+  "solargraph.trace.server": true,
+  "suggest.languageSourcePriority": 90
 }
