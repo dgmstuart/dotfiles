@@ -62,10 +62,8 @@ if &t_Co > 2 || has("gui_running")
   exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
 
   " highlight the status bar when in insert mode
-  if version >= 700
-    au InsertEnter * exe "hi StatusLine ctermfg=" .s:solarizedYellow "ctermbg=" .s:solarizedBlack
-    au InsertLeave * exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
-  endif
+  autocmd InsertEnter * exe "hi StatusLine ctermfg=" .s:solarizedYellow "ctermbg=" .s:solarizedBlack
+  autocmd InsertLeave * exe "hi StatusLine ctermfg=" .s:solarizedGrey5 "ctermbg=" .s:solarizedCyan
 endif
 
 " allow backspacing over everything in insert mode
@@ -100,6 +98,10 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 
+" Whitespace highlighting
+set list
+set listchars=trail:·,tab:¬·
+
 " ===== Instead of backing up files, just reload the buffer when it changes. =====
 " The buffer is an in-memory representation of a file, it's what you edit
 set autoread        " Auto-reload buffers when file changed on disk
@@ -118,28 +120,50 @@ command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
 command! Wq wq " Bind :Wq to :wq
 
+" Close the current buffer without closing the split
+command! Bd bp\|bd \#
+
 " CTRL-U in insert mode deletes a lot.  Use CTRL-G u to first break undo,
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
+" Ack config
+let g:ack_use_dispatch = 1
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
-" Close the current buffer without closing the split
-command! Bd bp\|bd \#
+" ALE config (Syntax checking)
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 1
+let g:ale_virtualtext_cursor = 'disabled'
+let g:ale_open_list = 1
+let g:ale_list_window_size = 5
+let g:ale_linters = {}
+let g:ale_fixers = {}
 
-function! RegReset()
-  echo 'Resetting named registers a-z...'
-  let regs=split('abcdefghijklmnopqrstuvwxyz', '\zs')
-  for r in regs
-    call setreg(r, [])
-  endfor
-endfunction
+" Fzf config (file search)
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+let g:fzf_action = {
+      \ 'ctrl-t': 'tab split',
+      \ 'ctrl-x': 'split',
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit' }
 
-let mapleader = ","
+" Rails.vim config
+let g:rails_projections = {
+      \ ".env": {"alternate": ".env.example"},
+      \ ".env.example": {"alternate": ".env"}
+      \ }
 
-map <Leader>gs :Gstatus<CR>
+" Refactoring - vim/partial config
+let g:partial_templates = {
+      \ 'erb' : '<%%= render "%s" %%>',
+      \ }
+let g:partial_use_splits = 1
+let g:partial_vertical_split = 1
 
-" Run rspec using thoughtbot/vim-rspec and tpope/dispatch.
+" RSpec config
 if filereadable("bin/rspec")
   let b:rspec_executable = "bin/rspec"
 else
@@ -158,6 +182,13 @@ function! RunSpecsInTerminal(args)
   execute l:rspec_terminal_command
 endfunction
 
+
+let mapleader = ","
+
+" Git
+map <Leader>gs :Git<CR>
+
+" RSpec
 map <Leader>r :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
@@ -170,13 +201,13 @@ map <Leader>aa :call RunSpecsInTerminal('spec')<CR>
 map <Leader>ff :call RunSpecsInTerminal('spec --only-failures')<CR>
 map <Leader>nn :call RunSpecsInTerminal('spec --next-failure')<CR>
 
-" Run tests which don't use RSpec
+" Ruby tests which don't use RSpec
 map <Leader>ea :Dispatch bundle exec rake<CR>
 map <Leader>eaa :!bundle exec rake<CR>
 map <Leader>er :Dispatch bundle exec rake test TEST=%<CR>
 map <Leader>err :!bundle exec rake test TEST=%<CR>
 
-" Run php tests
+" PhP tests
 " ptest is defined in ~/.zsh/functions
 map <Leader>w  :Dispatch ptest<CR>
 map <Leader>wr :Dispatch ptest %<CR>
@@ -184,55 +215,18 @@ map <Leader>wr :Dispatch ptest %<CR>
 " Project search
 map <Leader>m :Ack <cword> -w<CR>
 map <Leader>/ :Ack '' -w<left><left><left><left>
-let g:ack_use_dispatch = 1
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-" Refactoring - vim/partial config
-let g:partial_templates = {
-      \ 'erb' : '<%%= render "%s" %%>',
-      \ }
-let g:partial_use_splits = 1
-let g:partial_vertical_split = 1
 
 " File search
 map <Leader>t :FZF<CR>
 map <Leader>b :Buffers<CR>
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
 
 " Quickfix lists
 map <Leader>q :cclose<CR>   " close the quickfix window
 map <Leader>o :cope<CR> " open the quickfix window fullscreen
 map <Leader>oo :cope<CR> :only<CR> " open the quickfix window fullscreen
 
+" My functions (in .vim/plugin)
 nnoremap <Leader>1 :call ToggleRelativeNumber()<cr>
-function! ToggleRelativeNumber()
-    if &relativenumber
-        set norelativenumber
-    else
-        set relativenumber
-    endif
-endfunction
-
-" Toggle the background because Tmux doesn't pass it through properly
-let s:BACKGROUND_SETTING_FILE = '/tmp/vim_background_setting'
-function! ToggleBackground()
-  let &background = &background ==# 'dark' ? 'light' : 'dark'
-  " save the new setting to a file
-  call writefile([&background], s:BACKGROUND_SETTING_FILE)
-endfunction
-
-" read from that file when reopening Vim
-if filereadable(s:BACKGROUND_SETTING_FILE)
-  execute 'set background=' . trim(readfile(s:BACKGROUND_SETTING_FILE)[0])
-endif
-
 map <Leader>d :call ToggleBackground()<CR>
 
 " Disable backspace in normal mode - it's a bad habit
@@ -242,6 +236,10 @@ noremap <BS> <Nop>
 nnoremap <C-S-n> :cprevious<CR>
 nnoremap <C-n> :cnext<CR>
 
+" Auto indent pasted text
+nnoremap p p=`]<C-o>
+nnoremap P P=`]<C-o>
+
 " convenient shortcut to save file
 nnoremap <C-s> :w<CR>
 
@@ -249,6 +247,15 @@ nnoremap <C-s> :w<CR>
 map <Leader>- :Ack  -w<left><left><left>
 map - /<left><left><left>
 
+map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
+
+function! RegReset()
+  echo 'Resetting named registers a-z...'
+  let regs=split('abcdefghijklmnopqrstuvwxyz', '\zs')
+  for r in regs
+    call setreg(r, [])
+  endfor
+endfunction
 
 " Open tig showing the history of the current file
 command! Tighist !tig %
@@ -263,11 +270,22 @@ function! Norocket()
   " ldf> move into the following space and delete up to the end of the =>
   normal! ^xf"r:ldf>j
 endfunction
-
 command! Norocket call Norocket()
 
 " replace `try` (Rails) with the lonely operator (`&. Ruby)
 command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
+
+augroup vimStartup
+  autocmd!
+
+  " When editing a file, always jump to the last known cursor position.
+  autocmd BufReadPost *
+        \ let line = line("'\"")
+        \ | if line >= 1 && line <= line("$") && &filetype !~# 'commit'
+        \      && index(['xxd', 'gitrebase'], &filetype) == -1
+        \ |   execute "normal! g`\""
+        \ | endif
+augroup END
 
 function! ErrorCountMessage()
   let current_buffer = bufnr("%")
@@ -310,100 +328,48 @@ if exists('$TMUX') == 0
   set statusline+=%*                         " <end time>
 endif
 
-" Syntax checking
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 1
-let g:ale_virtualtext_cursor = 'disabled'
-let g:ale_open_list = 1
-let g:ale_list_window_size = 5
-let g:ale_linters = {}
-let g:ale_fixers = {}
-
 " Enable file type detection.
 " Use the default filetype settings, so that mail gets 'tw' set to 72,
 " 'cindent' is on in C files, etc.
 " Also load indent files, to automatically do language-dependent indenting.
 filetype plugin indent on
 
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
-let g:rails_projections = {
-      \ ".env": {"alternate": ".env.example"},
-      \ ".env.example": {"alternate": ".env"}
-      \ }
-
-augroup vimrcEx
-  autocmd!
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-augroup END
-
-augroup ruby
-  autocmd!
-
-  let g:ale_linters.eruby = ['erblint', 'erubi', 'erubis', 'ruumba']
-augroup END
-
 augroup ruby
   autocmd!
   " For all ruby files, encourage 80 columns:
   autocmd FileType ruby setlocal colorcolumn=81,101,125
 
-  let g:ale_linters.ruby = ['ruby', 'sorbet']
-
-  if filereadable(".rubocop.yml")
-    call add(g:ale_linters['ruby'], "rubocop")
-    let g:ale_ruby_rubocop_executable = "bundle"
-  endif
-
   autocmd BufNewFile,BufRead Brewfile set filetype=ruby
 
   " Prevent autocomplete looking in all gems!
-  set complete-=i
+  autocmd FileType ruby set complete-=i
 augroup END
 
-augroup haml
-  autocmd!
-  let g:ale_linters.haml = []
+let g:ale_linters.ruby = ['ruby', 'sorbet']
+let g:ale_linters.eruby = ['erblint', 'erubi', 'erubis', 'ruumba']
 
-  if filereadable(".haml-lint.yml")
-    let g:ale_linters.haml = ['hamllint']
-  endif
-augroup END
+if filereadable(".rubocop.yml")
+  call add(g:ale_linters['ruby'], "rubocop")
+  let g:ale_ruby_rubocop_executable = "bundle"
+endif
 
-augroup javascript
-  autocmd!
-  let g:ale_linters.javascript = ['eslint', 'standard', 'xo']
-  let g:ale_linters.javascriptreact = ['eslint', 'standard', 'xo']
-  let g:ale_linters.typescript = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
-  let g:ale_linters.typescriptreact = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
-  let g:ale_fixers.javascript = []
-  let g:ale_fixers.javascriptreact = []
-  let g:ale_fixers.typescript = []
-  let g:ale_fixers.typescriptreact = []
+" Javascript
+let g:ale_linters.javascript = ['eslint', 'standard', 'xo']
+let g:ale_linters.javascriptreact = ['eslint', 'standard', 'xo']
+let g:ale_linters.typescript = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
+let g:ale_linters.typescriptreact = ['eslint', 'standard', 'tsserver', 'typecheck', 'xo']
+let g:ale_fixers.javascript = []
+let g:ale_fixers.javascriptreact = []
+let g:ale_fixers.typescript = []
+let g:ale_fixers.typescriptreact = []
 
-  if filereadable(".prettierrc")
-    call add(g:ale_fixers['javascript'], "prettier")
-    call add(g:ale_fixers['javascriptreact'], "prettier")
-    call add(g:ale_fixers['typescript'], "prettier")
-    call add(g:ale_fixers['typescriptreact'], "prettier")
-    let g:ale_fix_on_save = 1
-  endif
-augroup END
-
-" augroup json
-"   autocmd!
-"   let g:ale_linters.json = ['eslint']
-" augroup END
+if filereadable(".prettierrc")
+  call add(g:ale_fixers['javascript'], "prettier")
+  call add(g:ale_fixers['javascriptreact'], "prettier")
+  call add(g:ale_fixers['typescript'], "prettier")
+  call add(g:ale_fixers['typescriptreact'], "prettier")
+  let g:ale_fix_on_save = 1
+endif
 
 augroup elm
   autocmd!
@@ -412,10 +378,11 @@ augroup elm
 
   autocmd FileType elm setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
-  let g:elm_setup_keybindings = 0
   autocmd FileType elm map <Leader>e :ElmMake<CR>
   autocmd FileType elm map <Leader>d :ElmErrorDetail<CR>
 augroup END
+
+let g:elm_setup_keybindings = 0
 
 augroup php
   autocmd!
@@ -454,13 +421,6 @@ augroup whitespace
   autocmd!
   autocmd FileType conf,css,eruby,gitcommit,html,haml,help,javascript,typescript,react,typescriptreact,json,markdown,php,ruby,scss,sh,text,tmux,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
-
-" Whitespace highlighting
-set list
-set listchars=trail:·,tab:¬·
-
-" Delete trailing whitespace by pressing f5
-:nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " auto-source .vimrc when saving
 autocmd! bufwritepost .vimrc nested source %
