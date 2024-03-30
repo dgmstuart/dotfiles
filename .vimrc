@@ -220,10 +220,6 @@ function! ToggleRelativeNumber()
     endif
 endfunction
 
-" Rails i18n helpers
-vmap <Leader>z :call I18nTranslateString()<CR>
-vmap <Leader>dt :call I18nDisplayTranslation()<CR>
-
 " Toggle the background because Tmux doesn't pass it through properly
 let s:BACKGROUND_SETTING_FILE = '/tmp/vim_background_setting'
 function! ToggleBackground()
