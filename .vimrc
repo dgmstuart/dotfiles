@@ -302,8 +302,9 @@ function! ShowDocumentation()
 endfunction
 
 " Autocomplete
-" Use Tab to complete with coc
-inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "\<TAB>"
+" Use Tab to complete with coc, or expand a snippet if available
+" (eg. by default non-word characters like % don't open up the popup menu)
+inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm() : "<Plug>(coc-snippets-expand)"
 " ...or enter to complete with coc
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()  : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
