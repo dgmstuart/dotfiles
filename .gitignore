@@ -88,6 +88,7 @@ dump.rdb
 .config/hub
 .config/coc
 .oh-my-zsh
+.iterm2
 
 ## Miscellaneous application config files:
 .vscode/

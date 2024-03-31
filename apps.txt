@@ -4,7 +4,7 @@ Pop
 Chrome
 Spotify
 
-iterm2
+iterm2 (remember to install shell integrations to get inline images)
 asdf
 Postgres.app
 VScode
