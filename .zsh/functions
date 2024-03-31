@@ -112,3 +112,9 @@ function battery() {
     echo $result
   fi
 }
+
+# Run an arbitrary command in a new iTerm tab
+function run_in_iterm_tab() {
+  open -a iTerm .
+  osascript -e "tell application \"iTerm\" to tell current window to tell last tab to tell current session to write text \"$1\""
+}

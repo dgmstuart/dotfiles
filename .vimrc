@@ -181,11 +181,18 @@ let g:partial_use_splits = 1
 let g:partial_vertical_split = 1
 
 " RSpec config
-if filereadable("bin/rspec")
-  let b:rspec_executable = "bin/rspec"
-else
-  let b:rspec_executable = "bundle exec rspec"
-endif
+function! ChooseRSpecExecutable()
+  if filereadable("bin/rspec")
+    let b:rspec_executable = "bin/rspec"
+  else
+    let b:rspec_executable = "bundle exec rspec"
+  endif
+endfunction
+augroup RSpecSettings
+  autocmd!
+  autocmd BufEnter * call ChooseRSpecExecutable()
+augroup END
+call ChooseRSpecExecutable()
 let g:rspec_command = "Dispatch " . b:rspec_executable . " {spec} --format=progress --no-color"
 let g:rspec_terminal_command = '!' . b:rspec_executable
 function! RunSpecsWithFlag(flag)
@@ -197,6 +204,11 @@ function! RunSpecsInTerminal(args)
   let l:rspec_terminal_command = g:rspec_terminal_command . ' ' . a:args
 
   execute l:rspec_terminal_command
+endfunction
+function! RunSpecsInWindow(args)
+  let l:rspec_command = b:rspec_executable . ' ' . a:args
+
+  silent execute '!run_in_iterm_tab "' . l:rspec_command . '"'
 endfunction
 
 
@@ -217,6 +229,11 @@ map <Leader>ss :call RunSpecsInTerminal(expand('%') . ':' . line("."))<CR>
 map <Leader>aa :call RunSpecsInTerminal('spec')<CR>
 map <Leader>ff :call RunSpecsInTerminal('spec --only-failures')<CR>
 map <Leader>nn :call RunSpecsInTerminal('spec --next-failure')<CR>
+map <Leader>rrr :call RunSpecsInWindow('%')<CR>
+map <Leader>sss :call RunSpecsInWindow(expand('%') . ':' . line("."))<CR>
+map <Leader>aaa :call RunSpecsInWindow('spec')<CR>
+map <Leader>fff :call RunSpecsInWindow('spec --only-failures')<CR>
+map <Leader>nnn :call RunSpecsInWindow('spec --next-failure')<CR>
 
 " Ruby tests which don't use RSpec
 map <Leader>ea :Dispatch bundle exec rake<CR>
