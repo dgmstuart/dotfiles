@@ -1,0 +1,12 @@
+# /Users/dgmstuart/.config/tmuxinator/bingo.yml
+
+name: bingo
+root: ~/dev/bingo-frontend
+
+windows:
+  - editor: dirty
+  - server&test:
+      layout: even-horizontal
+      panes:
+        - npm start
+        - npm test
