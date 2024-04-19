@@ -473,6 +473,9 @@ augroup gitcommit
 
   " add spellchecking and automatic wrapping at the recommended 72 columns to commit messages.
   autocmd FileType gitcommit setlocal spell textwidth=72 colorcolumn=73
+
+  " disable CoC in commit messages
+  autocmd FileType gitcommit let b:coc_enabled=0
 augroup END
 
 " Automatically delete trailing whitespace for certain filetypes
