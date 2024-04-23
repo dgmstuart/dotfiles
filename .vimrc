@@ -36,6 +36,7 @@ call plug#end()
 let g:coc_global_extensions = [
 \ 'coc-snippets',
 \ 'coc-solargraph',
+\ 'coc-tsserver',
 \ '@yaegassy/coc-tailwindcss3'
 \ ]
 

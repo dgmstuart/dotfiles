@@ -17,3 +17,5 @@ homebrew
 oh-my-zsh
 tmuxinator (gem)
 k
+
+npm install -g typescript (Language server)
