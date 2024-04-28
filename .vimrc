@@ -80,7 +80,11 @@ if &t_Co > 2 || has("gui_running")
     " selected item in popup menu:
     exe "hi CocMenuSel ctermbg=" .s:solarizedCreamDark
   endfunction
-  autocmd VimEnter,ColorScheme * call SetCocColors()
+  autocmd ColorScheme * call SetCocColors()
+  " Delay setting CoC colours after opening vim
+  " Needed to give time for CoC to set itself up? Otherwise it just
+  " immediately overwrites these settings?
+  autocmd VimEnter * call timer_start(1000, {-> execute('call SetCocColors()')})
 endif
 
 " allow backspacing over everything in insert mode
