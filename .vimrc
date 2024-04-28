@@ -428,6 +428,7 @@ if filereadable(".prettierrc")
   call add(g:ale_fixers['javascriptreact'], "prettier")
   call add(g:ale_fixers['typescript'], "prettier")
   call add(g:ale_fixers['typescriptreact'], "prettier")
+  let g:ale_fixers['json'] = ["prettier"]
   let g:ale_fix_on_save = 1
 endif
 
