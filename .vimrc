@@ -141,6 +141,7 @@ map Q gq
 command! Q q " Bind :Q to :q
 command! W w " Bind :W to :w
 command! Wq wq " Bind :Wq to :wq
+command! AX AS " open alternate in horizontal split
 
 " Close the current buffer without closing the split
 command! Bd bp\|bd \#
