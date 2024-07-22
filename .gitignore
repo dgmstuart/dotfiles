@@ -71,6 +71,7 @@ dump.rdb
 .node-gyp/
 .yarnrc
 .nvm/
+.yarn/
 
 # Vim
 .viminfo
