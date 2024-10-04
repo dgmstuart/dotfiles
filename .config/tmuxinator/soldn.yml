@@ -1,0 +1,9 @@
+# /Users/dgmstuart/.config/tmuxinator/soldn.yml
+
+name: soldn
+root: ~/dev/personal/swing-out-london
+
+windows:
+  - editor: dirty
+  - server: heroku local -f Procfile.dev
+  - console: bin/rails console
