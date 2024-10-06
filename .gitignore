@@ -70,6 +70,8 @@ dump.rdb
 .npm-global/
 .node-gyp/
 .yarnrc
+# .pnp.cjs is Yarn Plug n Play: https://yarnpkg.com/features/pnp#minimal-install-footprint
+.pnp.cjs
 .nvm/
 .yarn/
 
