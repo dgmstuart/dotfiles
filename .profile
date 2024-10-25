@@ -7,7 +7,7 @@ if [ -d "/Applications/Postgres.app" ]; then
 fi
 
 # Node
-PATH=$PATH:~/.npm-global/bin
+PATH=~/.npm-global/bin:$PATH
 
 # Golang
 export GOPATH=~/go
