@@ -178,6 +178,7 @@ alias rubofix='vim $(bundle exec rubocop --format=files)'
 alias rubocop='bin/rubocop'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 alias localdev='heroku local -f Procfile.dev'
+alias resetdb='gcm; rake db:reset; gco -'
 
 # Ruby
 alias rake='noglob bundle exec rake'
