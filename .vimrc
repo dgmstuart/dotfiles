@@ -254,6 +254,7 @@ map <Leader>wr :Dispatch ptest %<CR>
 
 " Project search
 map <Leader>m :Ack <cword> -w<CR>
+map <Leader>mm :Ack <cword> app -w<CR>
 map <Leader>/ :Ack '' -w<left><left><left><left>
 
 " File search
