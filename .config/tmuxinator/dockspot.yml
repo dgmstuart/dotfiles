@@ -18,4 +18,8 @@ windows:
       panes:
         - bin/sidekiq
         - WEB_CONCURRENCY=0 PORT=28080 bundle exec puma config/cable.ru
-  - ngrok: ngrok http --domain=dockspot-duncan.ngrok.dev 3000
+  - ngrok:
+      layout: even-horizontal
+      panes:
+        - ngrok http --domain=dockspot-duncan.ngrok.dev 3000
+        - stripe listen --forward-to "https://dockspot-duncan.ngrok.dev/stripe_webhook?account=eu" -l

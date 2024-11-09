@@ -98,3 +98,4 @@ dump.rdb
 .config/configstore
 .config/iterm2
 .tmux/plugins
+.config/stripe
