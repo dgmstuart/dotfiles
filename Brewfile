@@ -1,6 +1,5 @@
 tap "heroku/brew"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "puma/puma"
 
@@ -15,6 +14,7 @@ brew "hub"
 brew "tmate"
 brew "tmux"
 brew "yarn"
+# DON'T intstall asdf with Brew - use git instead
 
 # Utils
 brew "coreutils"

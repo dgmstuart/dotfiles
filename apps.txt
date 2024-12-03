@@ -5,17 +5,16 @@ Chrome
 Spotify
 
 iterm2 (remember to install shell integrations to get inline images)
-asdf
+asdf (install with git, not with brew)
 Postgres.app
 VScode
-
-Tomito
 
 1Password
 
 homebrew
 oh-my-zsh
+solargraph (gem)
 tmuxinator (gem)
-k
+k (git submodule init; git submodule update)
 
 npm install -g typescript (Language server)
