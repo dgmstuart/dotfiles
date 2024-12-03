@@ -3,6 +3,8 @@
 name: dockspot
 root: ~/dev/dockspot
 
+on_project_start: brew services start redis
+
 windows:
   - editor: dirty
   - server: bin/rails server
