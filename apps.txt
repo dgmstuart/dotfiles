@@ -16,5 +16,6 @@ oh-my-zsh
 solargraph (gem)
 tmuxinator (gem)
 k (git submodule init; git submodule update)
+instant-markdown-d
 
 npm install -g typescript (Language server)
