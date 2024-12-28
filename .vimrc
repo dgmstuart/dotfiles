@@ -288,7 +288,7 @@ nnoremap P P=`]<C-o>
 nnoremap <C-s> :w<CR>
 
 " Swedish keyboard mappings:
-map <Leader>- :Ack  -w<left><left><left>
+map <Leader>- :Ack '' -w<left><left><left><left>
 map - /<left><left><left>
 
 map <silent>\ :nohlsearch<CR> " clear search highlighting by pressing \
