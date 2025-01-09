@@ -8,13 +8,13 @@ brew "diff-so-fancy"
 brew "the_silver_searcher"
 brew "fzf"
 brew "git"
-brew "vim", with: "ruby python3" # python is needed for ultisnips.vim
+brew "vim"
 brew "tig"
 brew "hub"
 brew "tmate"
 brew "tmux"
-brew "yarn"
-# DON'T intstall asdf with Brew - use git instead
+# DON'T install yarn with Homebrew - use corepack instead
+# DON'T intstall asdf with Homebrew - use git instead
 
 # Utils
 brew "coreutils"
