@@ -1,8 +1,6 @@
 # Path
 ##########
-PATH=~/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
-
-PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
+PATH=~/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin
 
 if [ -d "/Applications/Postgres.app" ]; then
   PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin";
