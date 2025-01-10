@@ -1,7 +1,7 @@
 # /Users/dgmstuart/.config/tmuxinator/soldn.yml
 
 name: soldn
-root: ~/dev/personal/swing-out-london
+root: ~/dev/swing-out-london
 
 windows:
   - editor: dirty
