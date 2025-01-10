@@ -36,6 +36,5 @@ brew "s3cmd"
 brew "shpotify"
 
 # Cask apps
-cask "karabiner-elements"
 cask "ngrok"
 cask "font-fira-code"

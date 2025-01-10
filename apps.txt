@@ -22,3 +22,5 @@ instant-markdown-d (npm)
 npm install -g typescript (Language server)
 
 yarn (run `corepack enable`)
+
+tpm (Tmux Plugins Manager)
