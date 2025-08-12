@@ -9,6 +9,9 @@ fi
 # Node
 PATH=~/.npm-global/bin:$PATH
 
+# Alacritty
+PATH=$PATH:/Applications/Alacritty.app/Contents/MacOS/
+
 # Golang
 export GOPATH=~/go
 PATH=$PATH:$GOPATH/bin

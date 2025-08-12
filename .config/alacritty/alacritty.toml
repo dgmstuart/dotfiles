@@ -1,0 +1,13 @@
+[general]
+live_config_reload = true
+import = [
+    "~/.config/alacritty/theme.toml"
+]
+ipc_socket = true
+
+[window]
+startup_mode = "SimpleFullscreen"
+
+[font]
+normal = { family = "Fira Code", style = "Light" }
+size = 14
