@@ -92,6 +92,7 @@ dump.rdb
 .config/coc
 .oh-my-zsh
 .iterm2
+.docker
 
 ## Miscellaneous application config files:
 .vscode/
