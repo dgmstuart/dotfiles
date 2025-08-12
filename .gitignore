@@ -27,6 +27,7 @@ bin/
 .certs
 .rnd
 .htpasswd
+.gnupg
 
 # History, logs, caches etc #
 #############################
