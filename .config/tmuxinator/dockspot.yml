@@ -14,8 +14,7 @@ windows:
       layout: even-horizontal
       panes:
         - nvm use; npm run build -- --watch
-        - bin/rails dartsass:build; bin/rails dartsass:watch
-        - bin/rails tailwindcss:watch
+        - npm run build:css -- --watch
   - sidekiq/cable:
       layout: even-horizontal
       panes:
