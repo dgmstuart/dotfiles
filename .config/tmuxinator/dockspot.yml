@@ -15,10 +15,10 @@ windows:
       panes:
         - nvm use; npm run build -- --watch
         - npm run build:css -- --watch
-  - sidekiq/cable:
+  - jobs/cable:
       layout: even-horizontal
       panes:
-        - bin/sidekiq
+        - bundle exec rake solid_queue:start
         - WEB_CONCURRENCY=0 PORT=28080 bundle exec puma config/cable.ru
   - ngrok:
       layout: even-horizontal
