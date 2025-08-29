@@ -3,7 +3,6 @@
 name: dockspot
 root: ~/dev/dockspot
 
-on_project_start: brew services start redis
 on_project_restart: git checkout main; bin/apply_updates; git checkout -
 
 windows:
