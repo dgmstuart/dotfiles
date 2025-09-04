@@ -295,6 +295,10 @@ nnoremap P P=`]<C-o>
 " convenient shortcut to save file
 nnoremap <C-s> :w<CR>
 
+" 'save as' and open in new split (in place of the current one, but keep the
+" current one open)
+command! -nargs=1 Savs execute 'w ' . <q-args> | execute 'leftabove vsplit ' . <q-args>
+
 " Swedish keyboard mappings:
 map <Leader>- :Ack '' -w<left><left><left><left>
 map - /<left><left><left>
