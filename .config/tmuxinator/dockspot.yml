@@ -3,7 +3,7 @@
 name: dockspot
 root: ~/dev/dockspot
 
-on_project_restart: git checkout main; bin/apply_updates; git checkout -
+on_project_restart: git checkout main; bin/apply_updates; git checkout -; spring stop
 
 windows:
   - editor: dirty
