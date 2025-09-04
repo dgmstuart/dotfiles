@@ -180,6 +180,13 @@ let g:rails_projections = {
       \ ".env.example": {"alternate": ".env"}
       \ }
 
+let s:alternate_file = 'rails#buffer().alternate()'
+command AC :execute "e " . eval(s:alternate_file)
+command ACV :execute "vsp " . eval(s:alternate_file)
+command ACS :execute "sp " . eval(s:alternate_file)
+command ACX ACS
+
+
 " Refactoring - vim/partial config
 let g:partial_templates = {
       \ 'erb' : '<%%= render "%s" %%>',
