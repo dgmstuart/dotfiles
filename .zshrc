@@ -1,5 +1,8 @@
 # !/bin/zsh
 
+# Write oh-my-zsh cache files to cache folder instead of home
+export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 

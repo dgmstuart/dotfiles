@@ -31,7 +31,6 @@ bin/
 
 # History, logs, caches etc #
 #############################
-.zcompdump*
 .zsh_sessions/
 .cache/
 .bundle/cache
