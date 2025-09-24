@@ -177,7 +177,9 @@ let g:fzf_action = {
 " Rails.vim config
 let g:rails_projections = {
       \ ".env": {"alternate": ".env.example"},
-      \ ".env.example": {"alternate": ".env"}
+      \ ".env.example": {"alternate": ".env"},
+      \ "app/components/*.html.erb": {"related": "app/components/{}.rb"},
+      \ "app/components/*.rb": {"related": "app/components/{}.html.erb"}
       \ }
 
 let s:alternate_file = 'rails#buffer().alternate()'
