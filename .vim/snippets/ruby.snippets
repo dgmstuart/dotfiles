@@ -571,11 +571,7 @@ snippet begin
 
 #debugging
 snippet debug
-	require 'byebug'; byebug
-snippet debug19
-	require 'debugger'; debugger
-snippet debug18
-	require 'ruby-debug'; debugger
+	page.driver.debug(binding)
 snippet pry
 	binding.irb
 snippet irb
