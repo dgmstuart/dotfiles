@@ -13,6 +13,7 @@ brew "tig"
 brew "hub"
 brew "tmate"
 brew "tmux"
+brew "tailwindcss-language-server"
 # DON'T install yarn with Homebrew - use corepack instead
 # DON'T intstall asdf with Homebrew - use git instead
 

@@ -6,6 +6,23 @@
   "hover.floatConfig": {
     "border": true
   },
+  "languageserver": {
+    "tailwindcss": {
+      "command": "tailwindcss-language-server",
+      "args": ["--stdio"],
+      "filetypes": [
+        "html","css","javascript","typescript","javascriptreact","typescriptreact",
+        "vue","svelte","php","erb","eruby","haml","slim","ruby"
+      ],
+      "rootPatterns": [".git","package.json","Gemfile"],
+      "initializationOptions": {
+        "userLanguages": { "eruby": "html" },
+        "experimental": {
+          "configFile": "/Users/dgmstuart/dev/dockspot/app/assets/tailwind/tailwind_main.css"
+        }
+      }
+    }
+  },
   "snippets.priority": 100,
   "snippets.extends": {
     "javascriptreact": ["javascript"],
@@ -13,5 +30,11 @@
     "typescriptreact": ["javascript"]
   },
   "solargraph.trace.server": true,
-  "suggest.languageSourcePriority": 90
+  "suggest.languageSourcePriority": 90,
+  "tailwindCSS.includeLanguages": { "eruby": "html" },
+  "tailwindCSS.classAttributes": ["class", "className", "class:list", "ngClass"],
+  "tailwindCSS.experimental.configFile": "/Users/dgmstuart/dev/dockspot/app/assets/tailwind/tailwind_main.css",
+  "tailwindCSS.experimental.classRegex": ["class:\\s*\"([^\"]*)\""],
+  "tailwindCSS.trace.server": "messages",
+  "workspace.rootPatterns": [".git", "package.json", "Gemfile"],
 }
