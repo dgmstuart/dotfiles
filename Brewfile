@@ -39,3 +39,4 @@ brew "shpotify"
 # Cask apps
 cask "ngrok"
 cask "font-fira-code"
+cask "nightfall"
