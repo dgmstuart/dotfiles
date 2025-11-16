@@ -125,6 +125,10 @@ set shiftwidth=2
 set list
 set listchars=trail:·,tab:¬·
 
+" Folding
+" set foldmethod=syntax
+" set nofoldenable
+
 " ===== Instead of backing up files, just reload the buffer when it changes. =====
 " The buffer is an in-memory representation of a file, it's what you edit
 set autoread        " Auto-reload buffers when file changed on disk
