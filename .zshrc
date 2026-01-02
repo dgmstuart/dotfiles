@@ -24,13 +24,15 @@ source ~/k/k.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-. $HOME/.asdf/asdf.sh
+export ASDF_DIR="$HOME/.asdf"
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+export PATH="${ASDF_DIR}/bin:$PATH"
+export PATH="${ASDF_DIR}/shims:$PATH"
 
 source ~/.iterm2_shell_integration.zsh
 

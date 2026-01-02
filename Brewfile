@@ -4,6 +4,7 @@ tap "homebrew/services"
 tap "puma/puma"
 
 # Dev tools
+brew "asdf"
 brew "diff-so-fancy"
 brew "the_silver_searcher"
 brew "fzf"
@@ -15,7 +16,6 @@ brew "tmate"
 brew "tmux"
 brew "tailwindcss-language-server"
 # DON'T install yarn with Homebrew - use corepack instead
-# DON'T intstall asdf with Homebrew - use git instead
 
 # Utils
 brew "coreutils"

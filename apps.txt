@@ -5,7 +5,6 @@ Chrome
 Spotify
 
 iterm2 (remember to install shell integrations to get inline images)
-asdf (install with git, not with brew)
 nvm
 Postgres.app
 VScode
