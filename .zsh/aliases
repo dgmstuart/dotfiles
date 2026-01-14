@@ -186,7 +186,7 @@ alias rubies='asdf list-all ruby'
 alias i18n='i18n-tasks'
 
 # Bundler
-alias b='bundle'
+alias b='bundle install'
 alias bu='bundle update'
 
 # Heroku
