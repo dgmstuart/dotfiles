@@ -219,7 +219,7 @@ alias lastpost='find `blogposts` | tail -1 '
 alias lastdraft='find `blogdrafts` | tail -1 '
 alias epost='vim `lastpost`'
 alias edraft='vim `lastdraft`'
-alias blogd='octopress integrate;jekyll build;octopress deploy;gcad'
+alias blog='cd $BLOG_HOME;bundle exec jekyll post'
 
 # Maintenance
 alias janitor='sudo periodic daily weekly monthly; cd ~; rmtemp; cd -'
