@@ -29,6 +29,7 @@
     "typescript": ["javascript"],
     "typescriptreact": ["javascript"]
   },
+  "snippets.userSnippetsDirectory": "~/.vim/snippets",
   "solargraph.trace.server": true,
   "suggest.languageSourcePriority": 90,
   "tailwindCSS.includeLanguages": { "eruby": "html" },
