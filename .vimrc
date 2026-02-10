@@ -457,6 +457,14 @@ if filereadable(".prettierrc")
   let g:ale_fix_on_save = 1
 endif
 
+" Python
+let g:ale_python_pylint_change_directory = 1
+let g:python_indent = {}
+" align closing paren with opening line, instead of last line
+let g:python_indent.closed_paren_align_last_line = v:false
+let g:python_indent.open_paren = 'shiftwidth()' "defaults to shiftwidth() * 2
+
+
 augroup elm
   autocmd!
   " For all elm files, encourage 80 columns:
@@ -469,6 +477,11 @@ augroup elm
 augroup END
 
 let g:elm_setup_keybindings = 0
+
+augroup python
+  autocmd!
+  autocmd BufNewFile,BufRead requirements-dev.txt set filetype=requirements
+augroup END
 
 augroup php
   autocmd!
@@ -508,7 +521,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd FileType conf,css,eruby,gitcommit,html,haml,help,javascript,typescript,react,typescriptreact,json,markdown,php,ruby,scss,sh,text,tmux,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+  autocmd FileType conf,css,eruby,gitcommit,html,haml,help,javascript,typescript,react,typescriptreact,json,markdown,php,python,ruby,scss,sh,text,tmux,vim,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 augroup END
 
 " auto-source .vimrc when saving
