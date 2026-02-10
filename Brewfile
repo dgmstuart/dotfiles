@@ -6,6 +6,7 @@ tap "puma/puma"
 # Dev tools
 brew "asdf"
 brew "diff-so-fancy"
+brew "direnv"
 brew "the_silver_searcher"
 brew "fzf"
 brew "git"

@@ -42,3 +42,5 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm alias default node #  default to the latest installed version
 nvm use default --slient
+
+eval "$(direnv hook zsh)"
