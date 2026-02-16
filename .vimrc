@@ -457,6 +457,15 @@ if filereadable(".prettierrc")
   let g:ale_fix_on_save = 1
 endif
 
+if filereadable(".eslint.config.mjs")
+  call add(g:ale_fixers['javascript'], "eslint")
+  call add(g:ale_fixers['javascriptreact'], "eslint")
+  call add(g:ale_fixers['typescript'], "eslint")
+  call add(g:ale_fixers['typescriptreact'], "eslint")
+  let g:ale_fixers['json'] = ["eslint"]
+  let g:ale_fix_on_save = 1
+endif
+
 " Python
 let g:ale_python_pylint_change_directory = 1
 let g:python_indent = {}
