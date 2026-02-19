@@ -101,3 +101,4 @@ dump.rdb
 .config/iterm2
 .tmux/plugins
 .config/stripe
+.render
