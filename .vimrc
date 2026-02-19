@@ -434,6 +434,8 @@ augroup END
 let g:ale_linters.ruby = ['ruby', 'sorbet']
 let g:ale_linters.eruby = ['erblint', 'erubi', 'erubis', 'ruumba']
 
+let g:ale_eruby_erblint_executable = 'erb_lint'
+
 if filereadable(".rubocop.yml")
   call add(g:ale_linters['ruby'], "rubocop")
   let g:ale_ruby_rubocop_executable = "bundle"
