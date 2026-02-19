@@ -31,6 +31,7 @@ Plug 'mattn/emmet-vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Einenlum/yaml-revealer'
+Plug 'wellle/context.vim'
 
 call plug#end()
 
