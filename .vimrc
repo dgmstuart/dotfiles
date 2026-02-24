@@ -431,7 +431,7 @@ augroup ruby
   autocmd FileType ruby set complete-=i
 augroup END
 
-let g:ale_linters.ruby = ['ruby', 'sorbet']
+let g:ale_linters.ruby = ['ruby']
 let g:ale_linters.eruby = ['erblint', 'erubi', 'erubis', 'ruumba']
 
 let g:ale_eruby_erblint_executable = 'erb_lint'
