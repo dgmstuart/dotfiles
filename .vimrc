@@ -361,6 +361,19 @@ command! Norocket call Norocket()
 " replace `try` (Rails) with the lonely operator (`&. Ruby)
 command! Thereisnotry %s/.try(:\(\w\+\))/\&.\1/gc
 
+" take initialize arguments and create variable assignment
+" eg. def initialize(foo:, bar:)
+" creates lines:
+" @foo = foo
+" @bar = bar
+function! FillInitialize()
+  let line = getline('.')
+  let args = split(substitute(matchstr(line, '(\zs.*\ze)'), '[: ]', '', 'g'), ',')
+  let assignments = map(filter(args, 'v:val != ""'), '"    @".v:val." = ".v:val')
+  call append(line('.'), assignments)
+  normal! =ip
+endfunction
+
 augroup vimStartup
   autocmd!
 
@@ -429,6 +442,7 @@ augroup ruby
 
   " Prevent autocomplete looking in all gems!
   autocmd FileType ruby set complete-=i
+  autocmd FileType ruby nnoremap <buffer> <leader>ii :call FillInitialize()<CR>
 augroup END
 
 let g:ale_linters.ruby = ['ruby']
