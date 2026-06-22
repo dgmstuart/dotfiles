@@ -22,5 +22,5 @@ windows:
   - ngrok:
       layout: even-horizontal
       panes:
-        - ngrok http --domain=dockspot-duncan.ngrok.dev 3000
+        - ngrok http --domain=dockspot-duncan.ngrok.dev 3000 --scheme http --scheme https
         - stripe listen --forward-to "https://dockspot-duncan.ngrok.dev/stripe_webhook?account=eu" -l
