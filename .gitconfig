@@ -12,6 +12,8 @@
 [pull]
 	rebase = true
 	ff = only
+[alias]
+	fpush = "!f() { b=${1:-$(git branch --show-current)}; git push --force-with-lease origin \"$b:$b\"; }; f"
 [merge]
 	ff = only
 [color]
