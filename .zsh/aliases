@@ -235,3 +235,6 @@ alias dip='docker-machine ip default'
 
 # Shpotify
 alias ss='spotify status'
+
+# Gmail inbox zero CSS
+alias zeroimage='v "$HOME/Library/Application Support/Firefox/Profiles/mwmhbc0x.default-release-1776771777220/chrome/userContent.css"'
