@@ -547,7 +547,7 @@ augroup END
 " Automatically delete trailing whitespace for certain filetypes
 augroup whitespace
   autocmd!
-  autocmd BufWritePre * if index(["conf","css","eruby","gitcommit","html","javascript","typescript","json","markdown","php","python","ruby","scss","sh","text","vim","yaml"], &filetype) >= 0 | %s/\s\+$//e | endif
+  autocmd BufWritePre * if index(["conf","css","eruby","gitcommit","html","javascript","typescript","json","markdown","php","python","ruby","scss","sh","text","toml","vim","yaml"], &filetype) >= 0 | %s/\s\+$//e | endif
 augroup END
 
 " auto-source .vimrc when saving
