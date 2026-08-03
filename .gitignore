@@ -105,6 +105,8 @@ dump.rdb
 
 ## Miscellaneous application config files:
 .vscode/
+.vscode-oss-shared/
+.vscode-oss/
 .config/configstore
 .config/iterm2
 .tmux/plugins

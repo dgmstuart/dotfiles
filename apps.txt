@@ -7,7 +7,7 @@ Spotify
 iterm2 (remember to install shell integrations to get inline images)
 nvm
 Postgres.app
-VScode
+(NOT VScode - VSCodium is installed with Homebrew instead)
 
 1Password
 
