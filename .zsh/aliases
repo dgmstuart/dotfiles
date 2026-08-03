@@ -183,7 +183,7 @@ alias resetdb='gcm; rake db:reset; gco -'
 # Ruby
 alias rake='noglob bundle exec rake'
 alias rubies='asdf list ruby'
-alias allrubies='asdf list all ruby'
+alias allrubies="asdf list all ruby | grep -E '^\s*[0-9]' | sort -rV | less"
 alias i18n='i18n-tasks'
 
 # Bundler
