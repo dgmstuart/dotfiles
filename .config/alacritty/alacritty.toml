@@ -7,7 +7,11 @@ ipc_socket = true
 
 [window]
 startup_mode = "SimpleFullscreen"
+padding = { x = 5, y = 2 }
 
 [font]
+# Regular text looks bold, so use Light for regular and regular for bold:
 normal = { family = "Fira Code", style = "Light" }
+bold = { style = "Regular" }
 size = 14
+offset = { x = 1, y = 3 }

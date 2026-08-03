@@ -28,5 +28,9 @@ local function apply(src)
   hs.execute('cp "'..src..'" "'..theme..'" && /usr/bin/touch "'..theme..'"', true)
 end
 
-hs.hotkey.bind({"cmd","shift"}, "1", function() apply(dark) end)
-hs.hotkey.bind({"cmd","shift"}, "2", function() apply(light) end) 
+local function applyForAppearance()
+  apply(hs.host.interfaceStyle() == "Dark" and dark or light)
+end
+
+applyForAppearance()  -- set correctly on Hammerspoon startup/reload
+hs.distributednotifications.new(applyForAppearance, "AppleInterfaceThemeChangedNotification"):start()

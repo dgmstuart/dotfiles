@@ -3,7 +3,7 @@
 # Default colors
 [colors.primary]
 background = '#fdf6e3'
-foreground = '#586e75'
+foreground = '#657b83'
 
 # Normal colors
 [colors.normal]
