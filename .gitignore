@@ -83,6 +83,13 @@ dump.rdb
 .vim/plugged
 .vim/.netrwhist
 
+# AI
+.claude/*
+.claude.json
+
+# Docker
+.sbx/*
+
 ## Miscellaneous development files:
 .v8flags.*
 .asdf/
