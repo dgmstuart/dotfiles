@@ -1,0 +1,6 @@
+theme = dark:solarized-dark,light:solarized-light
+keybind = global:cmd+backquote=toggle_quick_terminal
+quick-terminal-size = 100%,100%
+quick-terminal-animation-duration = 0
+font-family = "Fira Code"
+font-size = 14
