@@ -1,0 +1,8 @@
+{
+  "trustedtaps": [
+    "docker/tap"
+  ],
+  "trustedcasks": [
+    "docker/tap/sbx"
+  ]
+}
