@@ -1,7 +1,7 @@
 [general]
 live_config_reload = true
 import = [
-    "~/.config/alacritty/theme.toml"
+    "~/.cache/alacritty/theme.toml"
 ]
 ipc_socket = true
 

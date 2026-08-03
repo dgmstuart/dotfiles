@@ -20,12 +20,13 @@ end)
 -- Toggle themes by switching the file
 
 local home  = os.getenv("HOME")
-local theme = home .. "/.config/alacritty/theme.toml"
+local theme = home .. "/.cache/alacritty/theme.toml"
 local dark  = home .. "/.config/alacritty/themes/solarized_dark.toml"
 local light = home .. "/.config/alacritty/themes/solarized_light.toml"
 
 local function apply(src)
-  hs.execute('cp "'..src..'" "'..theme..'" && /usr/bin/touch "'..theme..'"', true)
+  hs.execute('mkdir -p "' .. home .. '/.cache/alacritty"', true)
+  hs.execute('cp "'..src..'" "'..theme..'"', true)
 end
 
 local function applyForAppearance()
