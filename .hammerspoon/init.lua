@@ -25,13 +25,15 @@ local dark  = home .. "/.config/alacritty/themes/solarized_dark.toml"
 local light = home .. "/.config/alacritty/themes/solarized_light.toml"
 
 local function apply(src)
-  hs.execute('mkdir -p "' .. home .. '/.cache/alacritty"', true)
-  hs.execute('cp "'..src..'" "'..theme..'"', true)
+  hs.execute('cp "'..src..'" "'..theme..'"')
 end
 
 local function applyForAppearance()
+  hs.execute('mkdir -p "' .. home .. '/.cache/alacritty"') -- create the cache directory if it doesn't exist
   apply(hs.host.interfaceStyle() == "Dark" and dark or light)
 end
 
 applyForAppearance()  -- set correctly on Hammerspoon startup/reload
-hs.distributednotifications.new(applyForAppearance, "AppleInterfaceThemeChangedNotification"):start()
+
+appearanceWatcher = hs.distributednotifications.new(applyForAppearance, "AppleInterfaceThemeChangedNotification")
+appearanceWatcher:start()
