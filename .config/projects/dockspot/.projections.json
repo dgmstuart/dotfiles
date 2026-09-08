@@ -1,0 +1,7 @@
+{
+  "app/components/*.html.erb": {"related": "app/components/{}.rb"},
+  "app/components/*.rb": {"related": "app/components/{}.html.erb"},
+  "scripts/metabase/*.sql": { "alternate": "spec/scripts/metabase/{}_spec.rb" },
+  "spec/scripts/metabase/*_spec.rb": { "alternate": "scripts/metabase/{}.sql" },
+  "spec/requests/*_controller_spec.rb": { "alternate": "app/controllers/{}_controller.rb" }
+}

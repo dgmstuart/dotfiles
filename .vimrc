@@ -182,9 +182,6 @@ let g:fzf_action = {
 let g:rails_projections = {
       \ ".env": {"alternate": ".env.example"},
       \ ".env.example": {"alternate": ".env"},
-      \ "app/components/*.html.erb": {"related": "app/components/{}.rb"},
-      \ "app/components/*.rb": {"related": "app/components/{}.html.erb"},
-      \ "spec/requests/*_controller_spec.rb": { "alternate": "app/controllers/{}_controller.rb" }
       \ }
 
 let s:alternate_file = 'rails#buffer().alternate()'
