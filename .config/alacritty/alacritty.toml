@@ -15,3 +15,8 @@ normal = { family = "Fira Code", style = "Light" }
 bold = { style = "Regular" }
 size = 14
 offset = { x = 1, y = 3 }
+
+[keyboard]
+bindings = [
+  { key = "Enter", mods = "Command", action = "ToggleSimpleFullscreen" }
+]
