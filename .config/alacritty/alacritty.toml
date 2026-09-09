@@ -20,3 +20,12 @@ offset = { x = 1, y = 3 }
 bindings = [
   { key = "Enter", mods = "Command", action = "ToggleSimpleFullscreen" }
 ]
+
+[[hints.enabled]]
+command = "open"
+hyperlinks = true
+post_processing = true
+persist = false
+mouse.enabled = true
+binding = { key = "O", mods = "Control|Shift" }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
