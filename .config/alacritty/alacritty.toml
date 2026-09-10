@@ -21,6 +21,9 @@ bindings = [
   { key = "Enter", mods = "Command", action = "ToggleSimpleFullscreen" }
 ]
 
+[mouse]
+hide_when_typing = true
+
 [[hints.enabled]]
 command = "open"
 hyperlinks = true
