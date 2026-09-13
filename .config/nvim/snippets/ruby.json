@@ -1,0 +1,1838 @@
+{
+  "frozen": {
+    "prefix": "frozen",
+    "body": [
+      "# frozen_string_literal: true",
+      "",
+      "${0}"
+    ],
+    "description": "frozen string magic comment"
+  },
+  "#!": {
+    "prefix": "#!",
+    "body": [
+      "#!/usr/bin/env ruby",
+      "# encoding: utf-8"
+    ],
+    "description": "#!/usr/bin/env ruby"
+  },
+  "=b": {
+    "prefix": "=b",
+    "body": [
+      "=begin rdoc",
+      "\t${0}",
+      "=end"
+    ],
+    "description": "New Block"
+  },
+  "prot": {
+    "prefix": "prot",
+    "body": [
+      "protected",
+      "",
+      "${0}"
+    ]
+  },
+  "priv": {
+    "prefix": "priv",
+    "body": [
+      "private",
+      "",
+      "${0}"
+    ]
+  },
+  "y": {
+    "prefix": "y",
+    "body": ":yields: ${0:arguments}"
+  },
+  "rb": {
+    "prefix": "rb",
+    "body": "#!/usr/bin/env ruby -wKU"
+  },
+  "beg": {
+    "prefix": "beg",
+    "body": [
+      "begin",
+      "\t${0}",
+      "rescue ${1:Exception} => ${2:e}",
+      "end"
+    ]
+  },
+  "req": {
+    "prefix": "req",
+    "body": "require \"${1}\"",
+    "description": "require"
+  },
+  "reqr": {
+    "prefix": "reqr",
+    "body": "require_relative \"${1}\""
+  },
+  "#": {
+    "prefix": "#",
+    "body": "# =>"
+  },
+  "end": {
+    "prefix": "end",
+    "body": "__END__"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case ${1:object}",
+      "when ${2:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "when": {
+    "prefix": "when",
+    "body": [
+      "when ${1:condition}",
+      "\t${0}"
+    ]
+  },
+  "def": {
+    "prefix": "def",
+    "body": [
+      "def ${1:method_name}${0}",
+      "end"
+    ]
+  },
+  "deft": {
+    "prefix": "deft",
+    "body": [
+      "def test_${1:case_name}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "descendants": {
+    "prefix": "descendants",
+    "body": [
+      "class Class",
+      "\tdef descendants",
+      "\t\tObjectSpace.each_object(::Class).select { |klass| klass < self }",
+      "\tend",
+      "end"
+    ]
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": [
+      "if ${1:condition}",
+      "\t${2}",
+      "else",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eif": {
+    "prefix": "eif",
+    "body": [
+      "elsif ${1:condition}",
+      "\t${0}"
+    ]
+  },
+  "ifee": {
+    "prefix": "ifee",
+    "body": [
+      "if ${1:condition}",
+      "\t$2",
+      "elsif ${3:condition}",
+      "\t$4",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "unless": {
+    "prefix": "unless",
+    "body": [
+      "unless ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "unlesse": {
+    "prefix": "unlesse",
+    "body": [
+      "unless ${1:condition}",
+      "\t$2",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "unlesee": {
+    "prefix": "unlesee",
+    "body": [
+      "unless ${1:condition}",
+      "\t$2",
+      "elsif ${3:condition}",
+      "\t$4",
+      "else",
+      "\t$0",
+      "end"
+    ]
+  },
+  "wh": {
+    "prefix": "wh",
+    "body": [
+      "while ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for ${1:e} in ${2:c}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "until": {
+    "prefix": "until",
+    "body": [
+      "until ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "claself": {
+    "prefix": "claself",
+    "body": [
+      "class << ${1:self}${0}",
+      "end"
+    ],
+    "description": "class << self .. end"
+  },
+  "r": {
+    "prefix": "r",
+    "body": "attr_reader :${0:attr_names}",
+    "description": "attr_reader"
+  },
+  "w": {
+    "prefix": "w",
+    "body": "attr_writer :${0:attr_names}",
+    "description": "attr_writer"
+  },
+  "rw": {
+    "prefix": "rw",
+    "body": "attr_accessor :${0:attr_names}",
+    "description": "attr_accessor"
+  },
+  "atp": {
+    "prefix": "atp",
+    "body": "attr_protected :${0:attr_names}"
+  },
+  "ata": {
+    "prefix": "ata",
+    "body": "attr_accessible :${0:attr_names}"
+  },
+  "ana": {
+    "prefix": "ana",
+    "body": "accepts_nested_attributes_for :${0:association}"
+  },
+  "ivc": {
+    "prefix": "ivc",
+    "body": "@${1:variable_name} ||= ${0:cached_value}",
+    "description": "ivc == instance variable cache"
+  },
+  "Enum": {
+    "prefix": "Enum",
+    "body": [
+      "include Enumerable",
+      "",
+      "def each(&block)",
+      "\t${0}",
+      "end"
+    ],
+    "description": "include Enumerable"
+  },
+  "Comp": {
+    "prefix": "Comp",
+    "body": [
+      "include Comparable",
+      "",
+      "def <=>(other)",
+      "\t${0}",
+      "end"
+    ],
+    "description": "include Comparable"
+  },
+  "Forw-": {
+    "prefix": "Forw-",
+    "body": "extend Forwardable",
+    "description": "extend Forwardable"
+  },
+  "defs": {
+    "prefix": "defs",
+    "body": [
+      "def self.${1:class_method_name}",
+      "\t${0}",
+      "end"
+    ],
+    "description": "def self"
+  },
+  "defi": {
+    "prefix": "defi",
+    "body": [
+      "def initialize(${1:args})",
+      "\t${0}",
+      "end"
+    ],
+    "description": "def initialize"
+  },
+  "defmm": {
+    "prefix": "defmm",
+    "body": [
+      "def method_missing(meth, *args, &blk)",
+      "\t${0}",
+      "end"
+    ],
+    "description": "def method_missing"
+  },
+  "defd": {
+    "prefix": "defd",
+    "body": "def_delegator :${1:@del_obj}, :${2:del_meth}, :${0:new_name}"
+  },
+  "defds": {
+    "prefix": "defds",
+    "body": "def_delegators :${1:@del_obj}, :${0:del_methods}"
+  },
+  "am": {
+    "prefix": "am",
+    "body": "alias_method :${1:new_name}, :${0:old_name}"
+  },
+  "app": {
+    "prefix": "app",
+    "body": [
+      "if __FILE__ == $PROGRAM_NAME",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "usai": {
+    "prefix": "usai",
+    "body": [
+      "if ARGV.${1}",
+      "\tabort \"Usage: #{$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"${0}",
+      "end"
+    ],
+    "description": "usage_if()"
+  },
+  "usau": {
+    "prefix": "usau",
+    "body": [
+      "unless ARGV.${1}",
+      "\tabort \"Usage: #{$PROGRAM_NAME} ${2:ARGS_GO_HERE}\"${0}",
+      "end"
+    ],
+    "description": "usage_unless()"
+  },
+  "array": {
+    "prefix": "array",
+    "body": "Array.new(${1:10}) { |${2:i}| ${0} }"
+  },
+  "hash": {
+    "prefix": "hash",
+    "body": "Hash.new { |${1:hash}, ${2:key}| $1[$2] = ${0} }"
+  },
+  "file": {
+    "prefix": "file",
+    "body": "File.foreach(${1:'path/to/file'}) { |${2:line}| ${0} }",
+    "description": "File.foreach() { |line| .. }"
+  },
+  "file_file_read": {
+    "prefix": "file",
+    "body": "File.read(${1:'path/to/file'})",
+    "description": "File.read()"
+  },
+  "Dir": {
+    "prefix": "Dir",
+    "body": "Dir.glob(${1:'dir/glob/*'}) { |${2:file}| ${0} }",
+    "description": "Dir.global() { |file| .. }"
+  },
+  "Dir_dir": {
+    "prefix": "Dir",
+    "body": "Dir[${1:'glob/**/*.rb'}]",
+    "description": "Dir[\"..\"]"
+  },
+  "dir": {
+    "prefix": "dir",
+    "body": "Filename.dirname(__FILE__)"
+  },
+  "deli": {
+    "prefix": "deli",
+    "body": "delete_if { |${1:e}| ${0} }"
+  },
+  "fil": {
+    "prefix": "fil",
+    "body": "fill(${1:range}) { |${2:i}| ${0} }"
+  },
+  "flao": {
+    "prefix": "flao",
+    "body": "reduce(Array.new) { |${1:arr}, ${2:a}| $1.push(*$2) }",
+    "description": "flatten_once()"
+  },
+  "zip": {
+    "prefix": "zip",
+    "body": "zip(${1:enums}) { |${2:row}| ${0} }"
+  },
+  "dow": {
+    "prefix": "dow",
+    "body": "downto(${1:0}) { |${2:n}| ${0} }",
+    "description": "downto(0) { |n| .. }"
+  },
+  "ste": {
+    "prefix": "ste",
+    "body": "step(${1:2}) { |${2:n}| ${0} }"
+  },
+  "tim": {
+    "prefix": "tim",
+    "body": "times { |${1:n}| ${0} }"
+  },
+  "upt": {
+    "prefix": "upt",
+    "body": "upto(${1:1.0/0.0}) { |${2:n}| ${0} }"
+  },
+  "loo": {
+    "prefix": "loo",
+    "body": "loop { ${0} }"
+  },
+  "ea": {
+    "prefix": "ea",
+    "body": "each { |${1:e}| ${0} }"
+  },
+  "ead": {
+    "prefix": "ead",
+    "body": [
+      "each do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eab": {
+    "prefix": "eab",
+    "body": "each_byte { |${1:byte}| ${0} }"
+  },
+  "eac-": {
+    "prefix": "eac-",
+    "body": "each_char { |${1:chr}| ${0} }",
+    "description": "each_char { |chr| .. }"
+  },
+  "eac-_each_cons_group": {
+    "prefix": "eac-",
+    "body": "each_cons(${1:2}) { |${2:group}| ${0} }",
+    "description": "each_cons(..) { |group| .. }"
+  },
+  "eai": {
+    "prefix": "eai",
+    "body": "each_index { |${1:i}| ${0} }"
+  },
+  "eaid": {
+    "prefix": "eaid",
+    "body": [
+      "each_index do |${1:i}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eak": {
+    "prefix": "eak",
+    "body": "each_key { |${1:key}| ${0} }"
+  },
+  "eakd": {
+    "prefix": "eakd",
+    "body": [
+      "each_key do |${1:key}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eal": {
+    "prefix": "eal",
+    "body": "each_line { |${1:line}| ${0} }"
+  },
+  "eald": {
+    "prefix": "eald",
+    "body": [
+      "each_line do |${1:line}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eap": {
+    "prefix": "eap",
+    "body": "each_pair { |${1:name}, ${2:val}| ${0} }"
+  },
+  "eapd": {
+    "prefix": "eapd",
+    "body": [
+      "each_pair do |${1:name}, ${2:val}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eas-": {
+    "prefix": "eas-",
+    "body": "each_slice(${1:2}) { |${2:group}| ${0} }"
+  },
+  "easd-": {
+    "prefix": "easd-",
+    "body": [
+      "each_slice(${1:2}) do |${2:group}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eav": {
+    "prefix": "eav",
+    "body": "each_value { |${1:val}| ${0} }"
+  },
+  "eavd": {
+    "prefix": "eavd",
+    "body": [
+      "each_value do |${1:val}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eawi": {
+    "prefix": "eawi",
+    "body": "each_with_index { |${1:e}, ${2:i}| ${0} }"
+  },
+  "eawid": {
+    "prefix": "eawid",
+    "body": [
+      "each_with_index do |${1:e}, ${2:i}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "eawo": {
+    "prefix": "eawo",
+    "body": "each_with_object(${1:init}) { |${2:e}, ${3:var}| ${0} }"
+  },
+  "eawod": {
+    "prefix": "eawod",
+    "body": [
+      "each_with_object(${1:init}) do |${2:e}, ${3:var}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "reve": {
+    "prefix": "reve",
+    "body": "reverse_each { |${1:e}| ${0} }"
+  },
+  "reved": {
+    "prefix": "reved",
+    "body": [
+      "reverse_each do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "inj": {
+    "prefix": "inj",
+    "body": "inject(${1:init}) { |${2:mem}, ${3:var}| ${0} }"
+  },
+  "injd": {
+    "prefix": "injd",
+    "body": [
+      "inject(${1:init}) do |${2:mem}, ${3:var}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "red": {
+    "prefix": "red",
+    "body": "reduce(${1:init}) { |${2:mem}, ${3:var}| ${0} }"
+  },
+  "redd": {
+    "prefix": "redd",
+    "body": [
+      "reduce(${1:init}) do |${2:mem}, ${3:var}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "map": {
+    "prefix": "map",
+    "body": "map { |${1:e}| ${0} }"
+  },
+  "mapd": {
+    "prefix": "mapd",
+    "body": [
+      "map do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "mapwi-": {
+    "prefix": "mapwi-",
+    "body": "enum_with_index.map { |${1:e}, ${2:i}| ${0} }"
+  },
+  "sor": {
+    "prefix": "sor",
+    "body": "sort { |a, b| ${0} }"
+  },
+  "sorb": {
+    "prefix": "sorb",
+    "body": "sort_by { |${1:e}| ${0} }"
+  },
+  "ran": {
+    "prefix": "ran",
+    "body": "sort_by { rand }"
+  },
+  "all": {
+    "prefix": "all",
+    "body": "all? { |${1:e}| ${0} }"
+  },
+  "any": {
+    "prefix": "any",
+    "body": "any? { |${1:e}| ${0} }"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "classify { |${1:e}| ${0} }"
+  },
+  "col": {
+    "prefix": "col",
+    "body": "collect { |${1:e}| ${0} }"
+  },
+  "cold": {
+    "prefix": "cold",
+    "body": [
+      "collect do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "det": {
+    "prefix": "det",
+    "body": "detect { |${1:e}| ${0} }"
+  },
+  "detd": {
+    "prefix": "detd",
+    "body": [
+      "detect do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "fet": {
+    "prefix": "fet",
+    "body": "fetch(${1:name}) { |${2:key}| ${0} }"
+  },
+  "fin": {
+    "prefix": "fin",
+    "body": "find { |${1:e}| ${0} }"
+  },
+  "find": {
+    "prefix": "find",
+    "body": [
+      "find do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "fina": {
+    "prefix": "fina",
+    "body": "find_all { |${1:e}| ${0} }"
+  },
+  "finad": {
+    "prefix": "finad",
+    "body": [
+      "find_all do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "gre": {
+    "prefix": "gre",
+    "body": "grep(${1:/pattern/}) { |${2:match}| ${0} }"
+  },
+  "sub": {
+    "prefix": "sub",
+    "body": "${1:g}sub(${2:/pattern/}) { |${3:match}| ${0} }"
+  },
+  "sca": {
+    "prefix": "sca",
+    "body": "scan(${1:/pattern/}) { |${2:match}| ${0} }"
+  },
+  "scad": {
+    "prefix": "scad",
+    "body": [
+      "scan(${1:/pattern/}) do |${2:match}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "max": {
+    "prefix": "max",
+    "body": "max { |a, b| ${0} }"
+  },
+  "min": {
+    "prefix": "min",
+    "body": "min { |a, b| ${0} }"
+  },
+  "par": {
+    "prefix": "par",
+    "body": "partition { |${1:e}| ${0} }"
+  },
+  "pard": {
+    "prefix": "pard",
+    "body": [
+      "partition do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "rej": {
+    "prefix": "rej",
+    "body": "reject { |${1:e}| ${0} }"
+  },
+  "rejd": {
+    "prefix": "rejd",
+    "body": [
+      "reject do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "sel": {
+    "prefix": "sel",
+    "body": "select { |${1:e}| ${0} }"
+  },
+  "seld": {
+    "prefix": "seld",
+    "body": [
+      "select do |${1:e}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "lam": {
+    "prefix": "lam",
+    "body": "lambda { |${1:args}| ${0} }"
+  },
+  "->": {
+    "prefix": "->",
+    "body": "-> { ${0} }"
+  },
+  "->a": {
+    "prefix": "->a",
+    "body": "->(${1:args}) { ${0} }"
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "dov": {
+    "prefix": "dov",
+    "body": [
+      "do |${1:v}|",
+      "\t${2}",
+      "end"
+    ]
+  },
+  ":": {
+    "prefix": ":",
+    "body": "${1:key}: ${2:'value'}"
+  },
+  "ope": {
+    "prefix": "ope",
+    "body": "open('${1:path/or/url/or/pipe}', '${2:w}') { |${3:io}| ${0} }"
+  },
+  "fpath": {
+    "prefix": "fpath",
+    "body": "File.join(File.dirname(__FILE__), *['${1:rel path here}'])",
+    "description": "path_from_here()"
+  },
+  "unif": {
+    "prefix": "unif",
+    "body": [
+      "ARGF.each_line${1} do |${2:line}|",
+      "\t${0}",
+      "end"
+    ],
+    "description": "unix_filter {}"
+  },
+  "optp": {
+    "prefix": "optp",
+    "body": [
+      "require 'optparse'",
+      "",
+      "options = { ${0:default: 'args'} }",
+      "",
+      "ARGV.options do |opts|",
+      "\topts.banner = \"Usage: #{File.basename($PROGRAM_NAME)}\"",
+      "end"
+    ],
+    "description": "option_parse {}"
+  },
+  "opt": {
+    "prefix": "opt",
+    "body": [
+      "opts.on('-${1:o}', '--${2:long-option-name}', ${3:String}, '${4:Option description.}') do |${5:opt}|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "tc": {
+    "prefix": "tc",
+    "body": [
+      "require 'test/unit'",
+      "",
+      "require '${1:library_file_name}'",
+      "",
+      "class Test${2:$1} < Test::Unit::TestCase",
+      "\tdef test_${3:case_name}",
+      "\t\t${0}",
+      "\tend",
+      "end"
+    ]
+  },
+  "ts": {
+    "prefix": "ts",
+    "body": [
+      "require 'test/unit'",
+      "",
+      "require 'tc_${1:test_case_file}'",
+      "require 'tc_${2:test_case_file}'"
+    ]
+  },
+  "as": {
+    "prefix": "as",
+    "body": "assert ${1:test}, '${2:Failure message.}'"
+  },
+  "ase": {
+    "prefix": "ase",
+    "body": "assert_equal ${1:expected}, ${2:actual}"
+  },
+  "asne": {
+    "prefix": "asne",
+    "body": "assert_not_equal ${1:unexpected}, ${2:actual}"
+  },
+  "asid": {
+    "prefix": "asid",
+    "body": "assert_in_delta ${1:expected_float}, ${2:actual_float}, ${3:2**-20}"
+  },
+  "asi": {
+    "prefix": "asi",
+    "body": "assert_includes ${1:collection}, ${2:object}"
+  },
+  "asio": {
+    "prefix": "asio",
+    "body": "assert_instance_of ${1:ExpectedClass}, ${2:actual_instance}"
+  },
+  "asko": {
+    "prefix": "asko",
+    "body": "assert_kind_of ${1:ExpectedKind}, ${2:actual_instance}"
+  },
+  "asn": {
+    "prefix": "asn",
+    "body": "assert_nil ${1:instance}"
+  },
+  "asnn": {
+    "prefix": "asnn",
+    "body": "assert_not_nil ${1:instance}"
+  },
+  "asm": {
+    "prefix": "asm",
+    "body": "assert_match(/${1:expected_pattern}/, ${2:actual_string})"
+  },
+  "asnm": {
+    "prefix": "asnm",
+    "body": "assert_no_match(/${1:unexpected_pattern}/, ${2:actual_string})"
+  },
+  "aso": {
+    "prefix": "aso",
+    "body": "assert_operator ${1:left}, :${2:operator}, ${3:right}"
+  },
+  "asr": {
+    "prefix": "asr",
+    "body": "assert_raise ${1:Exception} { ${0} }"
+  },
+  "asrd": {
+    "prefix": "asrd",
+    "body": [
+      "assert_raise ${1:Exception} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "asnr": {
+    "prefix": "asnr",
+    "body": "assert_nothing_raised ${1:Exception} { ${0} }"
+  },
+  "asnrd": {
+    "prefix": "asnrd",
+    "body": [
+      "assert_nothing_raised ${1:Exception} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "asrt": {
+    "prefix": "asrt",
+    "body": "assert_respond_to ${1:object}, :${2:method}"
+  },
+  "ass": {
+    "prefix": "ass",
+    "body": "assert_same ${1:expected}, ${2:actual}",
+    "description": "assert_same(..)"
+  },
+  "ass_assert_send": {
+    "prefix": "ass",
+    "body": "assert_send [${1:object}, :${2:message}, ${3:args}]",
+    "description": "assert_send(..)"
+  },
+  "asns": {
+    "prefix": "asns",
+    "body": "assert_not_same ${1:unexpected}, ${2:actual}"
+  },
+  "ast": {
+    "prefix": "ast",
+    "body": "assert_throws :${1:expected}, -> { ${0} }"
+  },
+  "astd": {
+    "prefix": "astd",
+    "body": [
+      "assert_throws :${1:expected} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "asnt": {
+    "prefix": "asnt",
+    "body": "assert_nothing_thrown { ${0} }"
+  },
+  "asntd": {
+    "prefix": "asntd",
+    "body": [
+      "assert_nothing_thrown do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "fl": {
+    "prefix": "fl",
+    "body": "flunk '${1:Failure message.}'"
+  },
+  "bm-": {
+    "prefix": "bm-",
+    "body": [
+      "TESTS = ${1:10_000}",
+      "Benchmark.bmbm do |results|",
+      "\t${0}",
+      "end"
+    ],
+    "description": "Benchmark.bmbm do .. end"
+  },
+  "rep": {
+    "prefix": "rep",
+    "body": "results.report('${1:name}:') { TESTS.times { ${0} } }"
+  },
+  "Md": {
+    "prefix": "Md",
+    "body": "File.open('${1:path/to/file.dump}', 'wb') { |${2:file}| Marshal.dump(${3:obj}, $2) }",
+    "description": "Marshal.dump(.., file)"
+  },
+  "Ml": {
+    "prefix": "Ml",
+    "body": "File.open('${1:path/to/file.dump}', 'rb') { |${2:file}| Marshal.load($2) }",
+    "description": "Mashal.load(obj)"
+  },
+  "deec": {
+    "prefix": "deec",
+    "body": "Marshal.load(Marshal.dump(${1:obj_to_copy}))",
+    "description": "deep_copy(..)"
+  },
+  "Pn-": {
+    "prefix": "Pn-",
+    "body": "PStore.new('${1:file_name.pstore}')"
+  },
+  "tra": {
+    "prefix": "tra",
+    "body": "transaction(${1:true}) { ${0} }"
+  },
+  "xml-": {
+    "prefix": "xml-",
+    "body": "REXML::Document.new(File.read('${1:path/to/file}'))",
+    "description": "xmlread(..)"
+  },
+  "xpa": {
+    "prefix": "xpa",
+    "body": [
+      "elements.each('${1://Xpath}') do |${2:node}|",
+      "\t${0}",
+      "end"
+    ],
+    "description": "xpath(..) { .. }"
+  },
+  "clafn": {
+    "prefix": "clafn",
+    "body": "split('::').inject(Object) { |par, const| par.const_get(const) }",
+    "description": "class_from_name()"
+  },
+  "sinc": {
+    "prefix": "sinc",
+    "body": "class << self; self end",
+    "description": "singleton_class()"
+  },
+  "tas": {
+    "prefix": "tas",
+    "body": [
+      "desc '${1:Task description}'",
+      "task ${2:task_name: [:dependent, :tasks]} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "b": {
+    "prefix": "b",
+    "body": "{ |${1:var}| ${0} }",
+    "description": "block"
+  },
+  "begin": {
+    "prefix": "begin",
+    "body": [
+      "begin",
+      "\tfail 'A test exception.'",
+      "rescue Exception => e",
+      "\tputs e.message",
+      "\tputs e.backtrace.inspect",
+      "else",
+      "\t# other exception",
+      "ensure",
+      "\t# always executed",
+      "end"
+    ]
+  },
+  "debug": {
+    "prefix": "debug",
+    "body": "page.driver.debug(binding)",
+    "description": "debugging"
+  },
+  "pry": {
+    "prefix": "pry",
+    "body": "binding.irb"
+  },
+  "irb": {
+    "prefix": "irb",
+    "body": "binding.irb"
+  },
+  "strf": {
+    "prefix": "strf",
+    "body": "strftime('${1:%Y-%m-%d %H:%M:%S %z}')${0}"
+  },
+  "descc": {
+    "prefix": "descc",
+    "body": "described_class.new"
+  },
+  "descm": {
+    "prefix": "descm",
+    "body": [
+      "describe \"${1:#method}\" do",
+      "\t${0:pending 'Not implemented'}",
+      "end"
+    ]
+  },
+  "con": {
+    "prefix": "con",
+    "body": [
+      "context \"${1:message}\" do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "bef": {
+    "prefix": "bef",
+    "body": [
+      "before :${1:each} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "aft": {
+    "prefix": "aft",
+    "body": [
+      "after :${1:each} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "let": {
+    "prefix": "let",
+    "body": "let(:${1:object}) { ${0} }"
+  },
+  "let!": {
+    "prefix": "let!",
+    "body": "let!(:${1:object}) { ${0} }"
+  },
+  "subj": {
+    "prefix": "subj",
+    "body": "subject { ${0} }"
+  },
+  "s.": {
+    "prefix": "s.",
+    "body": "subject.${0:method}"
+  },
+  "spec": {
+    "prefix": "spec",
+    "body": "specify { subject.${0} }"
+  },
+  "exp": {
+    "prefix": "exp",
+    "body": "expect(${1:object}).to ${0}"
+  },
+  "expb": {
+    "prefix": "expb",
+    "body": "expect { ${1:object} }.to ${0}"
+  },
+  "experr": {
+    "prefix": "experr",
+    "body": "expect { ${1:object} }.to raise_error ${2:StandardError}, /${0:message_regex}/"
+  },
+  "shared": {
+    "prefix": "shared",
+    "body": "shared_examples ${0:'shared examples name'}"
+  },
+  "ibl": {
+    "prefix": "ibl",
+    "body": "it_behaves_like ${0:'shared examples name'}"
+  },
+  "it": {
+    "prefix": "it",
+    "body": [
+      "it \"${1:spec_name}\" do${0}",
+      "end"
+    ]
+  },
+  "its": {
+    "prefix": "its",
+    "body": "its(:${1:method}) { should ${0} }"
+  },
+  "is": {
+    "prefix": "is",
+    "body": "it { should ${0} }"
+  },
+  "isn": {
+    "prefix": "isn",
+    "body": "it { should_not ${0} }"
+  },
+  "rrh": {
+    "prefix": "rrh",
+    "body": "require \"rails_helper\""
+  },
+  "rsh": {
+    "prefix": "rsh",
+    "body": "require \"spec_helper\""
+  },
+  "feat": {
+    "prefix": "feat",
+    "body": [
+      "feature \"${1}\" do",
+      "  scenario \"${2}\" do",
+      "    ${3}",
+      "  end",
+      "end"
+    ]
+  },
+  "save": {
+    "prefix": "save",
+    "body": "save_and_open_page"
+  },
+  "saves": {
+    "prefix": "saves",
+    "body": "save_and_open_screenshot"
+  },
+  "resize": {
+    "prefix": "resize",
+    "body": "Capybara.current_session.current_window.resize_to(1024, 1024)"
+  },
+  "art": {
+    "prefix": "art",
+    "body": "assert_redirected_to ${1:action}: '${2:index}'"
+  },
+  "artnp": {
+    "prefix": "artnp",
+    "body": "assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1}, ${0:@$2})"
+  },
+  "artnpp": {
+    "prefix": "artnpp",
+    "body": "assert_redirected_to ${1:parent}_${2:child}_path(${0:@$1})"
+  },
+  "artp": {
+    "prefix": "artp",
+    "body": "assert_redirected_to ${1:model}_path(${0:@$1})"
+  },
+  "artpp": {
+    "prefix": "artpp",
+    "body": "assert_redirected_to ${0:model}s_path"
+  },
+  "asd": {
+    "prefix": "asd",
+    "body": [
+      "assert_difference '${1:Model}.${2:count}', ${3:1} do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "asnd": {
+    "prefix": "asnd",
+    "body": [
+      "assert_no_difference '${1:Model}.${2:count}' do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "asre": {
+    "prefix": "asre",
+    "body": "assert_response :${1:success}, @response.body"
+  },
+  "asrj": {
+    "prefix": "asrj",
+    "body": "assert_rjs :${1:replace}, '${0:dom id}'"
+  },
+  "ass_assert_select": {
+    "prefix": "ass",
+    "body": [
+      "assert_select '${1:path}', ${2:text}: '${3:inner_html}' ${4:do}",
+      "\t${0}",
+      "end"
+    ],
+    "description": "assert_select(..)"
+  },
+  "ba": {
+    "prefix": "ba",
+    "body": "before_action :${0:method}"
+  },
+  "bf": {
+    "prefix": "bf",
+    "body": "before_filter :${0:method}"
+  },
+  "bt": {
+    "prefix": "bt",
+    "body": "belongs_to :${0:association}"
+  },
+  "btp": {
+    "prefix": "btp",
+    "body": "belongs_to :${1:association}, polymorphic: true"
+  },
+  "crw": {
+    "prefix": "crw",
+    "body": "cattr_accessor :${0:attr_names}"
+  },
+  "defcreate": {
+    "prefix": "defcreate",
+    "body": [
+      "def create",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.new(params[:$1])",
+      "",
+      "\trespond_to do |format|",
+      "\t\tif @$1.save",
+      "\t\t\tflash[:notice] = '$2 was successfully created.'",
+      "\t\t\tformat.html { redirect_to(@$1) }",
+      "\t\t\tformat.xml  { render xml: @$1, status: :created, location: @$1 }",
+      "\t\telse",
+      "\t\t\tformat.html { render action: 'new' }",
+      "\t\t\tformat.xml  { render xml: @$1.errors, status: :unprocessable_entity }",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  },
+  "defdestroy": {
+    "prefix": "defdestroy",
+    "body": [
+      "def destroy",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+      "\t@$1.destroy",
+      "",
+      "\trespond_to do |format|",
+      "\t\tformat.html { redirect_to($1s_url) }",
+      "\t\tformat.xml  { head :ok }",
+      "\tend",
+      "end"
+    ]
+  },
+  "defedit": {
+    "prefix": "defedit",
+    "body": [
+      "def edit",
+      "\t@${1:model_class_name} = ${0:ModelClassName}.find(params[:id])",
+      "end"
+    ]
+  },
+  "defindex": {
+    "prefix": "defindex",
+    "body": [
+      "def index",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.all",
+      "",
+      "\trespond_to do |format|",
+      "\t\tformat.html # index.html.erb",
+      "\t\tformat.xml  { render xml: @$1s }",
+      "\tend",
+      "end"
+    ]
+  },
+  "defnew": {
+    "prefix": "defnew",
+    "body": [
+      "def new",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.new",
+      "",
+      "\trespond_to do |format|",
+      "\t\tformat.html # new.html.erb",
+      "\t\tformat.xml  { render xml: @$1 }",
+      "\tend",
+      "end"
+    ]
+  },
+  "defshow": {
+    "prefix": "defshow",
+    "body": [
+      "def show",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+      "",
+      "\trespond_to do |format|",
+      "\t\tformat.html # show.html.erb",
+      "\t\tformat.xml  { render xml: @$1 }",
+      "\tend",
+      "end"
+    ]
+  },
+  "defupdate": {
+    "prefix": "defupdate",
+    "body": [
+      "def update",
+      "\t@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])",
+      "",
+      "\trespond_to do |format|",
+      "\t\tif @$1.update_attributes(params[:$1])",
+      "\t\t\tflash[:notice] = '$2 was successfully updated.'",
+      "\t\t\tformat.html { redirect_to(@$1) }",
+      "\t\t\tformat.xml  { head :ok }",
+      "\t\telse",
+      "\t\t\tformat.html { render action: 'edit' }",
+      "\t\t\tformat.xml  { render xml: @$1.errors, status: :unprocessable_entity }",
+      "\t\tend",
+      "\tend",
+      "end"
+    ]
+  },
+  "dele": {
+    "prefix": "dele",
+    "body": "delegate :${1:methods}, to: :${0:object}",
+    "description": "delegate .. to"
+  },
+  "dele_delegate_to_prefix_allow_nil": {
+    "prefix": "dele",
+    "body": "delegate :${1:methods}, to: :${2:object}, prefix: :${3:prefix}, allow_nil: ${0:allow_nil}",
+    "description": "delegate .. to .. prefix .. allow_nil"
+  },
+  "amc": {
+    "prefix": "amc",
+    "body": "alias_method_chain :${1:method_name}, :${0:feature}"
+  },
+  "flash": {
+    "prefix": "flash",
+    "body": "flash[:${1:notice}] = '${0}'"
+  },
+  "habtm": {
+    "prefix": "habtm",
+    "body": "has_and_belongs_to_many :${1:object}, join_table: '${2:table_name}', foreign_key: '${3}_id'"
+  },
+  "hm": {
+    "prefix": "hm",
+    "body": "has_many :${0:object}"
+  },
+  "hmd": {
+    "prefix": "hmd",
+    "body": "has_many :${1:other}s, class_name: '${2:$1}', foreign_key: '${3:$1}_id', dependent: :destroy"
+  },
+  "hmt": {
+    "prefix": "hmt",
+    "body": "has_many :${1:object}, through: :${0:object}"
+  },
+  "ho": {
+    "prefix": "ho",
+    "body": "has_one :${0:object}"
+  },
+  "hod": {
+    "prefix": "hod",
+    "body": "has_one :${1:object}, dependent: :${0:destroy}"
+  },
+  "i18": {
+    "prefix": "i18",
+    "body": "I18n.t('${1:type.key}')"
+  },
+  "ist": {
+    "prefix": "ist",
+    "body": "<%= image_submit_tag('${1:agree.png}', id: '${2:id}'${0}) %>"
+  },
+  "log": {
+    "prefix": "log",
+    "body": "Rails.logger.${1:debug} ${0}"
+  },
+  "log2": {
+    "prefix": "log2",
+    "body": "RAILS_DEFAULT_LOGGER.${1:debug} ${0}"
+  },
+  "logd": {
+    "prefix": "logd",
+    "body": "logger.debug { '${1:message}' }"
+  },
+  "loge": {
+    "prefix": "loge",
+    "body": "logger.error { '${1:message}' }"
+  },
+  "logf": {
+    "prefix": "logf",
+    "body": "logger.fatal { '${1:message}' }"
+  },
+  "logi": {
+    "prefix": "logi",
+    "body": "logger.info { '${1:message}' }"
+  },
+  "logw": {
+    "prefix": "logw",
+    "body": "logger.warn { '${1:message}' }"
+  },
+  "mapc": {
+    "prefix": "mapc",
+    "body": "${1:map}.${2:connect} '${0:controller/:action/:id}'"
+  },
+  "mapca": {
+    "prefix": "mapca",
+    "body": "${1:map}.catch_all '*${2:anything}', controller: '${3:default}', action: '${4:error}'"
+  },
+  "mapr": {
+    "prefix": "mapr",
+    "body": "${1:map}.resource :${0:resource}"
+  },
+  "maprs": {
+    "prefix": "maprs",
+    "body": "${1:map}.resources :${0:resource}"
+  },
+  "mapwo": {
+    "prefix": "mapwo",
+    "body": [
+      "${1:map}.with_options ${2:controller}: '${3:thing}' do |$3|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "mp": {
+    "prefix": "mp",
+    "body": "map(&:${0:id})"
+  },
+  "mrw": {
+    "prefix": "mrw",
+    "body": "mattr_accessor :${0:attr_names}"
+  },
+  "oa": {
+    "prefix": "oa",
+    "body": "order('${0:field}')"
+  },
+  "od": {
+    "prefix": "od",
+    "body": "order('${0:field} DESC')"
+  },
+  "pa": {
+    "prefix": "pa",
+    "body": "params[:${1:id}]"
+  },
+  "ra": {
+    "prefix": "ra",
+    "body": "render action: '${0:action}'"
+  },
+  "ral": {
+    "prefix": "ral",
+    "body": "render action: '${1:action}', layout: '${0:layoutname}'"
+  },
+  "rest": {
+    "prefix": "rest",
+    "body": [
+      "respond_to do |format|",
+      "\tformat.${1:html} { ${0} }",
+      "end"
+    ]
+  },
+  "rf": {
+    "prefix": "rf",
+    "body": "render file: '${0:filepath}'"
+  },
+  "rfu": {
+    "prefix": "rfu",
+    "body": "render file: '${1:filepath}', use_full_path: ${0:false}"
+  },
+  "ri": {
+    "prefix": "ri",
+    "body": "render inline: \"${0:<%= 'hello' %>}\""
+  },
+  "ril": {
+    "prefix": "ril",
+    "body": "render inline: \"${1:<%= 'hello' %>}\", locals: { ${2:name}: '${3:value}'${0} }"
+  },
+  "rit": {
+    "prefix": "rit",
+    "body": "render inline: \"${1:<%= 'hello' %>}\", type: ${0::rxml}"
+  },
+  "rjson": {
+    "prefix": "rjson",
+    "body": "render json: '${0:text to render}'"
+  },
+  "rl": {
+    "prefix": "rl",
+    "body": "render layout: '${0:layoutname}'"
+  },
+  "rn": {
+    "prefix": "rn",
+    "body": "render nothing: ${0:true}"
+  },
+  "rns": {
+    "prefix": "rns",
+    "body": "render nothing: ${1:true}, status: ${0:401}"
+  },
+  "rp": {
+    "prefix": "rp",
+    "body": "render partial: '${0:item}'"
+  },
+  "rpc": {
+    "prefix": "rpc",
+    "body": "render partial: '${1:item}', collection: ${0:@$1s}"
+  },
+  "rpl": {
+    "prefix": "rpl",
+    "body": "render partial: '${1:item}', locals: { ${2:$1}: ${0:@$1} }"
+  },
+  "rpo": {
+    "prefix": "rpo",
+    "body": "render partial: '${1:item}', object: ${0:@$1}"
+  },
+  "rps": {
+    "prefix": "rps",
+    "body": "render partial: '${1:item}', status: ${0:500}"
+  },
+  "rt": {
+    "prefix": "rt",
+    "body": "render text: '${0:text to render}'"
+  },
+  "rtl": {
+    "prefix": "rtl",
+    "body": "render text: '${1:text to render}', layout: '${0:layoutname}'"
+  },
+  "rtlt": {
+    "prefix": "rtlt",
+    "body": "render text: '${1:text to render}', layout: ${0:true}"
+  },
+  "rts": {
+    "prefix": "rts",
+    "body": "render text: '${1:text to render}', status: ${0:401}"
+  },
+  "ru": {
+    "prefix": "ru",
+    "body": [
+      "render :update do |${1:page}|",
+      "\t$1.${0}",
+      "end"
+    ]
+  },
+  "rxml": {
+    "prefix": "rxml",
+    "body": "render xml: '${0:text to render}'"
+  },
+  "sc": {
+    "prefix": "sc",
+    "body": "scope :${1:name}, -> { where(${2:field}: ${0:value}) }"
+  },
+  "sl": {
+    "prefix": "sl",
+    "body": [
+      "scope :${1:name}, lambda do |${2:value}|",
+      "\twhere('${3:field = ?}', ${0:value})",
+      "end"
+    ]
+  },
+  "sha1": {
+    "prefix": "sha1",
+    "body": "Digest::SHA1.hexdigest(${0:string})"
+  },
+  "sweeper": {
+    "prefix": "sweeper",
+    "body": [
+      "class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper",
+      "\tobserve $1",
+      "",
+      "\tdef after_save(${0:model_class_name})",
+      "\t\texpire_cache($2)",
+      "\tend",
+      "",
+      "\tdef after_destroy($2)",
+      "\t\texpire_cache($2)",
+      "\tend",
+      "",
+      "\tdef expire_cache($2)",
+      "\t\texpire_page",
+      "\tend",
+      "end"
+    ]
+  },
+  "va": {
+    "prefix": "va",
+    "body": "validates_associated :${0:attribute}",
+    "description": "validates_associated"
+  },
+  "va_validates_acceptance_true": {
+    "prefix": "va",
+    "body": "validates :${0:terms}, acceptance: true",
+    "description": "validates .., acceptance: true"
+  },
+  "vc": {
+    "prefix": "vc",
+    "body": "validates :${0:attribute}, confirmation: true"
+  },
+  "ve": {
+    "prefix": "ve",
+    "body": "validates :${1:attribute}, exclusion: { in: ${0:%w( mov avi )} }"
+  },
+  "vf": {
+    "prefix": "vf",
+    "body": "validates :${1:attribute}, format: { with: /${0:regex}/ }"
+  },
+  "vi": {
+    "prefix": "vi",
+    "body": "validates :${1:attribute}, inclusion: { in: %w(${0: mov avi }) }"
+  },
+  "vl": {
+    "prefix": "vl",
+    "body": "validates :${1:attribute}, length: { in: ${2:3}..${0:20} }"
+  },
+  "vn": {
+    "prefix": "vn",
+    "body": "validates :${0:attribute}, numericality: true"
+  },
+  "vp": {
+    "prefix": "vp",
+    "body": "validates :${0:attribute}, presence: true"
+  },
+  "vu": {
+    "prefix": "vu",
+    "body": "validates :${0:attribute}, uniqueness: true"
+  },
+  "format": {
+    "prefix": "format",
+    "body": "format.${1:js|xml|html} { ${0} }"
+  },
+  "wc": {
+    "prefix": "wc",
+    "body": "where(${1:'conditions'}${0:, bind_var})"
+  },
+  "wf": {
+    "prefix": "wf",
+    "body": "where(${1:field}: ${0:value})"
+  },
+  "xdelete": {
+    "prefix": "xdelete",
+    "body": "xhr :delete, :${1:destroy}, id: ${2:1}"
+  },
+  "xget": {
+    "prefix": "xget",
+    "body": "xhr :get, :${1:show}, id: ${2:1}"
+  },
+  "xpost": {
+    "prefix": "xpost",
+    "body": "xhr :post, :${1:create}, ${2:object}: ${3:object}"
+  },
+  "xput": {
+    "prefix": "xput",
+    "body": "xhr :put, :${1:update}, id: ${2:1}, ${3:object}: ${4:object}"
+  },
+  "test": {
+    "prefix": "test",
+    "body": [
+      "test 'should ${1:do something}' do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "mac": {
+    "prefix": "mac",
+    "body": "add_column :${1:table_name}, :${2:column_name}, :${0:data_type}"
+  },
+  "mai": {
+    "prefix": "mai",
+    "body": "add_index :${1:table_name}, :${0:column_name}"
+  },
+  "mrc": {
+    "prefix": "mrc",
+    "body": "remove_column :${1:table_name}, :${0:column_name}"
+  },
+  "mrnc": {
+    "prefix": "mrnc",
+    "body": "rename_column :${1:table_name}, :${2:old_column_name}, :${0:new_column_name}"
+  },
+  "mcc": {
+    "prefix": "mcc",
+    "body": "change_column :${1:table}, :${2:column}, :${0:type}"
+  },
+  "mnc": {
+    "prefix": "mnc",
+    "body": "t.${1:string} :${2:title}${3:, null: false}"
+  },
+  "mct": {
+    "prefix": "mct",
+    "body": [
+      "create_table :${1:table_name} do |t|",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "mcht": {
+    "prefix": "mcht",
+    "body": [
+      "change_table :${1:table_name} do |t|",
+      "${0}",
+      "end"
+    ]
+  },
+  "trc": {
+    "prefix": "trc",
+    "body": "t.remove :${0:column}"
+  },
+  "tre": {
+    "prefix": "tre",
+    "body": [
+      "t.rename :${1:old_column_name}, :${2:new_column_name}",
+      "${0}"
+    ]
+  },
+  "tref": {
+    "prefix": "tref",
+    "body": "t.references :${0:model}"
+  },
+  "tcb": {
+    "prefix": "tcb",
+    "body": [
+      "t.boolean :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcbi": {
+    "prefix": "tcbi",
+    "body": [
+      "t.binary :${1:title}, limit: ${2:2}.megabytes",
+      "${0}"
+    ]
+  },
+  "tcd": {
+    "prefix": "tcd",
+    "body": [
+      "t.decimal :${1:title}, precision: ${2:10}, scale: ${3:2}",
+      "${0}"
+    ]
+  },
+  "tcda": {
+    "prefix": "tcda",
+    "body": [
+      "t.date :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcdt": {
+    "prefix": "tcdt",
+    "body": [
+      "t.datetime :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcf": {
+    "prefix": "tcf",
+    "body": [
+      "t.float :${1:title}",
+      "${0}"
+    ]
+  },
+  "tch": {
+    "prefix": "tch",
+    "body": [
+      "t.change :${1:name}, :${2:string}, ${3:limit}: ${4:80}",
+      "${0}"
+    ]
+  },
+  "tci": {
+    "prefix": "tci",
+    "body": [
+      "t.integer :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcl": {
+    "prefix": "tcl",
+    "body": [
+      "t.integer :lock_version, null: false, default: 0",
+      "${0}"
+    ]
+  },
+  "tcr": {
+    "prefix": "tcr",
+    "body": [
+      "t.references :${1:taggable}, polymorphic: { default: '${2:Photo}' }",
+      "${0}"
+    ]
+  },
+  "tcs": {
+    "prefix": "tcs",
+    "body": [
+      "t.string :${1:title}",
+      "${0}"
+    ]
+  },
+  "tct": {
+    "prefix": "tct",
+    "body": [
+      "t.text :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcti": {
+    "prefix": "tcti",
+    "body": [
+      "t.time :${1:title}",
+      "${0}"
+    ]
+  },
+  "tcts": {
+    "prefix": "tcts",
+    "body": [
+      "t.timestamp :${1:title}",
+      "${0}"
+    ]
+  },
+  "tctss": {
+    "prefix": "tctss",
+    "body": [
+      "t.timestamps",
+      "${0}"
+    ]
+  }
+}

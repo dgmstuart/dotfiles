@@ -10,13 +10,20 @@ brew "direnv"
 brew "ripgrep"
 brew "fzf"
 brew "git"
-brew "vim"
 brew "tig"
 brew "hub"
 brew "tmate"
 brew "tmux"
-brew "tailwindcss-language-server"
 # DON'T install yarn with Homebrew - use corepack instead
+
+# Vim
+brew "vim"
+brew "tailwindcss-language-server"
+
+# Neovim
+brew "nvim"
+brew "tree-sitter-cli"
+brew "fd" # Used by fzf-lua
 
 # Utils
 brew "coreutils"
@@ -39,6 +46,6 @@ brew "shpotify"
 
 # Cask apps
 cask "ngrok"
-cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "nightfall"
 cask "vscodium"

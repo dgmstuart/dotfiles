@@ -1,0 +1,373 @@
+{
+  "proto": {
+    "prefix": "proto",
+    "body": [
+      "${1:class_name}.prototype.${2:method_name} = function(${3}) {",
+      "\t${0}",
+      "};"
+    ],
+    "description": "prototype"
+  },
+  "fun": {
+    "prefix": "fun",
+    "body": [
+      "function ${1:function_name}(${2}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "f": {
+    "prefix": "f",
+    "body": [
+      "function(${1}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "Anonymous Function"
+  },
+  "vaf": {
+    "prefix": "vaf",
+    "body": [
+      "var ${1:function_name} = function(${2}) {",
+      "\t${0}",
+      "};"
+    ],
+    "description": "Anonymous Function assigned to variable"
+  },
+  "vf": {
+    "prefix": "vf",
+    "body": [
+      "var ${1:function_name} = function $1(${2}) {",
+      "\t${0}",
+      "};"
+    ],
+    "description": "Function assigned to variable"
+  },
+  "(f": {
+    "prefix": "(f",
+    "body": [
+      "(function(${1}) {",
+      "\t${0}",
+      "}(${2}));"
+    ],
+    "description": "Immediate function"
+  },
+  "sdf": {
+    "prefix": "sdf",
+    "body": [
+      "var ${1:function_name} = function (${2:argument}) {",
+      "\t${3}",
+      "",
+      "\t$1 = function ($2) {",
+      "\t\t${0}",
+      "\t};",
+      "};"
+    ],
+    "description": "self-defining function"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "if (${1:true}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "if"
+  },
+  "ife": {
+    "prefix": "ife",
+    "body": [
+      "if (${1:true}) {",
+      "\t${2}",
+      "} else {",
+      "\t${0}",
+      "}"
+    ]
+  },
+  "ter": {
+    "prefix": "ter",
+    "body": "${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}",
+    "description": "tertiary conditional"
+  },
+  "switch": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:expression}) {",
+      "\tcase '${3:case}':",
+      "\t\t${4}",
+      "\t\tbreak;",
+      "\t${0}",
+      "\tdefault:",
+      "\t\t${2}",
+      "}"
+    ],
+    "description": "switch"
+  },
+  "case": {
+    "prefix": "case",
+    "body": [
+      "case '${1:case}':",
+      "\t${2}",
+      "\tbreak;",
+      "${0}"
+    ],
+    "description": "case"
+  },
+  "try": {
+    "prefix": "try",
+    "body": [
+      "try {",
+      "\t${1}",
+      "} catch (${2:e}) {",
+      "\t${0:/* handle error */}",
+      "}"
+    ],
+    "description": "try"
+  },
+  "ret": {
+    "prefix": "ret",
+    "body": "return ${0:result};",
+    "description": "return"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for (var ${2:i} = 0, l = ${1:arr}.length; $2 < l; $2 ++) {",
+      "\tvar ${3:v} = $1[$2];${0:}",
+      "}"
+    ],
+    "description": "for loop"
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": [
+      "for (var ${2:i} = ${1:arr}.length - 1; $2 >= 0; $2 --) {",
+      "\tvar ${3:v} = $1[$2];${0:}",
+      "}"
+    ],
+    "description": "Reversed for loop"
+  },
+  "wh": {
+    "prefix": "wh",
+    "body": [
+      "while (${1:/* condition */}) {",
+      "\t${0}",
+      "}"
+    ],
+    "description": "While loop"
+  },
+  "do": {
+    "prefix": "do",
+    "body": [
+      "do {",
+      "\t${0}",
+      "} while (${1:/* condition */});"
+    ],
+    "description": "Do while loop"
+  },
+  "fori": {
+    "prefix": "fori",
+    "body": [
+      "for (var ${1:prop} in ${2:object}) {",
+      "\t${0:$2[$1]}",
+      "}"
+    ],
+    "description": "For in loop"
+  },
+  ":f": {
+    "prefix": ":f",
+    "body": [
+      "${1:method_name}: function (${2:attribute}) {",
+      "\t${3}",
+      "},"
+    ],
+    "description": "Object Method"
+  },
+  "has": {
+    "prefix": "has",
+    "body": "hasOwnProperty(${0})",
+    "description": "hasOwnProperty"
+  },
+  "sing": {
+    "prefix": "sing",
+    "body": [
+      "function ${1:Singleton} (${2:argument}) {",
+      "\t// the cached instance",
+      "\tvar instance;",
+      "",
+      "\t// rewrite the constructor",
+      "\t$1 = function $1($2) {",
+      "\t\treturn instance;",
+      "\t};",
+      "",
+      "\t// carry over the prototype properties",
+      "\t$1.prototype = this;",
+      "",
+      "\t// the instance",
+      "\tinstance = new $1();",
+      "",
+      "\t// reset the constructor pointer",
+      "\tinstance.constructor = $1;",
+      "",
+      "\t${0}",
+      "",
+      "\treturn instance;",
+      "}"
+    ],
+    "description": "singleton"
+  },
+  "obj": {
+    "prefix": "obj",
+    "body": [
+      "function object(o) {",
+      "\tfunction F() {}",
+      "\tF.prototype = o;",
+      "\treturn new F();",
+      "}"
+    ],
+    "description": "Crockford's object function"
+  },
+  "props": {
+    "prefix": "props",
+    "body": [
+      "var ${1:my_object} = Object.defineProperties(",
+      "\t${2:new Object()},",
+      "\t{",
+      "\t\t${3:property} : {",
+      "\t\t\tget : function $1_$3_getter() {",
+      "\t\t\t\t// getter code",
+      "\t\t\t},",
+      "\t\t\tset : function $1_$3_setter(value) {",
+      "\t\t\t\t// setter code",
+      "\t\t\t},",
+      "\t\t\tvalue        : ${4:value},",
+      "\t\t\twriteable    : ${5:boolean},",
+      "\t\t\tenumerable   : ${6:boolean},",
+      "\t\t\tconfigurable : ${0:boolean}",
+      "\t\t}",
+      "\t}",
+      ");"
+    ],
+    "description": "Define multiple properties"
+  },
+  "prop": {
+    "prefix": "prop",
+    "body": [
+      "Object.defineProperty(",
+      "\t${1:object},",
+      "\t'${2:property}',",
+      "\t{",
+      "\t\tget : function $1_$2_getter() {",
+      "\t\t\t// getter code",
+      "\t\t},",
+      "\t\tset : function $1_$2_setter(value) {",
+      "\t\t\t// setter code",
+      "\t\t},",
+      "\t\tvalue        : ${3:value},",
+      "\t\twriteable    : ${4:boolean},",
+      "\t\tenumerable   : ${5:boolean},",
+      "\t\tconfigurable : ${0:boolean}",
+      "\t}",
+      ");"
+    ],
+    "description": "Define single property"
+  },
+  "/**": {
+    "prefix": "/**",
+    "body": [
+      "/**",
+      " * ${0:description}",
+      " *",
+      " */"
+    ],
+    "description": "docstring"
+  },
+  "@par": {
+    "prefix": "@par",
+    "body": "@param {${1:type}} ${2:name} ${0:description}"
+  },
+  "@ret": {
+    "prefix": "@ret",
+    "body": "@return {${1:type}} ${0:description}"
+  },
+  "jsonp": {
+    "prefix": "jsonp",
+    "body": "JSON.parse(${0:jstr});",
+    "description": "JSON.parse"
+  },
+  "jsons": {
+    "prefix": "jsons",
+    "body": "JSON.stringify(${0:object});",
+    "description": "JSON.stringify"
+  },
+  "get": {
+    "prefix": "get",
+    "body": "getElementsBy${1:TagName}('${0}')",
+    "description": "Get elements"
+  },
+  "gett": {
+    "prefix": "gett",
+    "body": "getElementBy${1:Id}('${0}')",
+    "description": "Get element"
+  },
+  "by.": {
+    "prefix": "by.",
+    "body": "${1:document}.getElementsByClassName('${0:class}')",
+    "description": "Elements by class"
+  },
+  "by#": {
+    "prefix": "by#",
+    "body": "${1:document}.getElementById('${0:element ID}')",
+    "description": "Element by ID"
+  },
+  "qs": {
+    "prefix": "qs",
+    "body": "${1:document}.querySelector('${0:CSS selector}')",
+    "description": "Query selector"
+  },
+  "qsa": {
+    "prefix": "qsa",
+    "body": "${1:document}.querySelectorAll('${0:CSS selector}')",
+    "description": "Query selector all"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": "console.log(${0});",
+    "description": "console.log"
+  },
+  "clm": {
+    "prefix": "clm",
+    "body": "console.log(\"${1:variableName}\", $1);"
+  },
+  "cd": {
+    "prefix": "cd",
+    "body": "console.debug(${0});",
+    "description": "console.debug"
+  },
+  "ct": {
+    "prefix": "ct",
+    "body": "console.trace(${0:label});",
+    "description": "console.trace"
+  },
+  "ctime": {
+    "prefix": "ctime",
+    "body": "console.time(${0:label});",
+    "description": "console.time"
+  },
+  "ca": {
+    "prefix": "ca",
+    "body": "console.assert(${1:expression}, ${0:obj});",
+    "description": "console.assert"
+  },
+  "cdir": {
+    "prefix": "cdir",
+    "body": "console.dir(${0:obj});",
+    "description": "console.dir"
+  },
+  "timeout": {
+    "prefix": "timeout",
+    "body": "setTimeout(function () {${0}}${2}, ${1:10});",
+    "description": "setTimeout function"
+  }
+}
