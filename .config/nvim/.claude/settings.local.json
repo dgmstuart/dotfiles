@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvim --version)",
+      "WebFetch(domain:github.com)",
+      "Read(//home/agent/**)",
+      "Bash(find / -iname \"ruby.vim\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "Bash(apt list *)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/*)",
+      "Bash(curl -sL https://raw.githubusercontent.com/*)",
+      "Skill(update-config)",
+      "Bash(awk ' *)",
+      "Read(//tmp/**)",
+      "Bash(find *)",
+      "WebFetch(domain:cmp.saghen.dev)",
+      "Bash(grep *)",
+      "Bash(ruby -v)",
+      "Bash(python3 -V)",
+      "Bash(export *)",
+      "Bash(nvim --headless *)",
+      "Bash(nvim-nightly --headless -c \"lua dofile\\(vim.fn.getenv\\('CLAUDE_JOB_DIR'\\) .. '/tmp/install_ts.lua'\\)\" -c \"qa\")",
+      "Bash(sudo apt-get install -y -qq build-essential)",
+      "Bash(nvim-nightly *)",
+      "Read(//usr/share/nvim/runtime/lua/vim/lsp/**)"
+    ]
+  }
+}
