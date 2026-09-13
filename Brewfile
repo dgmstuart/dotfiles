@@ -7,15 +7,19 @@ tap "puma/puma"
 brew "asdf"
 brew "diff-so-fancy"
 brew "direnv"
+# TODO: Delete after migrating to neovim?:
 brew "the_silver_searcher"
+brew "fd"
+brew "rg"
 brew "fzf"
 brew "git"
 brew "vim"
+brew "nvim"
 brew "tig"
 brew "hub"
 brew "tmate"
 brew "tmux"
-brew "tailwindcss-language-server"
+brew "tree-sitter-cli"
 # DON'T install yarn with Homebrew - use corepack instead
 
 # Utils
@@ -39,6 +43,6 @@ brew "shpotify"
 
 # Cask apps
 cask "ngrok"
-cask "font-fira-code"
+cask "font-fira-code-nerd-font"
 cask "nightfall"
 cask "vscodium"
