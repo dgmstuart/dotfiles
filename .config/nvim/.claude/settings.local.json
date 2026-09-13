@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nvim --version)",
+      "WebFetch(domain:github.com)",
+      "Read(//home/agent/**)",
+      "Bash(find / -iname \"ruby.vim\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "Bash(apt list *)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/*)",
+      "Bash(curl -sL https://raw.githubusercontent.com/*)",
+      "Skill(update-config)",
+      "Bash(awk ' *)",
+      "Read(//tmp/**)"
+    ]
+  }
+}
