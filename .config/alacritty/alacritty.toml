@@ -8,6 +8,7 @@ ipc_socket = true
 [window]
 startup_mode = "SimpleFullscreen"
 padding = { x = 5, y = 2 }
+option_as_alt = "Both"
 
 [font]
 # Regular text looks bold, so use Light for regular and regular for bold:
