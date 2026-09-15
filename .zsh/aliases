@@ -120,6 +120,7 @@ alias gstd='git stash drop'
 
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
+alias ndirty='nvim `git ls-files --modified` `git ls-files --others --exclude-standard`'
 alias exclude='vim .git/info/exclude'
 alias gce='git config -e'
 
