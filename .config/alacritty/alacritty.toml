@@ -11,7 +11,7 @@ padding = { x = 5, y = 4,0 }
 
 [font]
 # Regular text looks bold, so use Light for regular and regular for bold:
-normal = { family = "Fira Code", style = "Light" }
+normal = { family = "FiraCode Nerd Font", style = "Light" }
 bold = { style = "Regular" }
 size = 14
 offset = { x = 1 }

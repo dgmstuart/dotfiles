@@ -1,3 +1,9 @@
 tmuxinator
+
+# Used by neovim:
+ruby-lsp
+ruby-lsp-rspec
+
+# Used by vim
 solargraph
 solargraph-rails

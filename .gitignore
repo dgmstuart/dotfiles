@@ -83,6 +83,7 @@ dump.rdb
 .vim/bundle
 .vim/plugged
 .vim/.netrwhist
+.config/nvim/spell/en.utf-8.add.spl
 
 # AI
 .claude/*
