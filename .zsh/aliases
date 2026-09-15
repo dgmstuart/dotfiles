@@ -28,6 +28,7 @@ alias subl=subl
 alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
 alias v='fg || $EDITOR'
 alias mvm='mvim'
+alias nv='nvim'
 alias vv='$EDITOR ~/.vimrc'
 alias vf='$EDITOR `fzf`'
 alias code='codium'
