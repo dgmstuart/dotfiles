@@ -37,8 +37,8 @@ export DEV_DIR=$HOME/dev
 
 # Environment
 ##############
-export VISUAL='vim'
-export EDITOR='vim'
+export VISUAL='nvim'
+export EDITOR='nvim'
 export LANG="en_GB.UTF-8"
 
 # Syntax highlighting for less:
