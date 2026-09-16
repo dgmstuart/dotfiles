@@ -118,3 +118,13 @@ function run_in_iterm_tab() {
   open -a iTerm .
   osascript -e "tell application \"iTerm\" to tell current window to tell last tab to tell current session to write text \"$1\""
 }
+
+# Move a file and symlink to it
+move_and_link() {
+  local source_file="$1"
+  local target_directory="$2"
+  local filename="${source_file:t}"
+
+  mv -- "$source_file" "$target_directory" || return 1
+  ln -s -- "$target_directory/$filename" "$source_file"
+}
