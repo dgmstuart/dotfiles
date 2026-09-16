@@ -145,8 +145,8 @@ alias tga='tig --all'
 alias tgr='tig refs'
 
 # Hub
-alias hpr='hub pull-request --browse --push'
-alias hprd='hpr --draft'
+alias hpr='hprr --draft'
+alias hprr='hub pull-request --browse --push' # r for "ready"
 alias hprm='hpr -b main'
 alias hbr='hub browse -- pulls'
 
