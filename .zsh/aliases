@@ -6,23 +6,23 @@ alias dev='~/dev'
 # zsh
 alias ohmyzsh="~/.oh-my-zsh"
 alias zshplugins='cd ~/.oh-my-zsh/plugins; ll'
-alias zpr="vim ~/.zshrc"
+alias zpr="$EDITOR ~/.zshrc"
 alias szsh='source ~/.zshrc'
 alias sal='source ~/.zsh/aliases'
-alias eal="vim ~/.zsh/aliases"
-alias efun="vim ~/.zsh/functions"
+alias eal="$EDITOR ~/.zsh/aliases"
+alias efun="$EDITOR ~/.zsh/functions"
 
 # profile
-alias epr="vim ~/.profile"
-alias eprl="vim ~/.profile.local"
+alias epr="$EDITOR ~/.profile"
+alias eprl="$EDITOR ~/.profile.local"
 
 # Editors
 alias subl=subl
 alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
-alias v='fg || vim'
+alias v='fg || $EDITOR'
 alias mvm='mvim'
-alias vv='vim ~/.vimrc'
-alias vf='vim `fzf`'
+alias vv='$EDITOR ~/.vimrc'
+alias vf='$EDITOR `fzf`'
 
 # Tmux
 alias muxkill='tmux kill-session'
@@ -118,7 +118,7 @@ alias gstd='git stash drop'
 
 alias fix='$EDITOR `git diff --name-only | uniq`'
 alias dirty='$EDITOR `git ls-files --modified` `git ls-files --others --exclude-standard`'
-alias exclude='vim .git/info/exclude'
+alias exclude='$EDITOR .git/info/exclude'
 alias gce='git config -e'
 
 alias sha='git rev-parse --short HEAD'
@@ -174,7 +174,7 @@ alias rce='bin/rails credentials:edit'
 alias rcep='bin/rails credentials:edit --environment=production'
 alias update='git checkout develop; git pull; bundle; bundle exec rake db:migrate'
 alias dope='open http://$(docker-machine ip):3000'
-alias rubofix='vim $(bundle exec rubocop --format=files)'
+alias rubofix='$EDITOR $(bundle exec rubocop --format=files)'
 alias rubocop='bin/rubocop'
 alias rebundle='git reset HEAD Gemfile.lock;git checkout Gemfile.lock;bundle'
 alias localdev='heroku local -f Procfile.dev'
@@ -218,8 +218,8 @@ alias bposts='blogposts | sort -r'
 alias bdrafts='blogdrafts | sort -r'
 alias lastpost='find `blogposts` | tail -1 '
 alias lastdraft='find `blogdrafts` | tail -1 '
-alias epost='vim `lastpost`'
-alias edraft='vim `lastdraft`'
+alias epost='$EDITOR `lastpost`'
+alias edraft='$EDITOR `lastdraft`'
 alias blog='cd $BLOG_HOME;bundle exec jekyll post'
 
 # Maintenance
