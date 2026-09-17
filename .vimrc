@@ -111,10 +111,13 @@ set undodir=~/.vim/undo
 set nomodeline      " modelines are a potential security hole
 set ignorecase      " ignore case in searches
 set smartcase       " do case-sensitive searches if the search term includes uppercase letters
-set grepprg=ag      " use the silver searcher for grep commands
 set splitright      " open new split panes on the right (left is default)
 set mouse=a         " enable the mouse
 set updatetime=300  " minimise latency (default is 4000)
+
+" Use ripgrep for grep commands:
+set grepprg=rg\ --vimgrep
+set grepformat=%f:%l:%c:%m
 
 " Soft tabs
 set expandtab
@@ -157,8 +160,8 @@ inoremap <C-U> <C-G>u<C-U>
 
 " Ack config
 let g:ack_use_dispatch = 1
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep'
 endif
 
 " ALE config (Syntax checking)
@@ -171,7 +174,7 @@ let g:ale_linters = {}
 let g:ale_fixers = {}
 
 " Fzf config (file search)
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --glob "!.git"'
 let g:fzf_action = {
       \ 'ctrl-t': 'tab split',
       \ 'ctrl-x': 'split',
