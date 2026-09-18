@@ -1,6 +1,7 @@
 # vim: syntax=zsh
 PROMPT='%{$fg[green]%}♺ %{$fg[yellow]%}%~$(git_prompt_info) %{$fg[blue]%}$(ruby -v | grep -o "ruby\s\?[0-9\.]*") %{$fg[yellow]%}»%{$reset_color%} '
 RPROMPT='%{$fg[green]%}$(battery escape)%{$reset_color%} %{$fg[yellow]%}%T%{$reset_color%}'
+ZLE_RPROMPT_INDENT=0 # Don't include a space on the right hand side of the screen
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[blue]%}(%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[blue]%})%{$reset_color%}"
