@@ -1,6 +1,17 @@
+# Theme
 theme = dark:solarized-dark,light:solarized-light
-keybind = global:cmd+backquote=toggle_quick_terminal
-quick-terminal-size = 100%,100%
-quick-terminal-animation-duration = 0
-font-family = "Fira Code"
+
+# Font
+font-family = "FiraCode Nerd Font"
 font-size = 14
+
+# character spacing, line height
+adjust-cell-width = 1
+adjust-cell-height = 3
+
+# Window
+window-padding-x = 5
+window-padding-y = 5,0
+fullscreen = non-native-padded-notch
+macos-non-native-fullscreen = padded-notch
+keybind = global:ctrl+backquote=toggle_visibility
