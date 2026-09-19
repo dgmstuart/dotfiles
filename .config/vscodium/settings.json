@@ -1,0 +1,7 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "files.associations": {
+        "config": "ini",
+        "*.ghostty": "ini"
+    }
+}
