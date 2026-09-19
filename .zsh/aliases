@@ -16,6 +16,13 @@ alias efun="$EDITOR ~/.zsh/functions"
 alias epr="$EDITOR ~/.profile"
 alias eprl="$EDITOR ~/.profile.local"
 
+# Config
+alias conf="~/.config"
+alias gconf='ghostty +edit-config'
+alias aconf='$EDITOR ~/.config/alacritty/alacritty.toml'
+alias nconf='~/.config/nvim'
+alias vsconf='$EDITOR ~/.config/vscodium/settings.json'
+
 # Editors
 alias subl=subl
 alias sublconf='~/Library/Application\ Support/Sublime\ Text\ 2/Packages/User'
@@ -23,6 +30,7 @@ alias v='fg || $EDITOR'
 alias mvm='mvim'
 alias vv='$EDITOR ~/.vimrc'
 alias vf='$EDITOR `fzf`'
+alias code='codium'
 
 # Tmux
 alias muxkill='tmux kill-session'
