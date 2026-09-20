@@ -12,6 +12,9 @@ PATH=~/.npm-global/bin:$PATH
 # Alacritty
 PATH=$PATH:/Applications/Alacritty.app/Contents/MacOS/
 
+# Ghostty
+PATH="$PATH:/Applications/Ghostty.app/Contents/MacOS"
+
 # Golang
 export GOPATH=~/go
 PATH=$PATH:$GOPATH/bin
