@@ -5,6 +5,7 @@ tap "puma/puma"
 
 # Dev tools
 brew "asdf"
+brew "eza"
 brew "diff-so-fancy"
 brew "direnv"
 brew "ripgrep"

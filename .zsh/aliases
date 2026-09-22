@@ -40,8 +40,8 @@ alias mux='tmuxinator'
 
 # Listing
 alias l='ls -F'
-alias ll='ls -aloh'
-alias kk="k -Ah"
+# use eza, but first we need to disable LS_COLORS which oh-my-zsh sets
+alias ll='env -u LS_COLORS eza -lAH --git --color-scale=age,size --color-scale-mode=gradient'
 alias lt='ls -alort'
 
 # Whippet

@@ -20,7 +20,7 @@ source $HOME/.zsh/explicit_aliases.sh
 # Enable the hash key
 bindkey -s '^[3' \#
 
-source ~/k/k.sh
+export EZA_CONFIG_DIR=$HOME/.config/eza
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

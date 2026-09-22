@@ -1,0 +1,61 @@
+filekinds:
+  directory:   {foreground: Blue, is_bold: false}
+  symlink:     {foreground: Magenta}
+  executable:  {foreground: LightRed}
+  special:     {foreground: LightGreen}
+  socket:      {foreground: LightGreen}
+  mount_point: {foreground: LightGreen}
+perms:
+  user_read:          {foreground: LightGreen, is_bold: false}
+  user_write:         {foreground: LightGreen, is_bold: false}
+  user_execute_file:  {foreground: LightGreen, is_bold: false}
+  user_execute_other: {foreground: LightGreen, is_bold: false}
+  group_read:         {foreground: LightGreen}
+  group_write:        {foreground: LightGreen}
+  group_execute:      {foreground: LightGreen}
+  other_read:         {foreground: LightGreen}
+  other_write:        {foreground: LightGreen}
+  other_execute:      {foreground: LightGreen}
+  special_user_file:  {foreground: LightGreen}
+  special_other:      {foreground: LightGreen}
+  attribute:          {foreground: LightGreen}
+punctuation: {foreground: LightGreen, is_bold: false}
+users:
+  user_you:    {foreground: LightGreen, is_bold: false}
+  user_other:  {foreground: LightGreen, is_bold: false}
+  user_root:   {foreground: LightGreen, is_bold: false}
+  group_yours: {foreground: LightGreen, is_bold: false}
+  group_other: {foreground: LightGreen, is_bold: false}
+  group_root:  {foreground: LightGreen, is_bold: false}
+links:
+  normal:          {foreground: LightGreen, is_bold: false}
+  multi_link_file: {foreground: LightGreen, is_bold: false}
+size:
+  number_byte: {foreground: Green, is_bold: false}
+  number_kilo: {foreground: Green, is_bold: false}
+  number_mega: {foreground: Green, is_bold: false}
+  number_giga: {foreground: Green, is_bold: false}
+  number_huge: {foreground: Green, is_bold: false}
+  unit_byte:   {foreground: Green, is_bold: false}
+  unit_kilo:   {foreground: Green, is_bold: false}
+  unit_mega:   {foreground: Green, is_bold: false}
+  unit_giga:   {foreground: Green, is_bold: false}
+  unit_huge:   {foreground: Green, is_bold: false}
+date: {foreground: White, is_bold: false}
+git:
+  new:        {foreground: Green,  is_bold: true}
+  modified:   {foreground: Yellow, is_bold: true}
+  deleted:    {foreground: Red,    is_bold: true}
+  renamed:    {foreground: Cyan,   is_bold: true}
+  typechange: {foreground: Magenta, is_bold: true}
+  ignored:    {foreground: LightMagenta, is_dimmed: true}
+  conflicted: {foreground: Red, is_bold: true}
+file_type:
+  image:      {foreground: LightCyan, is_bold: false, is_underline: false}
+  video:      {foreground: LightCyan, is_bold: false, is_underline: false}
+  music:      {foreground: LightCyan, is_bold: false, is_underline: false}
+  crypto:     {foreground: LightCyan, is_bold: false, is_underline: false}
+  compressed: {foreground: LightCyan, is_bold: false, is_underline: false}
+  build:      {foreground: LightCyan, is_bold: false, is_underline: false}
+  source:     {foreground: LightCyan, is_bold: false, is_underline: false}
+header: {foreground: LightGreen, is_underline: true}
