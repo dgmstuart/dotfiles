@@ -61,6 +61,11 @@ return {
           ['@punctuation.special.ruby'] = { fg = colors.red },
           ['@keyword.directive.ruby'] = { fg = colors.red },
 
+          -- Commit message summary line. The gitcommit syntax links it to
+          -- Keyword, which solarized.nvim makes base1 - barely different
+          -- from the body text - so the title doesn't stand out.
+          gitcommitSummary = { fg = colors.green, bold = false },
+
           -- Search matches: yellow, as in Vim, where solarized sets Search to
           -- a yellow foreground plus 'reverse' and IncSearch to orange.
           -- solarized.nvim instead uses a muted teal wash for Search and
