@@ -237,6 +237,7 @@ let mapleader = ","
 
 " Git
 map <Leader>gs :Git<CR>
+map gb :Git blame<CR>
 
 " RSpec
 map <Leader>r :call RunCurrentSpecFile()<CR>
