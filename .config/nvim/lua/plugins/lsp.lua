@@ -173,6 +173,12 @@ return {
       -- templates need mapping onto its HTML parser explicitly.
       vim.lsp.config("css_classes", {
         filetypes = { "eruby", "html", "css", "scss" },
+        -- Only used for jumping around: its one diagnostic ("class not
+        -- defined in any indexed stylesheet") flags every Tailwind utility,
+        -- and it has no setting to turn that off.
+        handlers = {
+          ["textDocument/publishDiagnostics"] = function() end,
+        },
         settings = {
           cssClasses = {
             extensions = { html = { ".html", ".htm", ".erb" } },
