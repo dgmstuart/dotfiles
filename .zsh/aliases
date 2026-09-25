@@ -198,7 +198,7 @@ alias i18n='i18n-tasks'
 
 # Bundler
 alias b='bundle install'
-alias bu='bundle update'
+alias bu='bundle update --all'
 
 # Heroku
 alias gphm='git push heroku main'
