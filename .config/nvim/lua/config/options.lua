@@ -22,6 +22,9 @@ vim.opt.shiftwidth = 2
 vim.opt.list = true
 vim.opt.listchars = { trail = "·", tab = "¬·" }
 
+-- Dictionary additions:
+vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
+
 -- Instead of backing up files, just reload the buffer when it changes.
 -- The buffer is an in-memory representation of a file, it's what you edit
 vim.opt.writebackup = false -- Don't backup the file while editing
