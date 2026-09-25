@@ -86,4 +86,31 @@ return {
     ft = { "html", "css", "eruby", "javascript", "javascriptreact", "typescriptreact" }
   },
   "tpope/vim-surround",
+  { -- Spellcheck dictionary of programming terms
+    -- Only the plugin's wordlists are used: they're compiled into
+    -- programming.utf-8.spl under stdpath("data")/site/spell, which is always
+    -- on the runtimepath, so the plugin itself never needs to load.
+    -- Its own :DirtytalkUpdate can't do the compiling: it calls
+    -- spellfile#WritableSpellDir(), which Neovim no longer ships. This build
+    -- does the same job. Re-run it with :Lazy build vim-dirtytalk
+    "psliwka/vim-dirtytalk",
+    lazy = true,
+    build = function(plugin)
+      -- :mkspell treats each extra input file as a separate region (8 max),
+      -- so the wordlists have to be joined into one file first
+      local words = {}
+      for _, wordlist in ipairs(vim.fn.glob(plugin.dir .. "/wordlists/*.words", true, true)) do
+        vim.list_extend(words, vim.fn.readfile(wordlist))
+      end
+      local wordlist_file = vim.fn.tempname()
+      vim.fn.writefile(words, wordlist_file)
+
+      local spell_dir = vim.fn.stdpath("data") .. "/site/spell"
+      vim.fn.mkdir(spell_dir, "p")
+      vim.cmd.mkspell({ args = { spell_dir .. "/programming", wordlist_file }, bang = true })
+    end,
+    init = function()
+      vim.opt.spelllang = { "en", "programming" }
+    end,
+  },
 }

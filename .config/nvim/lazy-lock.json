@@ -22,6 +22,7 @@
   "solarized.nvim": { "branch": "main", "commit": "a8085e29883ddcfb39bd46197eb32ef00df05368" },
   "treesj": { "branch": "main", "commit": "9f349ba62c524f065d6f43254d731ddf8319b9bf" },
   "vim-bundler": { "branch": "master", "commit": "64a448589e5e238cce0030d08984368ddc3851ac" },
+  "vim-dirtytalk": { "branch": "master", "commit": "aa57ba902b04341a04ff97214360f56856493583" },
   "vim-fugitive": { "branch": "master", "commit": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0" },
   "vim-instant-markdown": { "branch": "main", "commit": "00cf249fe59e70d16fd6e10c18132af09552ed2c" },
   "vim-rails": { "branch": "master", "commit": "b0a5c76f86ea214ade36ab0b811e730c3f0add67" },
