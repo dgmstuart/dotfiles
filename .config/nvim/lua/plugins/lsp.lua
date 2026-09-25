@@ -39,6 +39,19 @@ local function gem_paths(root_dir)
   return found(lines[1]), found(lines[2])
 end
 
+-- Whether the project's bundle includes RSpec.
+local function uses_rspec(root_dir)
+  local lockfile = io.open(root_dir .. "/Gemfile.lock", "r")
+  if not lockfile then
+    return false
+  end
+
+  local contents = lockfile:read("*a")
+  lockfile:close()
+
+  return contents:find("\n    rspec%-core ") ~= nil
+end
+
 -- Same as nvim-lspconfig's default `cmd`, plus RUBYOPT (which its default
 -- has no way to pass: it ignores `cmd_env`).
 --
@@ -63,9 +76,19 @@ local function start_ruby_lsp(dispatchers, config)
     )
   end
 
+  -- A missing add-on doesn't stop the server, but ruby-lsp misbehaves without
+  -- it in an RSpec project (e.g. no RuboCop diagnostics), so say so rather
+  -- than failing quietly. Projects that don't use RSpec don't need it.
   if rspec_addon then
     local rubyopt = vim.env.RUBYOPT or ""
     spawn_params.env = { RUBYOPT = vim.trim(rubyopt .. " -I" .. rspec_addon .. "/lib") }
+  elseif uses_rspec(root_dir) then
+    vim.notify(
+      "ruby-lsp-rspec is not installed for this project's Ruby.\n"
+        .. "Fix: `gem install ruby-lsp-rspec` with that Ruby active, then `:lsp restart ruby_lsp`.\n"
+        .. "(Rubies installed from now on get it from ~/.default-gems.)",
+      vim.log.levels.WARN
+    )
   end
 
   return vim.lsp.rpc.start({ "ruby-lsp" }, dispatchers, spawn_params)
