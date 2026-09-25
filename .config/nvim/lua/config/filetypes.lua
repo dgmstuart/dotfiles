@@ -59,6 +59,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Code: spellcheck comments only. The treesitter highlight queries decide what
+-- gets checked by capturing it as @spell, which for Ruby means comments.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "ruby" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
+
 -- Commit messages. Neovim's bundled gitcommit ftplugin already sets
 -- textwidth=72, which the global colorcolumn=+1 turns into a 73rd-column
 -- marker, so only the spellchecking is left to add here.
