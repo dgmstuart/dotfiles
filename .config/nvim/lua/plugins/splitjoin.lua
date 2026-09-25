@@ -18,7 +18,7 @@
 -- Each leaves the buffer alone when it has nothing to say, so "did anything
 -- change?" is what decides whether to try the next one.
 
-local function first_of(actions)
+local function first_of(actions, nothing_done)
   local before = vim.api.nvim_buf_get_lines(0, 0, -1, false)
   for _, action in ipairs(actions) do
     pcall(action)
@@ -26,6 +26,7 @@ local function first_of(actions)
       return
     end
   end
+  vim.notify(nothing_done)
 end
 
 local function split()
@@ -33,7 +34,7 @@ local function split()
     function() require("treesj").split() end,
     function() require("config.parenless_splitjoin").split() end,
     function() require("mini.splitjoin").split() end,
-  })
+  }, "Nothing to split")
 end
 
 local function join()
@@ -41,7 +42,7 @@ local function join()
     function() require("treesj").join() end,
     function() require("config.parenless_splitjoin").join() end,
     function() require("mini.splitjoin").join() end,
-  })
+  }, "Nothing to join")
 end
 
 return {
@@ -51,9 +52,24 @@ return {
       "nvim-treesitter/nvim-treesitter",
       {
         "echasnovski/mini.splitjoin",
-        -- Its own `gS` toggle would shadow the chain above, which is the only
-        -- thing that reaches the other two.
-        opts = { mappings = { toggle = "" } },
+        opts = {
+          -- Its own `gS` toggle would shadow the chain above, which is the
+          -- only thing that reaches the other two.
+          mappings = { toggle = "" },
+          split = {
+            hooks_pre = {
+              -- It splits any bracket pair, even one that already spans
+              -- several lines - which only adds a blank line after the `(`.
+              -- Returning no positions cancels the split.
+              function(positions)
+                if positions[1].line ~= positions[#positions].line then
+                  return {}
+                end
+                return positions
+              end,
+            },
+          },
+        },
       },
     },
     keys = {
