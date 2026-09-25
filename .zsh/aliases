@@ -135,7 +135,7 @@ alias sha='git rev-parse --short HEAD'
 
 alias gclean='git clean -f'
 
-alias delete_merged='git branch --merged main | grep -v "main" | xargs -n 1 git branch -d'
+alias delete_merged='git branch --merged main | rg -v "main" | xargs -n 1 git branch -d'
 
 alias glog='git log --abbrev-commit \
 --pretty=format:" \
@@ -178,7 +178,7 @@ alias rdms='bin/rails db:migrate:status'
 alias rdtp='bin/rails db:test:prepare'
 alias mailcatcher='mailcatcher; open http://127.0.0.1:1080'
 alias rr='bin/rails routes | less --tabs=4 -RFX'
-alias rrg='rr | grep'
+alias rrg='rr | rg'
 alias rT='rake -T'
 alias rce='bin/rails credentials:edit'
 alias rcep='bin/rails credentials:edit --environment=production'
@@ -193,7 +193,7 @@ alias resetdb='gcm; rake db:reset; gco -'
 # Ruby
 alias rake='noglob bundle exec rake'
 alias rubies='asdf list ruby'
-alias allrubies="asdf list all ruby | grep -E '^\s*[0-9]' | sort -rV | less"
+alias allrubies="asdf list all ruby | rg '^\s*[0-9]' | sort -rV | less"
 alias i18n='i18n-tasks'
 
 # Bundler
