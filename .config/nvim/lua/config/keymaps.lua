@@ -135,6 +135,10 @@ end
 vim.keymap.set('n', 'p', paste_and_reindent("p"), { desc = "Paste and re-indent" })
 vim.keymap.set('n', 'P', paste_and_reindent("P"), { desc = "Paste before and re-indent" })
 
+-- Visual-mode `P` replaces the selection without yanking it, so the register
+-- still holds the original text and can be pasted again.
+vim.keymap.set('x', '<Leader>p', 'P', { desc = "Paste over selection, keeping the register" })
+
 vim.api.nvim_create_user_command('Savs', function(opts)
   vim.cmd('w ' .. opts.args)
   vim.cmd('leftabove vsplit ' .. opts.args)
