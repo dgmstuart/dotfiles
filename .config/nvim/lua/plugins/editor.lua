@@ -79,7 +79,11 @@ return {
     },
   },
   { -- Open markdown files in the browser
-    "suan/vim-instant-markdown", ft = "markdown"
+    "suan/vim-instant-markdown",
+    ft = "markdown",
+    -- Installs the instant-markdown-d server into the plugin's own node_modules
+    -- (it's the dependency in the plugin's package.json), where the plugin looks for it.
+    build = "npm install",
   },
   { -- HTML completion
     "mattn/emmet-vim",
