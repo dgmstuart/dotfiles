@@ -68,6 +68,15 @@ return {
     "ibhagwan/fzf-lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     opts = {
+      keymap = {
+        fzf = {
+          -- inherit fzf-lua's default fzf binds, then add ours
+          true,
+          -- Select every result and accept: with more than one selected,
+          -- the default enter action sends them all to the quickfix list.
+          ["ctrl-q"] = "select-all+accept",
+        },
+      },
       -- `files` includes dotfiles out of the box, `grep` does not. Turn it on
       -- for grep, and exclude .git, which rg descends into once --hidden is set.
       -- `-e` must stay last: fzf-lua appends the search pattern directly after it.
