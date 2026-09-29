@@ -24,3 +24,8 @@ windows:
       panes:
         - ngrok http --domain=dockspot-duncan.ngrok.dev 3000 --scheme http --scheme https
         - stripe listen --forward-to "https://dockspot-duncan.ngrok.dev/stripe_webhook?account=eu" -l
+  - claude:
+      layout: even-horizontal
+      panes:
+        - sbx
+        - git status
