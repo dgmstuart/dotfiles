@@ -24,3 +24,14 @@ precompile
 fzf
 quickfix
 heroku
+autoload
+Autoloading
+autoloaded
+auth
+OmniAuth
+upsert
+tradeoff
+teardown
+Minitest
+RSpec
+rubocop
