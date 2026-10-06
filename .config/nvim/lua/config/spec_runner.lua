@@ -47,14 +47,14 @@ local function run_in_tmux_window(args)
   -- directly, so the window stays open afterwards and the command is in the
   -- shell history to re-run.
   --
-  -- Reuse the "rspec" window if there already is one. If specs are still
-  -- running there, the typed command just waits until they finish.
+  -- Reuse the "rspec" window if there already is one, first sending Ctrl-c
   local window = existing_rspec_window()
   local tmux_command
   if window then
     tmux_command = {
       "tmux",
       "select-window", "-t", window,
+      ";", "send-keys", "-t", window, "C-c", -- Remove any existing output
       ";", "send-keys", "-t", window, "-l", command,
       ";", "send-keys", "-t", window, "Enter",
     }
