@@ -26,6 +26,33 @@ return {
           border = "rounded",
           max_width = 0.9,
         },
+        consumers = {
+          -- Remembers whether the most recent run passed, for the statusline.
+          -- Failures need no help: they already show as diagnostics.
+          last_run = function(client)
+            local passed = false
+
+            client.listeners.run = function()
+              passed = false
+            end
+
+            client.listeners.results = function(_, results, partial)
+              if partial then return end
+
+              for _, result in pairs(results) do
+                if result.status == "failed" then
+                  passed = false
+                  return
+                end
+              end
+              passed = true
+            end
+
+            return {
+              passed = function() return passed end,
+            }
+          end,
+        },
         adapters = {
           require("neotest-rspec")({
             rspec_cmd = function()

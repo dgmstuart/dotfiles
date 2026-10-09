@@ -34,6 +34,27 @@ return {
         end
       end
 
+      local function specs_running()
+        -- neotest loads lazily; don't load it just to draw the statusline:
+        local neotest = package.loaded["neotest"]
+        if not neotest then return false end
+
+        for _, adapter_id in ipairs(neotest.state.adapter_ids()) do
+          local counts = neotest.state.status_counts(adapter_id)
+          if counts and counts.running > 0 then
+            return true
+          end
+        end
+        return false
+      end
+
+      local function last_spec_run_passed()
+        local neotest = package.loaded["neotest"]
+        if not neotest then return false end
+
+        return neotest.last_run.passed()
+      end
+
       require("lualine").setup({
         options = {
           theme = theme,
@@ -65,6 +86,16 @@ return {
               color = function() return { fg = palette().red } end,
             },
             "diagnostics",
+            {
+              function() return "󰗠" end, -- md-check_circle
+              cond = last_spec_run_passed,
+              color = function() return { fg = palette().green } end,
+            },
+            {
+              function() return "running specs" end,
+              cond = specs_running,
+              color = function() return { fg = palette().yellow } end,
+            },
           },
           lualine_x = { "location" },
           lualine_y = { "filetype" },
