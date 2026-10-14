@@ -97,7 +97,13 @@ return {
               color = function() return { fg = palette().yellow } end,
             },
           },
-          lualine_x = { "location" },
+          lualine_x = {
+            { -- pending plugin updates (lazy.nvim's checker doesn't notify)
+              require("lazy.status").updates,
+              cond = require("lazy.status").has_updates,
+            },
+            "location",
+          },
           lualine_y = { "filetype" },
           lualine_z = {
             {

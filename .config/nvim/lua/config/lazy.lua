@@ -29,6 +29,8 @@ require("lazy").setup({
   spec = {
     { import = "plugins" },
   },
-  -- periodically check for plugin updates:
-  checker = { enabled = true },
+  -- periodically check for plugin updates. Shown in the statusline rather than
+  -- notified: the notification comes back on every startup while an update
+  -- is pending, as a prompt that has to be dismissed.
+  checker = { enabled = true, notify = false },
 })
