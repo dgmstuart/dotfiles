@@ -21,6 +21,11 @@ return {
     },
     config = function()
       require("neotest").setup({
+        -- Parse only open spec files rather than every spec in the project:
+        -- the full scan reruns on every startup, and the current file's icons
+        -- wait their turn in it. The cost is that the summary only lists open
+        -- files. Run-all is unaffected: neotest-rspec runs it as plain rspec.
+        discovery = { enabled = false },
         floating = {
           -- configure the floating window which shows test output inline:
           border = "rounded",
