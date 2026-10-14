@@ -29,3 +29,10 @@ vim.opt.spellfile = vim.fn.stdpath("config") .. "/spell/en.utf-8.add"
 -- The buffer is an in-memory representation of a file, it's what you edit
 vim.opt.writebackup = false -- Don't backup the file while editing
 vim.opt.swapfile = false -- Don't create swapfiles for new buffers
+
+-- Pick up changes made while suspended (e.g. git operations after Ctrl-Z).
+-- autoread only acts when something checks the files, and Neovim checks on
+-- focus but not on resume: https://github.com/neovim/neovim/issues/2127
+vim.api.nvim_create_autocmd("VimResume", {
+  command = "checktime",
+})
