@@ -135,7 +135,7 @@ alias sha='git rev-parse --short HEAD'
 
 alias gclean='git clean -f'
 
-alias delete_merged='git branch --merged main | rg -v "main" | xargs -n 1 git branch -d'
+alias delete_merged='git branch --merged main --format="%(refname:short)" | rg -v "main" | xargs -n 1 git branch -d'
 
 alias glog='git log --abbrev-commit \
 --pretty=format:" \
