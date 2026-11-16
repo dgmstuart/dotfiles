@@ -23,6 +23,7 @@ alias aconf='$EDITOR ~/.config/alacritty/alacritty.toml'
 alias nconf='~/.config/nvim'
 alias tconf='$EDITOR ~/.tmux.conf'
 alias vsconf='$EDITOR ~/.config/vscodium/settings.json'
+alias skills='~/.claude/skills/'
 
 # Editors
 alias subl=subl
