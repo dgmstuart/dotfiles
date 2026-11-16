@@ -2,18 +2,20 @@
 name: building-features
 description: Use when implementing a feature or user-facing change that will span more than one commit, or when planning the commits for a feature branch - including work on claude/* branches and in worktrees
 ---
+
 # Building features outside-in
-Each behaviour commit is one outside-in TDD cycle that adds one scenario tothe feature's system spec. The system spec grows commit by commit, so a
-reviewer reads each commit as "this is what the user can now do, and this ishow".
-**REQUIRED SUB-SKILL:** superpowers:test-driven-development for each
-red/green step.
+
+Each behaviour commit is one outside-in TDD cycle that adds one scenario to the feature's system spec. The system spec grows commit by commit, so a reviewer reads each commit as "this is what the user can now do, and this is how".
+
+**REQUIRED SUB-SKILL:** superpowers:test-driven-development for each red/green step.
+
 ## 1. Plan the slices
-Before writing code, list the commits:- **Behaviour commits:** one system-spec scenario name each, e.g. `when the
-guest account holder follows the emailed link / shows the sign-up form,filled in from their latest booking`
-- **Refactor commits** you already know you need, placed before the committhat needs them
-Order the behaviour commits so that slices where end users act for themselves
-come before slices where admins act for them (dockadmin bookings,lightweight bookings). Cover every admin entry point that creates the same
-kind of record, e.g. lightweight bookings as well as dockadmin guestbookings.
+
+Before writing code, list the commits:
+- **Behaviour commits:** one system-spec scenario name each, e.g. `when the guest account holder follows the emailed link / shows the sign-up form, filled in from their latest booking`
+- **Refactor commits** you already know you need, placed before the commit that needs them
+
+Order the behaviour commits so that slices where end users act for themselves come before slices where admins act for them (dockadmin bookings, lightweight bookings). Cover every admin entry point that creates the same kind of record, e.g. lightweight bookings as well as dockadmin guest bookings.
 
 Get the user's approval on the list. Then work through it without stopping for review between commits.
 
