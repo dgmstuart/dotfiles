@@ -48,3 +48,10 @@ addon
 addons
 reservable
 numericality
+serializable
+Honeybadger
+ActiveJob
+serializer
+json
+ivars
+DRYs
