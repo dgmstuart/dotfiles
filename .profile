@@ -23,6 +23,9 @@ PATH=$PATH:$GOPATH/bin
 export COMPOSERPATH=~/.composer
 PATH=$PATH:$COMPOSERPATH/vendor/bin
 
+# Claude
+PATH=$PATH:~/.claude/scripts
+
 export PATH
 
 # Other application env variables

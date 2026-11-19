@@ -1,0 +1,75 @@
+#!/usr/bin/env bash
+# Install a skill drafted by Claude into ~/.claude/skills and import it into sbx.
+#
+# Expects $SKILL_DRAFTS_DIR/<name>/ to contain:
+#   draft/        the complete new skill directory
+#   draft.sha256  hashes of every file in draft/ (catches truncated/partial drafts)
+#   base.sha256   hashes of the installed skill Claude edited; empty for a new skill
+#
+# Aborts unless the installed skill still matches base.sha256 exactly,
+# so edits made on this machine since Claude read the skill are never overwritten.
+set -euo pipefail
+
+DRAFTS="${SKILL_DRAFTS_DIR:-$HOME/dev/dockspot/tmp/skills}"
+SKILLS="${SKILLS_DIR:-$HOME/.claude/skills}"
+
+die() { echo "ABORT: $*" >&2; exit 1; }
+
+[ $# -eq 1 ] || die "usage: $(basename "$0") <skill-name>"
+name="$1"
+case "$name" in */*|.*|"") die "invalid skill name '$name'" ;; esac
+
+src="$DRAFTS/$name"
+dest="$SKILLS/$name"
+
+hash_tree() { (cd "$1" && find . -type f ! -name .DS_Store | LC_ALL=C sort | while IFS= read -r f; do shasum -a 256 "$f"; done); }
+
+matches_manifest() {
+  # $1 = dir, $2 = manifest; true if the dir holds exactly the manifest's files with those hashes
+  diff <(LC_ALL=C sort "$2") <(hash_tree "$1" | LC_ALL=C sort) >/dev/null
+}
+
+[ -d "$src/draft" ] || die "no draft at $src/draft"
+[ -f "$src/draft.sha256" ] || die "missing $src/draft.sha256"
+[ -f "$src/base.sha256" ] || die "missing $src/base.sha256"
+[ -f "$src/draft/SKILL.md" ] || die "draft has no SKILL.md"
+
+matches_manifest "$src/draft" "$src/draft.sha256" ||
+  die "draft does not match draft.sha256 (incomplete or changed after Claude sealed it):
+$(diff <(LC_ALL=C sort "$src/draft.sha256") <(hash_tree "$src/draft" | LC_ALL=C sort) || true)"
+
+fm_name="$(sed -n '1,/^---$/{s/^name:[[:space:]]*//p;}' "$src/draft/SKILL.md" | head -1)"
+[ "$fm_name" = "$name" ] || die "frontmatter name '$fm_name' does not match directory '$name'"
+
+if [ -s "$src/base.sha256" ]; then
+  [ -d "$dest" ] || die "Claude edited an existing skill, but $dest does not exist"
+  matches_manifest "$dest" "$src/base.sha256" ||
+    die "$dest has changed since Claude read it. Not overwriting. Differences (< expected, > actual):
+$(diff <(LC_ALL=C sort "$src/base.sha256") <(hash_tree "$dest" | LC_ALL=C sort) || true)"
+  echo "Changes to $dest:"
+  diff -ru "$dest" "$src/draft" || true
+else
+  [ ! -e "$dest" ] || die "Claude drafted a new skill, but $dest already exists"
+  echo "New skill $dest:"
+  find "$src/draft" -type f ! -name .DS_Store | sed "s|^$src/draft/|  |"
+fi
+
+echo
+printf "Install and import? [y/N] "
+read -r answer
+[ "$answer" = y ] || [ "$answer" = Y ] || die "cancelled"
+
+if [ -d "$dest" ]; then
+  backup="$src/backups/$(date +%Y%m%d-%H%M%S)"
+  mkdir -p "$backup"
+  cp -R "$dest/." "$backup/"
+  echo "Backed up old version to $backup"
+  rm -rf "$dest"
+fi
+mkdir -p "$dest"
+cp -R "$src/draft/." "$dest/"
+
+matches_manifest "$dest" "$src/draft.sha256" || die "installed files do not match draft.sha256"
+echo "Installed $dest"
+
+sbx skills import
