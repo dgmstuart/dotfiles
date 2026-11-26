@@ -5,23 +5,32 @@ description: Use when the user asks to create, edit or rewrite a Claude Code ski
 
 # Writing skills in a Docker sandbox
 
-`~/.claude/skills` here is a read-only mount of sbx's shared skills store, and the user can't read `/home/agent`. So you don't install skills. You draft them in chat, the user saves them on their machine and imports them.
+`~/.claude/skills` here is a read-only mount of sbx's shared skills store, and the user can't read `/home/agent`. So you don't install skills. You write them to the repo's `tmp/skills/` (shared with the user's machine), and the user installs them with their `install-skill` script.
 
 ## Delivering a skill
 
-1. Output the whole `SKILL.md` in the chat, in a ````` ````markdown ````` fence (four backticks, so the ``` blocks inside survive). Never just give a path.
-2. Tell the user where to save it: `~/.claude/skills/<name>/SKILL.md` on their machine. The directory name must match `name:`.
-3. Tell them to run this on their machine:
-   ```bash
-   sbx skills import --dry-run   # preview
-   sbx skills import             # copy into the shared store; re-run after every edit (--force skips the prompt)
-   ```
-4. Verify the import:
-   - `diff` the whole imported `~/.claude/skills/<name>/SKILL.md` against your draft. Checking only that the file exists, its frontmatter or its line count misses copy-paste corruption.
-   - Show the user every difference. Say which ones change the instructions and which are only whitespace.
-   - Check the skill appears in the skill list. Usually it shows up in the current session; if not, start a new session.
+All paths are relative to the repo root. `<name>` must match the `name:` frontmatter.
 
-When asked to change a skill, read the imported version first (`~/.claude/skills/<name>/SKILL.md`). The user may have edited it. Output the full updated file, or only the changed section if that's what they asked for.
+1. Stage the draft. Use this exact `hash_tree`, because the user's script compares its output:
+   ```bash
+   hash_tree() { (cd "$1" && find . -type f ! -name .DS_Store | LC_ALL=C sort | while IFS= read -r f; do shasum -a 256 "$f"; done); }
+   d=tmp/skills/<name>
+   rm -rf "$d/draft" && mkdir -p "$d/draft"
+   if [ -d ~/.claude/skills/<name> ]; then
+     cp -R ~/.claude/skills/<name>/. "$d/draft/" && hash_tree ~/.claude/skills/<name> > "$d/base.sha256"
+   else
+     : > "$d/base.sha256"   # new skill
+   fi
+   ```
+   `base.sha256` records the version you started from. The script aborts if the user's copy differs from it, so never regenerate it after editing.
+2. Edit the files in `$d/draft/`. Read the staged `SKILL.md` first; it is the user's current version.
+3. Seal it, after the last edit: `hash_tree "$d/draft" > "$d/draft.sha256"`
+4. Show the user the diff (`diff -ru ~/.claude/skills/<name> "$d/draft"`) and tell them to run on their machine:
+   ```bash
+   install-skill <name>
+   ```
+5. If it aborts because their copy changed, re-stage from step 1 after they've run `sbx skills import`, so you build on their edits.
+6. Verify the import: `diff -ru "$d/draft" ~/.claude/skills/<name>` must print nothing. Check the skill appears in the skill list. If it doesn't, start a new session.
 
 Alternative: a project skill in `<repo>/.claude/skills/<name>/SKILL.md` needs no import step, because the checkout is shared. Only use it if the user wants it.
 
@@ -36,5 +45,7 @@ Alternative: a project skill in `<repo>/.claude/skills/<name>/SKILL.md` needs no
 ## Never
 
 - Write to `~/.claude/skills` (it's read-only, and an edit there wouldn't reach the user anyway)
+- Paste a whole skill into chat for the user to copy (it gets mangled)
+- Regenerate `base.sha256` to get past an abort
 - Tell the user to open a sandbox path
 - Write or change memories unasked
