@@ -218,6 +218,7 @@ return {
     version = '1.*',
 
     dependencies = {
+      { 'mikavilpas/blink-ripgrep.nvim', version = '*' },
       {
         'L3MON4D3/LuaSnip', -- Snippet engine: expands/navigates snippets, and
         -- lets snippets compute dynamic content (e.g. a class name derived
@@ -279,7 +280,17 @@ return {
       snippets = { preset = 'luasnip', score_offset = 20 },
 
       -- List of sources for entries in the autocomplete list
-      sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } }
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer', 'ripgrep' },
+        providers = {
+          lsp = { fallbacks = {} },
+          ripgrep = {
+            module = 'blink-ripgrep',
+            name = 'Ripgrep',
+            opts = {},
+          },
+        },
+      },
     },
 
     -- Allow the sources list to be extended by other files:
